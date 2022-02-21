@@ -1,13 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<html lang="Chinese">
+    <head>
+    <meta charset="utf-8">
 
-  
-  <title>kun&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这里是我的个人博客">
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+    
+    
+        <link rel="mask-icon" href="/favicon.ico">
+    
+
+
+    <!-- meta -->
+
+
+<title>kun&#39;s blog</title>
+
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="这里是我的个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="kun&#39;s blog">
 <meta property="og:url" content="http://example.com/page/8/index.html">
@@ -15,1191 +51,673 @@
 <meta property="og:description" content="这里是我的个人博客">
 <meta property="og:locale">
 <meta property="article:author" content="Gwoo">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="kun&#39;s blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">kun&#39;s blog</a>
-      </h1>
-      
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">迟早早</span>
+        </a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    <div class="header__right">
         
-          <a class="main-nav-link" href="/">Home</a>
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
+                    <a href="/about/" class="navbar-menu button">关于</a>
+                
+            </div>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
         
-      </nav>
-      <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+                    <a href="/about/" class="dropdown-menu button">关于</a>
+                
+            </div>
+        
     </div>
-  </div>
 </header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-themes/cards/source/css/highlight/atelier-savanna-dark" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/atelier-savanna-dark/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.786Z" itemprop="datePublished">2022-02-19</time>
-</a>
+
+
+    <div class="cover">
+        <div class="cover__logo">
+            
+                <img no-lazy alt="author Image" class="cover__avatar" src="/img/logo_qq.jpg">
+            
+        </div>
+        
+        
+            <div class="cover__intro">
+                <p>欢迎来到迟早世界,博主拖延症晚期,请自便<br> <div align="center"> <a href="https://space.bilibili.com/449364077" target="_blank"><img src="https://i.loli.net/2021/02/07/RioctC36Arq1KlL.png" width="32px" height="32px"></a> <a href="http://wpa.qq.com/msgrd?v=3&uin=2254228017&site=qq&menu=yes" target="_blank"><img src="https://i.loli.net/2021/02/07/C4lMDe1PAHIURvc.png" width="32px" height="32px"></a> <a href="https://github.com/denstiny" target="_blank"><img src="https://i.loli.net/2021/02/07/olDkgtKeqhRJY57.png" width="32px" height="32px"></a> </div></p>
+ 
+            </div>
+        
+    </div>
+
+            <main class="main">
     
-  </div>
-  <div class="article-inner">
+    <div class="post-list">
+        
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        no title
+    </h2>
     
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /* Base16 Atelier Savanna Dark - Theme */
+        <p>
+            /* Base16 Atelier Savanna Dark - Theme */
 /* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/savanna) */
-/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
-
-/* Atelier-Savanna Comment */
-.highlight .comment,
-.highlight .quote {
-  color: #78877d;
-}
-
-/* Atelier-Savanna Red */
-.highlight .variable,
-.highlight .template-variable,
-.highlight .attribute,
-.highlight .tag,
-.highlight .name,
-.highlight .regexp,
-.highlight .link,
-.highlight .name,
-.highlight .selector-id,
-.highlight .selector-class {
-  color: #b16139;
-}
-
-/* Atelier-Savanna Orange */
-.highlight .number,
-.highlight .meta,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .literal,
-.highlight .type,
-.highlight .params {
-  color: #9f713c;
-}
-
-/* Atelier-Savanna Green */
-.highlight .string,
-.highlight .symbol,
-.highlight .bullet {
-  color: #489963;
-}
-
-/* Atelier-Savanna Blue */
-.highlight .title,
-.highlight .section {
-  color: #478c90;
-}
-
-/* Atelier-Savanna Purple */
-.highlight .keyword,
-.highlight .selector-tag {
-  color: #55859b;
-}
-
-.highlight .deletion,
-.highlight .addition {
-  color: #171c19;
-  display: inline-block;
-  width: 100%;
-}
-
-.highlight .deletion {
-  background-color: #b16139;
-}
-
-.highlight .addition {
-  background-color: #489963;
-}
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  background: #171c19;
-  color: #87928a;
-  padding: 0.5em;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-savanna-dark/" data-id="ckztphph7001o1h8z59t976j8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/atelier-savanna-light" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/atelier-savanna-light/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.786Z" itemprop="datePublished">2022-02-19</time>
-</a>
+/* Origi...
+        </p>
     
-  </div>
-  <div class="article-inner">
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-19</a>
     
+ 
+</div>
+<div class="post-entry__tags"></div> 
+<a href="/2022/02/19/themes/cards/source/css/highlight/atelier-savanna-dark/" class="post-entry__link">no title</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        no title
+    </h2>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        /* Base16 Atelier Savanna Light - Theme */
+        <p>
+            /* Base16 Atelier Savanna Light - Theme */
 /* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/savanna) */
-/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
-
-/* Atelier-Savanna Comment */
-.highlight .comment,
-.highlight .quote {
-  color: #5f6d64;
-}
-
-/* Atelier-Savanna Red */
-.highlight .variable,
-.highlight .template-variable,
-.highlight .attribute,
-.highlight .tag,
-.highlight .name,
-.highlight .regexp,
-.highlight .link,
-.highlight .name,
-.highlight .selector-id,
-.highlight .selector-class {
-  color: #b16139;
-}
-
-/* Atelier-Savanna Orange */
-.highlight .number,
-.highlight .meta,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .literal,
-.highlight .type,
-.highlight .params {
-  color: #9f713c;
-}
-
-/* Atelier-Savanna Green */
-.highlight .string,
-.highlight .symbol,
-.highlight .bullet {
-  color: #489963;
-}
-
-/* Atelier-Savanna Blue */
-.highlight .title,
-.highlight .section {
-  color: #478c90;
-}
-
-/* Atelier-Savanna Purple */
-.highlight .keyword,
-.highlight .selector-tag {
-  color: #55859b;
-}
-
-.highlight .deletion,
-.highlight .addition {
-  color: #171c19;
-  display: inline-block;
-  width: 100%;
-}
-
-.highlight .deletion {
-  background-color: #b16139;
-}
-
-.highlight .addition {
-  background-color: #489963;
-}
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  background: #ecf4ee;
-  color: #526057;
-  padding: 0.5em;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-savanna-light/" data-id="ckztphph7001p1h8z85y434a8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/atelier-seaside-light" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/atelier-seaside-light/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.786Z" itemprop="datePublished">2022-02-19</time>
-</a>
+/* Orig...
+        </p>
     
-  </div>
-  <div class="article-inner">
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-19</a>
     
+ 
+</div>
+<div class="post-entry__tags"></div> 
+<a href="/2022/02/19/themes/cards/source/css/highlight/atelier-savanna-light/" class="post-entry__link">no title</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        no title
+    </h2>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        /* Base16 Atelier Seaside Light - Theme */
+        <p>
+            /* Base16 Atelier Seaside Light - Theme */
 /* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/seaside) */
-/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
-
-/* Atelier-Seaside Comment */
-.highlight .comment,
-.highlight .quote {
-  color: #687d68;
-}
-
-/* Atelier-Seaside Red */
-.highlight .variable,
-.highlight .template-variable,
-.highlight .attribute,
-.highlight .tag,
-.highlight .name,
-.highlight .regexp,
-.highlight .link,
-.highlight .name,
-.highlight .selector-id,
-.highlight .selector-class {
-  color: #e6193c;
-}
-
-/* Atelier-Seaside Orange */
-.highlight .number,
-.highlight .meta,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .literal,
-.highlight .type,
-.highlight .params {
-  color: #87711d;
-}
-
-/* Atelier-Seaside Green */
-.highlight .string,
-.highlight .symbol,
-.highlight .bullet {
-  color: #29a329;
-}
-
-/* Atelier-Seaside Blue */
-.highlight .title,
-.highlight .section {
-  color: #3d62f5;
-}
-
-/* Atelier-Seaside Purple */
-.highlight .keyword,
-.highlight .selector-tag {
-  color: #ad2bee;
-}
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  background: #f4fbf4;
-  color: #5e6e5e;
-  padding: 0.5em;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-seaside-light/" data-id="ckztphph7001q1h8z5tp6b9pt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/atelier-seaside-dark" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/atelier-seaside-dark/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.786Z" itemprop="datePublished">2022-02-19</time>
-</a>
+/* Orig...
+        </p>
     
-  </div>
-  <div class="article-inner">
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-19</a>
     
+ 
+</div>
+<div class="post-entry__tags"></div> 
+<a href="/2022/02/19/themes/cards/source/css/highlight/atelier-seaside-light/" class="post-entry__link">no title</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        no title
+    </h2>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        /* Base16 Atelier Seaside Dark - Theme */
+        <p>
+            /* Base16 Atelier Seaside Dark - Theme */
 /* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/seaside) */
-/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
-
-/* Atelier-Seaside Comment */
-.highlight .comment,
-.highlight .quote {
-  color: #809980;
-}
-
-/* Atelier-Seaside Red */
-.highlight .variable,
-.highlight .template-variable,
-.highlight .attribute,
-.highlight .tag,
-.highlight .name,
-.highlight .regexp,
-.highlight .link,
-.highlight .name,
-.highlight .selector-id,
-.highlight .selector-class {
-  color: #e6193c;
-}
-
-/* Atelier-Seaside Orange */
-.highlight .number,
-.highlight .meta,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .literal,
-.highlight .type,
-.highlight .params {
-  color: #87711d;
-}
-
-/* Atelier-Seaside Green */
-.highlight .string,
-.highlight .symbol,
-.highlight .bullet {
-  color: #29a329;
-}
-
-/* Atelier-Seaside Blue */
-.highlight .title,
-.highlight .section {
-  color: #3d62f5;
-}
-
-/* Atelier-Seaside Purple */
-.highlight .keyword,
-.highlight .selector-tag {
-  color: #ad2bee;
-}
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  background: #131513;
-  color: #8ca68c;
-  padding: 0.5em;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-seaside-dark/" data-id="ckztphph7001r1h8zbb6navv6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/atelier-sulphurpool-dark" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/atelier-sulphurpool-dark/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.786Z" itemprop="datePublished">2022-02-19</time>
-</a>
+/* Origi...
+        </p>
     
-  </div>
-  <div class="article-inner">
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-19</a>
     
+ 
+</div>
+<div class="post-entry__tags"></div> 
+<a href="/2022/02/19/themes/cards/source/css/highlight/atelier-seaside-dark/" class="post-entry__link">no title</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        no title
+    </h2>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        /* Base16 Atelier Sulphurpool Dark - Theme */
+        <p>
+            /* Base16 Atelier Sulphurpool Dark - Theme */
 /* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/sulphurpool) */
-/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
-
-/* Atelier-Sulphurpool Comment */
-.highlight .comment,
-.highlight .quote {
-  color: #898ea4;
-}
-
-/* Atelier-Sulphurpool Red */
-.highlight .variable,
-.highlight .template-variable,
-.highlight .attribute,
-.highlight .tag,
-.highlight .name,
-.highlight .regexp,
-.highlight .link,
-.highlight .name,
-.highlight .selector-id,
-.highlight .selector-class {
-  color: #c94922;
-}
-
-/* Atelier-Sulphurpool Orange */
-.highlight .number,
-.highlight .meta,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .literal,
-.highlight .type,
-.highlight .params {
-  color: #c76b29;
-}
-
-/* Atelier-Sulphurpool Green */
-.highlight .string,
-.highlight .symbol,
-.highlight .bullet {
-  color: #ac9739;
-}
-
-/* Atelier-Sulphurpool Blue */
-.highlight .title,
-.highlight .section {
-  color: #3d8fd1;
-}
-
-/* Atelier-Sulphurpool Purple */
-.highlight .keyword,
-.highlight .selector-tag {
-  color: #6679cc;
-}
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  background: #202746;
-  color: #979db4;
-  padding: 0.5em;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-sulphurpool-dark/" data-id="ckztphph8001s1h8z1h1b1vg4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/atelier-sulphurpool-light" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/atelier-sulphurpool-light/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.786Z" itemprop="datePublished">2022-02-19</time>
-</a>
+...
+        </p>
     
-  </div>
-  <div class="article-inner">
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-19</a>
     
+ 
+</div>
+<div class="post-entry__tags"></div> 
+<a href="/2022/02/19/themes/cards/source/css/highlight/atelier-sulphurpool-dark/" class="post-entry__link">no title</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        no title
+    </h2>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        /* Base16 Atelier Sulphurpool Light - Theme */
-/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/sulphurpool) */
-/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
-
-/* Atelier-Sulphurpool Comment */
-.highlight .comment,
-.highlight .quote {
-  color: #6b7394;
-}
-
-/* Atelier-Sulphurpool Red */
-.highlight .variable,
-.highlight .template-variable,
-.highlight .attribute,
-.highlight .tag,
-.highlight .name,
-.highlight .regexp,
-.highlight .link,
-.highlight .name,
-.highlight .selector-id,
-.highlight .selector-class {
-  color: #c94922;
-}
-
-/* Atelier-Sulphurpool Orange */
-.highlight .number,
-.highlight .meta,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .literal,
-.highlight .type,
-.highlight .params {
-  color: #c76b29;
-}
-
-/* Atelier-Sulphurpool Green */
-.highlight .string,
-.highlight .symbol,
-.highlight .bullet {
-  color: #ac9739;
-}
-
-/* Atelier-Sulphurpool Blue */
-.highlight .title,
-.highlight .section {
-  color: #3d8fd1;
-}
-
-/* Atelier-Sulphurpool Purple */
-.highlight .keyword,
-.highlight .selector-tag {
-  color: #6679cc;
-}
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  background: #f5f7ff;
-  color: #5e6687;
-  padding: 0.5em;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-sulphurpool-light/" data-id="ckztphph8001t1h8z8dz7a3od" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/atom-one-dark-reasonable" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/atom-one-dark-reasonable/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.786Z" itemprop="datePublished">2022-02-19</time>
-</a>
+        <p>
+            /* Base16 Atelier Sulphurpool Light - Theme */
+/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/sulphurpool) */...
+        </p>
     
-  </div>
-  <div class="article-inner">
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-19</a>
     
+ 
+</div>
+<div class="post-entry__tags"></div> 
+<a href="/2022/02/19/themes/cards/source/css/highlight/atelier-sulphurpool-light/" class="post-entry__link">no title</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        no title
+    </h2>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
+        <p>
+            /*
 
 Atom One Dark With support for ReasonML by Gidi Morris, based off work by Daniel Gamage
 
-Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
-
-*/
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
-  background: #282c34;
-}
-.highlight .keyword, .highlight .operator {
-  color: #F92672;
-}
-.highlight .pattern-match {
-  color: #F92672;
-}
-.highlight .pattern-match .highlight .constructor {
-  color: #61aeee;
-}
-.highlight .function {
-  color: #61aeee;
-}
-.highlight .function .highlight .params {
-  color: #A6E22E;
-}
-.highlight .function .highlight .params .highlight .typing {
-  color: #FD971F;
-}
-.highlight .module-access .highlight .module {
-  color: #7e57c2;
-}
-.highlight .constructor {
-  color: #e2b93d;
-}
-.highlight .constructor .highlight .string {
-  color: #9CCC65;
-}
-.highlight .comment, .highlight .quote {
-  color: #b18eb1;
-  font-style: italic;
-}
-.highlight .doctag, .highlight .formula {
-  color: #c678dd;
-}
-.highlight .section, .highlight .name, .highlight .selector-tag, .highlight .deletion, .highlight .subst {
-  color: #e06c75;
-}
-.highlight .literal {
-  color: #56b6c2;
-}
-.highlight .string, .highlight .regexp, .highlight .addition, .highlight .attribute, .highlight .meta-string {
-  color: #98c379;
-}
-.highlight .built_in, .highlight .class .highlight .title {
-  color: #e6c07b;
-}
-.highlight .attr, .highlight .variable, .highlight .template-variable, .highlight .type, .highlight .selector-class, .highlight .selector-attr, .highlight .selector-pseudo, .highlight .number {
-  color: #d19a66;
-}
-.highlight .symbol, .highlight .bullet, .highlight .link, .highlight .meta, .highlight .selector-id, .highlight .title {
-  color: #61aeee;
-}
-.highlight .emphasis {
-  font-style: italic;
-}
-.highlight .strong {
-  font-weight: bold;
-}
-.highlight .link {
-  text-decoration: underline;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atom-one-dark-reasonable/" data-id="ckztphph8001u1h8zcu9b8hj8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/atom-one-dark" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/atom-one-dark/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.786Z" itemprop="datePublished">2022-02-19</time>
-</a>
+Original One Dark Syntax theme from https://github.com...
+        </p>
     
-  </div>
-  <div class="article-inner">
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-19</a>
     
+ 
+</div>
+<div class="post-entry__tags"></div> 
+<a href="/2022/02/19/themes/cards/source/css/highlight/atom-one-dark-reasonable/" class="post-entry__link">no title</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        no title
+    </h2>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
+        <p>
+            /*
 
 Atom One Dark by Daniel Gamage
 Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
 
 base:    #282c34
 mono-1:  #abb2bf
-mono-2:  #818896
-mono-3:  #5c6370
-hue-1:   #56b6c2
-hue-2:   #61aeee
-hue-3:   #c678dd
-hue-4:   #98c379
-hue-5:   #e06c75
-hue-5-2: #be5046
-hue-6:   #d19a66
-hue-6-2: #e6c07b
-
-*/
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
-  background: #282c34;
-}
-
-.highlight .comment,
-.highlight .quote {
-  color: #5c6370;
-  font-style: italic;
-}
-
-.highlight .doctag,
-.highlight .keyword,
-.highlight .formula {
-  color: #c678dd;
-}
-
-.highlight .section,
-.highlight .name,
-.highlight .selector-tag,
-.highlight .deletion,
-.highlight .subst {
-  color: #e06c75;
-}
-
-.highlight .literal {
-  color: #56b6c2;
-}
-
-.highlight .string,
-.highlight .regexp,
-.highlight .addition,
-.highlight .attribute,
-.highlight .meta-string {
-  color: #98c379;
-}
-
-.highlight .built_in,
-.highlight .class .highlight .title {
-  color: #e6c07b;
-}
-
-.highlight .attr,
-.highlight .variable,
-.highlight .template-variable,
-.highlight .type,
-.highlight .selector-class,
-.highlight .selector-attr,
-.highlight .selector-pseudo,
-.highlight .number {
-  color: #d19a66;
-}
-
-.highlight .symbol,
-.highlight .bullet,
-.highlight .link,
-.highlight .meta,
-.highlight .selector-id,
-.highlight .title {
-  color: #61aeee;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-.highlight .link {
-  text-decoration: underline;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atom-one-dark/" data-id="ckztphph8001v1h8z1ptqfeci" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/atom-one-light" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/atom-one-light/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.786Z" itemprop="datePublished">2022-02-19</time>
-</a>
+m...
+        </p>
     
-  </div>
-  <div class="article-inner">
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-19</a>
     
+ 
+</div>
+<div class="post-entry__tags"></div> 
+<a href="/2022/02/19/themes/cards/source/css/highlight/atom-one-dark/" class="post-entry__link">no title</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        no title
+    </h2>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
+        <p>
+            /*
 
 Atom One Light by Daniel Gamage
 Original One Light Syntax theme from https://github.com/atom/one-light-syntax
 
 base:    #fafafa
-mono-1:  #383a42
-mono-2:  #686b77
-mono-3:  #a0a1a7
-hue-1:   #0184bb
-hue-2:   #4078f2
-hue-3:   #a626a4
-hue-4:   #50a14f
-hue-5:   #e45649
-hue-5-2: #c91243
-hue-6:   #986801
-hue-6-2: #c18401
+mono-1:  #383a4...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-19</a>
+    
+ 
+</div>
+<div class="post-entry__tags"></div> 
+<a href="/2022/02/19/themes/cards/source/css/highlight/atom-one-light/" class="post-entry__link">no title</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        no title
+    </h2>
+    
+        <p>
+            /*
+
+Brown Paper style from goldblog.com.ua (c) Zaripov Yura 
 
 */
 
 .highlight {
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
-  color: #383a42;
-  background: #fafafa;
-}
-
-.highlight .comment,
-.highlight .quote {
-  color: #a0a1a7;
-  font-style: italic;
-}
-
-.highlight .doctag,
-.highlight .keyword,
-.highlight .formula {
-  color: #a626a4;
-}
-
-.highlight .section,
-.highlight .name,
-.highlight .selector-tag,
-.highlight .deletion,
-.highlight .subst {
-  color: #e45649;
-}
-
-.highlight .literal {
-  color: #0184bb;
-}
-
-.highlight .string,
-.highlight .regexp,
-.highlight .addition,
-.highlight .attribute,
-.highlight .meta-string {
-  color: #50a14f;
-}
-
-.highlight .built_in,
-.highlight .class .highlight .title {
-  color: #c18401;
-}
-
-.highlight .attr,
-.highlight .variable,
-.highlight .template-variable,
-.highlight .type,
-.highlight .selector-class,
-.highlight .selector-attr,
-.highlight .selector-pseudo,
-.highlight .number {
-  color: #986801;
-}
-
-.highlight .symbol,
-.highlight .bullet,
-.highlight .link,
-.highlight .meta,
-.highlight .selector-id,
-.highlight .title {
-  color: #4078f2;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-.highlight .link {
-  text-decoration: underline;
-}
-
-      
+  padding: 0....
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-19</a>
+    
+ 
+</div>
+<div class="post-entry__tags"></div> 
+<a href="/2022/02/19/themes/cards/source/css/highlight/brown-paper/" class="post-entry__link">no title</a>
+                </div>
+            
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atom-one-light/" data-id="ckztphph8001w1h8zdfmc9p8m" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/brown-paper" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/brown-paper/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.786Z" itemprop="datePublished">2022-02-19</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+        <div class="nav">
+            <div class="nav__prev">
+                
+                    <a href="/page/7/" class="nav__link">
+                        <div>
+                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                        </div>
+                        <div>
+                            <div class="nav__label">
+                                Previous
+                            </div>
+                            <div class="nav__title">
+                                Page 7
+                            </div>
+                        </div>
+                    </a>
+                
+            </div>
+            <div class="nav__next">
+                
+                    <a href="/page/9/" class="nav__link">
+                        <div>
+                            <div class="nav__label">
+                                Next
+                            </div>
+                            <div class="nav__title">
+                                Page 9
+                            </div>
+                        </div>
+                        <div>
+                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                        </div>
+                    </a>
+                
+            </div>
+        </div>
+    
+
+
+</main>
+
+            <footer class="footer">
     
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
-
-Brown Paper style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
-
-*/
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background:#b7a68e url(./brown-papersq.png);
-}
-
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .literal {
-  color:#005599;
-  font-weight:bold;
-}
-
-.highlight,
-.highlight .subst {
-  color: #363c69;
-}
-
-.highlight .string,
-.highlight .title,
-.highlight .section,
-.highlight .type,
-.highlight .attribute,
-.highlight .symbol,
-.highlight .bullet,
-.highlight .built_in,
-.highlight .addition,
-.highlight .variable,
-.highlight .template-tag,
-.highlight .template-variable,
-.highlight .link,
-.highlight .name {
-  color: #2c009f;
-}
-
-.highlight .comment,
-.highlight .quote,
-.highlight .meta,
-.highlight .deletion {
-  color: #802022;
-}
-
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .literal,
-.highlight .doctag,
-.highlight .title,
-.highlight .section,
-.highlight .type,
-.highlight .name,
-.highlight .strong {
-  font-weight: bold;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/brown-paper/" data-id="ckztphph8001x1h8z269h428w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-
-
-  <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/7/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/9/">Next &amp;raquo;</a>
-  </nav>
+    
+        <span id="leancloud_container_site_uv" hidden>
+            <span></span>
+            <span id="leancloud_value_site_uv"></span>
+            <span>Viewers</span>
+            
+                <span>&amp;nbsp;&amp;nbsp;&amp;nbsp;|</span>
+            
+        </span>
+    
+    
+        <span id="leancloud_container_site_pv" hidden>
+            <span></span>
+            <span id="leancloud_value_site_pv"></span>
+            <span>Views</span>
+            
+        </span>
+    
 
-</section>
+     
+ 
+
+ 
+    
         
-          <aside id="sidebar">
-  
+        <p class="footer-copyright">
+            Copyright © 2022&nbsp;-&nbsp;2022 <a href="/">kun&#39;s blog</a>
+        </p>
     
-
-  
     
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/02/19/themes/cards/source/js/b2t/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/19/themes/cards/source/js/darkmode/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/19/themes/cards/source/js/local-search/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/19/themes/cards/source/css/style/main/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/19/themes/cards/source/css/style/dark/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 Gwoo<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
     
+    <script>
+        (function () {
+            function getRecord(Counter, target) {
+                return new Promise(function (resolve, reject) {
+                    Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+                        .then(response => response.json())
+                        .then(({results}) => {
+                            if (results && results.length > 0) {
+                                var record = results[0];
+                                resolve(record);
+                            } else {
+                                Counter('post', '/classes/Counter', {
+                                        target, time: 0
+                                    })
+                                    .then(response => response.json())
+                                    .then(record => {
+                                        resolve(record);
+                                    }).catch(error => {
+                                        console.error('Failed to create', error);
+                                        reject(error);
+                                    });
+                            }
+                        }).catch(error => {
+                            console.error('LeanCloud Counter Error', error);
+                            reject(error);
+                        });
+                })
+            }
+        
+            function buildIncrement(objectId) {
+                return {
+                    "method": "PUT",
+                    "path": `/1.1/classes/Counter/${ objectId }`,
+                    "body": {
+                        "time": {
+                            '__op': 'Increment',
+                            'amount': 1
+                        }
+                    }
+                }
+            }
+        
+            function increment(Counter, incrArr) {
+                return new Promise(function (resolve, reject) {
+                    Counter('post', '/batch', {
+                        "requests": incrArr
+                    }).then((res) => {
+                        resolve(res);
+                    }).catch(error => {
+                        console.error('Failed to save visitor count', error);
+                        reject(error);
+                    });
+                });
+            }
+        
+            function validUV() {
+                var key = 'LeanCloud_UV_Flag';
+                var flag = localStorage.getItem(key);
+                if (flag) {
+                    if (new Date().getTime() - parseInt(flag) <= 86400000) {
+                        return false;
+                    }
+                }
+                localStorage.setItem(key, new Date().getTime().toString());
+                return true;
+            }
+        
+            function addCount(Counter) {
+                var enableIncr = 'leancloud' === 'leancloud';
+                var getterArr = [];
+                var incrArr = [];
+                var pvCtn = document.querySelector('#leancloud_container_site_pv');
+                if (pvCtn || enableIncr) {
+                    var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+                        incrArr.push(buildIncrement(record.objectId))
+                        var ele = document.querySelector('#leancloud_value_site_pv');
+                        if (ele) {
+                            ele.innerText = record.time + 1;
+                            if (pvCtn) {
+                                pvCtn.style.display = 'inline';
+                            }
+                        }
+                    });
+                    getterArr.push(pvGetter);
+                }
+                var uvCtn = document.querySelector('#leancloud_container_site_uv');
+                if (uvCtn || enableIncr) {
+                    var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+                        var vuv = validUV();
+                        vuv && incrArr.push(buildIncrement(record.objectId))
+                        var ele = document.querySelector('#leancloud_value_site_uv');
+                        if (ele) {
+                            ele.innerText = record.time + (vuv ? 1 : 0);
+                            if (uvCtn) {
+                                uvCtn.style.display = 'inline';
+                            }
+                        }
+                    });
+                    getterArr.push(uvGetter);
+                }
+                if ('false' === 'true') {
+                    var viewCtn = document.querySelector('#leancloud_container_page_pv');
+                    if (viewCtn || enableIncr) {
+                        var target = decodeURI('/page/8/index.html');
+                        var viewGetter = getRecord(Counter, target).then((record) => {
+                            incrArr.push(buildIncrement(record.objectId))
+                            if (viewCtn) {
+                                var ele = document.querySelector('#leancloud_value_page_pv');
+                                if (ele) {
+                                    ele.innerText = (record.time || 0) + 1;
+                                    viewCtn.style.display = 'inline';
+                                }
+                            }
+                        });
+                        getterArr.push(viewGetter);
+                    }
+                }
+                if (enableIncr) {
+                    Promise.all(getterArr).then(() => {
+                        incrArr.length > 0 && increment(Counter, incrArr);
+                    })
+                }
+            }
+        
+            var app_id = 'STt5OqSQLi3m1FhajpU9wOD6-gzGzoHsz';
+            var app_key = 'vQf2BHWLdRAsBr7pWT30Bctj';
+            var server_url = '';
+        
+            function fetchData(api_server) {
+                var Counter = (method, url, data) => {
+                    return fetch(`${ api_server }/1.1${ url }`, {
+                        method,
+                        headers: {
+                                'X-LC-Id': app_id,
+                                'X-LC-Key': app_key,
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data)
+                    });
+                };
+                addCount(Counter);
+            }
+            var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+            if (api_server) {
+                fetchData(api_server);
+            } else {
+                fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+                    .then(response => response.json())
+                    .then(({api_server}) => {
+                        fetchData('https://' + api_server);
+                    });
+            }
+        })();
+    </script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+ 
 
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('true')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
 
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
+    </body>
 </html>
