@@ -66,6 +66,261 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-themes/cards/source/css/highlight/grayscale" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/grayscale/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.787Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /*
+
+grayscale style (c) MY Sun <simonmysun@gmail.com>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #fff;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #777;
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.highlight .number,
+.highlight .literal {
+  color: #777;
+}
+
+.highlight .string,
+.highlight .doctag,
+.highlight .formula {
+  color: #333;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJ0lEQVQIW2O8e/fufwYGBgZBQUEQxcCIIfDu3Tuwivfv30NUoAsAALHpFMMLqZlPAAAAAElFTkSuQmCC) repeat;
+}
+
+.highlight .title,
+.highlight .section,
+.highlight .selector-id {
+  color: #000;
+  font-weight: bold;
+}
+
+.highlight .subst {
+  font-weight: normal;
+}
+
+.highlight .class .highlight .title,
+.highlight .type,
+.highlight .name {
+  color: #333;
+  font-weight: bold;
+}
+
+.highlight .tag {
+  color: #333;
+}
+
+.highlight .regexp {
+    color: #333;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAN37979r6yszIgujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQDexSef15DBCwAAAABJRU5ErkJggg==) repeat;
+}
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .link {
+  color: #000;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAO7d+/+z4gsBhJwdXVlhAvCBECKwIIwAbhKZBUwBQA6hBpm5efZsgAAAABJRU5ErkJggg==) repeat;
+}
+
+.highlight .built_in,
+.highlight .builtin-name {
+  color: #000;
+  text-decoration: underline;
+}
+
+.highlight .meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.highlight .deletion {
+  color: #fff;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAE0lEQVQIW2MMDQ39zzhz5kwIAQAyxweWgUHd1AAAAABJRU5ErkJggg==) repeat;
+}
+
+.highlight .addition {
+  color: #000;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAALUlEQVQYV2N89+7dfwYk8P79ewZBQUFkIQZGOiu6e/cuiptQHAPl0NtNxAQBAM97Oejj3Dg7AAAAAElFTkSuQmCC) repeat;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/grayscale/" data-id="ckzwp1p98007cz18z24f87u8t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/source/css/highlight/hybrid" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/hybrid/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.787Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /*
+
+vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
+
+*/
+
+/*background color*/
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1d1f21;
+}
+
+/*selection color*/
+.highlight::selection,
+.highlight span::selection {
+  background: #373b41;
+}
+
+.highlight::-moz-selection,
+.highlight span::-moz-selection {
+  background: #373b41;
+}
+
+/*foreground color*/
+.highlight {
+  color: #c5c8c6;
+}
+
+/*color: fg_yellow*/
+.highlight .title,
+.highlight .name {
+  color: #f0c674;
+}
+
+/*color: fg_comment*/
+.highlight .comment,
+.highlight .meta,
+.highlight .meta .highlight .keyword {
+  color: #707880;
+}
+
+/*color: fg_red*/
+.highlight .number,
+.highlight .symbol,
+.highlight .literal,
+.highlight .deletion,
+.highlight .link {
+ color: #cc6666
+}
+
+/*color: fg_green*/
+.highlight .string,
+.highlight .doctag,
+.highlight .addition,
+.highlight .regexp,
+.highlight .selector-attr,
+.highlight .selector-pseudo {
+  color: #b5bd68;
+}
+
+/*color: fg_purple*/
+.highlight .attribute,
+.highlight .code,
+.highlight .selector-id {
+ color: #b294bb;
+}
+
+/*color: fg_blue*/
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .bullet,
+.highlight .tag {
+ color: #81a2be;
+}
+
+/*color: fg_aqua*/
+.highlight .subst,
+.highlight .variable,
+.highlight .template-tag,
+.highlight .template-variable {
+  color: #8abeb7;
+}
+
+/*color: fg_orange*/
+.highlight .type,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .quote,
+.highlight .section,
+.highlight .selector-class {
+  color: #de935f;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/hybrid/" data-id="ckzwp1p98007fz18zg4f71h7v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-themes/cards/source/css/highlight/gruvbox-dark" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/02/19/themes/cards/source/css/highlight/gruvbox-dark/" class="article-date">
@@ -190,117 +445,7 @@ Gruvbox style (dark) (c) Pavel Pertsev (original style at https://github.com/mor
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/gruvbox-dark/" data-id="ckzwn7a1z007cyt8z07pjfhmt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/hopscotch" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/hopscotch/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.787Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
- * Hopscotch
- * by Jan T. Sott
- * https://github.com/idleberg/Hopscotch
- *
- * This work is licensed under the Creative Commons CC0 1.0 Universal License
- */
-
-/* Comment */
-.highlight .comment,
-.highlight .quote {
-  color: #989498;
-}
-
-/* Red */
-.highlight .variable,
-.highlight .template-variable,
-.highlight .attribute,
-.highlight .tag,
-.highlight .name,
-.highlight .selector-id,
-.highlight .selector-class,
-.highlight .regexp,
-.highlight .link,
-.highlight .deletion {
-  color: #dd464c;
-}
-
-/* Orange */
-.highlight .number,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .literal,
-.highlight .type,
-.highlight .params {
-  color: #fd8b19;
-}
-
-/* Yellow */
-.highlight .class .highlight .title {
-  color: #fdcc59;
-}
-
-/* Green */
-.highlight .string,
-.highlight .symbol,
-.highlight .bullet,
-.highlight .addition {
-  color: #8fc13e;
-}
-
-/* Aqua */
-.highlight .meta {
-  color: #149b93;
-}
-
-/* Blue */
-.highlight .function,
-.highlight .section,
-.highlight .title {
-  color: #1290bf;
-}
-
-/* Purple */
-.highlight .keyword,
-.highlight .selector-tag {
-  color: #c85e7c;
-}
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  background: #322931;
-  color: #b9b5b8;
-  padding: 0.5em;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/hopscotch/" data-id="ckzwn7a1z007dyt8zcpnvex27" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/gruvbox-dark/" data-id="ckzwp1p98007hz18zdrcb2dha" class="article-share-link">Share</a>
       
       
     </footer>
@@ -434,135 +579,7 @@ Gruvbox style (light) (c) Pavel Pertsev (original style at https://github.com/mo
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/gruvbox-light/" data-id="ckzwn7a1z007eyt8z1f62ddez" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/hybrid" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/hybrid/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.787Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
-
-vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
-
-*/
-
-/*background color*/
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #1d1f21;
-}
-
-/*selection color*/
-.highlight::selection,
-.highlight span::selection {
-  background: #373b41;
-}
-
-.highlight::-moz-selection,
-.highlight span::-moz-selection {
-  background: #373b41;
-}
-
-/*foreground color*/
-.highlight {
-  color: #c5c8c6;
-}
-
-/*color: fg_yellow*/
-.highlight .title,
-.highlight .name {
-  color: #f0c674;
-}
-
-/*color: fg_comment*/
-.highlight .comment,
-.highlight .meta,
-.highlight .meta .highlight .keyword {
-  color: #707880;
-}
-
-/*color: fg_red*/
-.highlight .number,
-.highlight .symbol,
-.highlight .literal,
-.highlight .deletion,
-.highlight .link {
- color: #cc6666
-}
-
-/*color: fg_green*/
-.highlight .string,
-.highlight .doctag,
-.highlight .addition,
-.highlight .regexp,
-.highlight .selector-attr,
-.highlight .selector-pseudo {
-  color: #b5bd68;
-}
-
-/*color: fg_purple*/
-.highlight .attribute,
-.highlight .code,
-.highlight .selector-id {
- color: #b294bb;
-}
-
-/*color: fg_blue*/
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .bullet,
-.highlight .tag {
- color: #81a2be;
-}
-
-/*color: fg_aqua*/
-.highlight .subst,
-.highlight .variable,
-.highlight .template-tag,
-.highlight .template-variable {
-  color: #8abeb7;
-}
-
-/*color: fg_orange*/
-.highlight .type,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .quote,
-.highlight .section,
-.highlight .selector-class {
-  color: #de935f;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/hybrid/" data-id="ckzwn7a1z007fyt8z1jhvdcpq" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/gruvbox-light/" data-id="ckzwp1p99007nz18za6aca42i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -685,7 +702,7 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/idea/" data-id="ckzwn7a1z007gyt8z69z98ug3" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/idea/" data-id="ckzwp1p9a007yz18zdg5re0q3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -780,7 +797,7 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-heath-light/" data-id="ckzwn7a1v006iyt8z45kw8k33" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-heath-light/" data-id="ckzwp1p94006hz18zfiz2gcb1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -875,7 +892,7 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-lakeside-dark/" data-id="ckzwn7a1v006jyt8z0mk829y7" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-lakeside-dark/" data-id="ckzwp1p95006jz18z9gm91kpj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -970,7 +987,7 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-lakeside-light/" data-id="ckzwn7a1v006kyt8za84sb429" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-lakeside-light/" data-id="ckzwp1p95006kz18zdhh632sn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1080,7 +1097,7 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-plateau-dark/" data-id="ckzwn7a1v006lyt8z5oxwdset" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-plateau-dark/" data-id="ckzwp1p95006lz18z8gxdec5m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1190,7 +1207,7 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-plateau-light/" data-id="ckzwn7a1w006myt8z89vi5j22" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/atelier-plateau-light/" data-id="ckzwp1p95006mz18zfrlr4wpw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1236,15 +1253,15 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
       <ul>
         
           <li>
+            <a href="/2022/02/19/themes/cards/source/js/b2t/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2022/02/19/themes/cards/source/js/darkmode/">(no title)</a>
           </li>
         
           <li>
             <a href="/2022/02/19/themes/cards/source/js/local-search/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/19/themes/cards/source/js/b2t/">(no title)</a>
           </li>
         
           <li>

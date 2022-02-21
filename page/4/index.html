@@ -66,9 +66,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-themes/cards/source/css/highlight/sunburst" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-themes/cards/source/css/highlight/routeros" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/sunburst/" class="article-date">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/routeros/" class="article-date">
   <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
 </a>
     
@@ -80,7 +80,7 @@
       
         /*
 
-Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
+ highlight.js style for Microtik RouterOS script
 
 */
 
@@ -88,189 +88,96 @@ Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #000;
-  color: #f8f8f8;
+  background: #F0F0F0;
 }
 
-.highlight .comment,
-.highlight .quote {
-  color: #aeaeae;
-  font-style: italic;
+/* Base color: saturation 0; */
+
+.highlight,
+.highlight .subst {
+  color: #444;
+}
+
+.highlight .comment {
+  color: #888888;
 }
 
 .highlight .keyword,
 .highlight .selector-tag,
-.highlight .type {
-  color: #e28964;
-}
-
-.highlight .string {
-  color: #65b042;
-}
-
-.highlight .subst {
-  color: #daefa3;
-}
-
-.highlight .regexp,
-.highlight .link {
-  color: #e9c062;
-}
-
-.highlight .title,
-.highlight .section,
-.highlight .tag,
+.highlight .meta-keyword,
+.highlight .doctag,
 .highlight .name {
-  color: #89bdff;
-}
-
-.highlight .class .highlight .title,
-.highlight .doctag {
-  text-decoration: underline;
-}
-
-.highlight .symbol,
-.highlight .bullet,
-.highlight .number {
-  color: #3387cc;
-}
-
-.highlight .params,
-.highlight .variable,
-.highlight .template-variable {
-  color: #3e87e3;
+  font-weight: bold;
 }
 
 .highlight .attribute {
-  color: #cda869;
+  color: #0E9A00;
+}    
+
+.highlight .function {
+  color: #99069A;
 }
 
-.highlight .meta {
-  color: #8996a8;
+.highlight .builtin-name {
+  color: #99069A;
 }
 
-.highlight .formula {
-  background-color: #0e2231;
-  color: #f8f8f8;
-  font-style: italic;
-}
+/* User color: hue: 0 */
 
-.highlight .addition {
-  background-color: #253b22;
-  color: #f8f8f8;
-}
-
-.highlight .deletion {
-  background-color: #420e09;
-  color: #f8f8f8;
-}
-
-.highlight .selector-class {
-  color: #9b703f;
-}
-
-.highlight .selector-id {
-  color: #8b98ab;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/sunburst/" data-id="ckzwn7a23008cyt8zbmfwe1w4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/ir-black" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/ir-black/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.788Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
-  IR_Black style (c) Vasily Mikhailitchenko <vaskas@programica.ru>
-*/
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #000;
-  color: #f8f8f8;
-}
-
-.highlight .comment,
-.highlight .quote,
-.highlight .meta {
-  color: #7c7c7c;
-}
-
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .tag,
-.highlight .name {
-  color: #96cbfe;
-}
-
-.highlight .attribute,
-.highlight .selector-id {
-  color: #ffffb6;
-}
-
+.highlight .type,
 .highlight .string,
-.highlight .selector-attr,
-.highlight .selector-pseudo,
-.highlight .addition {
-  color: #a8ff60;
-}
-
-.highlight .subst {
-  color: #daefa3;
-}
-
-.highlight .regexp,
-.highlight .link {
-  color: #e9c062;
+.highlight .number,
+.highlight .selector-id,
+.highlight .selector-class,
+.highlight .quote,
+.highlight .template-tag,
+.highlight .deletion {
+  color: #880000;
 }
 
 .highlight .title,
-.highlight .section,
-.highlight .type,
-.highlight .doctag {
-  color: #ffffb6;
+.highlight .section {
+  color: #880000;
+  font-weight: bold;
 }
 
+.highlight .regexp,
 .highlight .symbol,
-.highlight .bullet,
 .highlight .variable,
 .highlight .template-variable,
-.highlight .literal {
-  color: #c6c5fe;
+.highlight .link,
+.highlight .selector-attr,
+.highlight .selector-pseudo {
+  color: #BC6060;
 }
 
-.highlight .number,
-.highlight .deletion {
-  color:#ff73fd;
+
+/* Language color: hue: 90; */
+
+.highlight .literal {
+  color: #78A960;
 }
+
+.highlight .built_in,
+.highlight .bullet,
+.highlight .code,
+.highlight .addition {
+  color: #0C9A9A;
+}
+
+
+/* Meta color: hue: 200 */
+
+.highlight .meta {
+  color: #1f7199;
+}
+
+.highlight .meta-string {
+  color: #4d99bf;
+}
+
+
+/* Misc effects */
 
 .highlight .emphasis {
   font-style: italic;
@@ -283,7 +190,7 @@ Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/ir-black/" data-id="ckzwn7a1z007hyt8z7uyyeot0" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/routeros/" data-id="ckzwp1p9d008lz18z3nxsc1zr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -421,7 +328,106 @@ ISBL Editor style dark color scheme (c) Dmitriy Tarasov <dimatar@gmail.com>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/isbl-editor-dark/" data-id="ckzwn7a1z007iyt8z04625nz1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/isbl-editor-dark/" data-id="ckzwp1p98007dz18z4ozkbwrv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/source/css/highlight/ir-black" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/ir-black/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.788Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /*
+  IR_Black style (c) Vasily Mikhailitchenko <vaskas@programica.ru>
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #000;
+  color: #f8f8f8;
+}
+
+.highlight .comment,
+.highlight .quote,
+.highlight .meta {
+  color: #7c7c7c;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .tag,
+.highlight .name {
+  color: #96cbfe;
+}
+
+.highlight .attribute,
+.highlight .selector-id {
+  color: #ffffb6;
+}
+
+.highlight .string,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .addition {
+  color: #a8ff60;
+}
+
+.highlight .subst {
+  color: #daefa3;
+}
+
+.highlight .regexp,
+.highlight .link {
+  color: #e9c062;
+}
+
+.highlight .title,
+.highlight .section,
+.highlight .type,
+.highlight .doctag {
+  color: #ffffb6;
+}
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .literal {
+  color: #c6c5fe;
+}
+
+.highlight .number,
+.highlight .deletion {
+  color:#ff73fd;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/ir-black/" data-id="ckzwp1p98007ez18zau5uatml" class="article-share-link">Share</a>
       
       
     </footer>
@@ -558,103 +564,7 @@ ISBL Editor style light color schemec (c) Dmitriy Tarasov <dimatar@gmail.com>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/isbl-editor-light/" data-id="ckzwn7a20007jyt8z7jz29u7t" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/magula" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/magula/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.788Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
-Description: Magula style for highligh.js
-Author: Ruslan Keba <rukeba@gmail.com>
-Website: http://rukeba.com/
-Version: 1.0
-Date: 2009-01-03
-Music: Aphex Twin / Xtal
-*/
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background-color: #f4f4f4;
-  color: black;
-}
-
-.highlight .subst {
-  color: black;
-}
-
-.highlight .string,
-.highlight .title,
-.highlight .symbol,
-.highlight .bullet,
-.highlight .attribute,
-.highlight .addition,
-.highlight .variable,
-.highlight .template-tag,
-.highlight .template-variable {
-  color: #050;
-}
-
-.highlight .comment,
-.highlight .quote {
-  color: #777;
-}
-
-.highlight .number,
-.highlight .regexp,
-.highlight .literal,
-.highlight .type,
-.highlight .link {
-  color: #800;
-}
-
-.highlight .deletion,
-.highlight .meta {
-  color: #00e;
-}
-
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .doctag,
-.highlight .title,
-.highlight .section,
-.highlight .built_in,
-.highlight .tag,
-.highlight .name {
-  font-weight: bold;
-  color: navy;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/magula/" data-id="ckzwn7a20007kyt8z7wlc90n5" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/isbl-editor-light/" data-id="ckzwp1p98007gz18z36ts7lsr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -754,7 +664,7 @@ Music: Aphex Twin / Xtal
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/kimbie.dark/" data-id="ckzwn7a20007lyt8zd5jc8fvl" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/kimbie.dark/" data-id="ckzwp1p98007iz18z1g1t3o8r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -854,121 +764,7 @@ Music: Aphex Twin / Xtal
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/kimbie.light/" data-id="ckzwn7a20007myt8zhq1zgxpz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/lioshi" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/lioshi/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.788Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /* lioshi Theme */
-/* Original theme - https://github.com/lioshi/vscode-lioshi-theme */
-
-/* Comment */
-.highlight .comment {
-  color: #8d8d8d;
-}
-
-/* quote */
-.highlight .quote {
-  color: #b3c7d8;
-}
-
-/* Red */
-.highlight .variable,
-.highlight .template-variable,
-.highlight .tag,
-.highlight .name,
-.highlight .selector-id,
-.highlight .selector-class,
-.highlight .regexp,
-.highlight .deletion {
-  color: #cc6666;
-}
-
-/* Orange */
-.highlight .number,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .literal,
-.highlight .type,
-.highlight .subst
-.highlight .link {
-  color: #de935f;
-}
-
-/* Yellow */
-.highlight .attribute {
-  color: #f0c674;
-}
-
-/* Green */
-.highlight .string,
-.highlight .bullet,
-.highlight .params,
-.highlight .addition {
-  color: #b5bd68;
-}
-
-/* Blue */
-.highlight .title,
-.highlight .meta,
-.highlight .section {
-  color: #81a2be;
-}
-
-/* Purple */
-.highlight .selector-tag,
-.highlight .keyword,
-.highlight .function,
-.highlight .class {
-  color: #be94bb;
-}
-
-/* Purple light */
-.highlight .symbol {
-  color: #dbc4d9;
-}
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  background: #303030;
-  color: #c5c8c6;
-  padding: 0.5em;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/lioshi/" data-id="ckzwn7a20007nyt8z0ulchgh3" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/kimbie.light/" data-id="ckzwp1p99007jz18zgsfwhi93" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1082,7 +878,217 @@ Lightfair style (c) Tristian Kelly <tristian.kelly560@gmail.com>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/lightfair/" data-id="ckzwn7a20007oyt8z6rnha6hr" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/lightfair/" data-id="ckzwp1p99007kz18zcctd7wfb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/source/css/highlight/lioshi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/lioshi/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.788Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /* lioshi Theme */
+/* Original theme - https://github.com/lioshi/vscode-lioshi-theme */
+
+/* Comment */
+.highlight .comment {
+  color: #8d8d8d;
+}
+
+/* quote */
+.highlight .quote {
+  color: #b3c7d8;
+}
+
+/* Red */
+.highlight .variable,
+.highlight .template-variable,
+.highlight .tag,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class,
+.highlight .regexp,
+.highlight .deletion {
+  color: #cc6666;
+}
+
+/* Orange */
+.highlight .number,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .literal,
+.highlight .type,
+.highlight .subst
+.highlight .link {
+  color: #de935f;
+}
+
+/* Yellow */
+.highlight .attribute {
+  color: #f0c674;
+}
+
+/* Green */
+.highlight .string,
+.highlight .bullet,
+.highlight .params,
+.highlight .addition {
+  color: #b5bd68;
+}
+
+/* Blue */
+.highlight .title,
+.highlight .meta,
+.highlight .section {
+  color: #81a2be;
+}
+
+/* Purple */
+.highlight .selector-tag,
+.highlight .keyword,
+.highlight .function,
+.highlight .class {
+  color: #be94bb;
+}
+
+/* Purple light */
+.highlight .symbol {
+  color: #dbc4d9;
+}
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  background: #303030;
+  color: #c5c8c6;
+  padding: 0.5em;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/lioshi/" data-id="ckzwp1p99007lz18zhkopf0j4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/source/css/highlight/magula" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/magula/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.788Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /*
+Description: Magula style for highligh.js
+Author: Ruslan Keba <rukeba@gmail.com>
+Website: http://rukeba.com/
+Version: 1.0
+Date: 2009-01-03
+Music: Aphex Twin / Xtal
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+.highlight .subst {
+  color: black;
+}
+
+.highlight .string,
+.highlight .title,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .attribute,
+.highlight .addition,
+.highlight .variable,
+.highlight .template-tag,
+.highlight .template-variable {
+  color: #050;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #777;
+}
+
+.highlight .number,
+.highlight .regexp,
+.highlight .literal,
+.highlight .type,
+.highlight .link {
+  color: #800;
+}
+
+.highlight .deletion,
+.highlight .meta {
+  color: #00e;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .doctag,
+.highlight .title,
+.highlight .section,
+.highlight .built_in,
+.highlight .tag,
+.highlight .name {
+  font-weight: bold;
+  color: navy;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/magula/" data-id="ckzwp1p99007mz18z8g4a7que" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1164,7 +1170,7 @@ Lightfair style (c) Tristian Kelly <tristian.kelly560@gmail.com>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/mono-blue/" data-id="ckzwn7a20007pyt8z9ckc47tx" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/mono-blue/" data-id="ckzwp1p99007oz18z3je72ayt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1210,15 +1216,15 @@ Lightfair style (c) Tristian Kelly <tristian.kelly560@gmail.com>
       <ul>
         
           <li>
+            <a href="/2022/02/19/themes/cards/source/js/b2t/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2022/02/19/themes/cards/source/js/darkmode/">(no title)</a>
           </li>
         
           <li>
             <a href="/2022/02/19/themes/cards/source/js/local-search/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/19/themes/cards/source/js/b2t/">(no title)</a>
           </li>
         
           <li>

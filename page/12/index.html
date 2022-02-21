@@ -66,9 +66,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-themes/cards/languages/en" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-themes/cards/languages/zh-TW" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/languages/en/" class="article-date">
+    <a href="/2022/02/19/themes/cards/languages/zh-TW/" class="article-date">
   <time datetime="2022-02-19T10:18:22.774Z" itemprop="datePublished">2022-02-19</time>
 </a>
     
@@ -78,11 +78,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        {"page":{"pagination":"Page %s","prev_page":"Previous","next_page":"Next"},"navbar":{"home":"Home","link":"Link","archive":"Archive","category":"Category","tag":"Tag","top":"Back to Top"},"search":{"main":"Search","placeholder":"Please enter a keyword..."},"post":{"top":"Top","read_more":"Read More","sticky":"Sticky","comments":"Comments","comments_placeholder":"Unable to load %s, please make sure your network can access.","updated":"updated at ","prev":"Previous Post","next":"Next Post","toc":"Article Directory","copyright":{"author":"Author: ","permalink":"Permalink: "},"expire":"This article was last updated on %s days ago, the information described in the article may be outdated."},"symbol":{"comma":", ","period":". ","colon":": ","angle_l":"&lt;&nbsp;","angle_r":"&nbsp;&gt;","brackets_l":"(","brackets_r":")"}}
+        {"page":{"pagination":"第 %s 頁","prev":"上一篇","next":"下一篇"},"navbar":{"home":"首頁","link":"鏈接","archive":"歸檔","category":"分類","tag":"標籤","top":"回到頂部"},"search":{"main":"搜索","placeholder":"請輸入關鍵字..."},"post":{"top":"置頂","read_more":"閱讀全文","sticky":"置頂","comments":"評論","comments_placeholder":"無法加載 %s 評論系統，請確保您的網絡能夠正常訪問。","updated":"更新於 ","prev_page":"上一頁","next_page":"下一頁","toc":"文章目錄","copyright":{"author":"本文作者：","permalink":"本文鏈接："},"expire":"本文最後更新於 %s 天前，文中部分描述可能已經過時。"},"symbol":{"comma":"，","period":"。","colon":"：","angle_l":"&lt;&nbsp;","angle_r":"&nbsp;&gt;","brackets_l":"（","brackets_r":"）"}}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/languages/en/" data-id="ckzwn7a0t0009yt8z35jp3b0z" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/languages/zh-TW/" data-id="ckzwp1p840006z18z6r1nbulm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/dist/js/b2t" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/dist/js/b2t/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.774Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        var requestAnimationFrame =
+    window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+document.addEventListener('DOMContentLoaded', function () {
+    const goTopButton = document.querySelectorAll('#b2t')[0];
+    const windowViewPortHeight = window.innerHeight;
+    var isRequestingAnimationFrame = false;
+
+    if (!goTopButton) {
+        return;
+    }
+
+    goTopButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    });
+
+    window.addEventListener('scroll', function () {
+        if (!isRequestingAnimationFrame) {
+            requestAnimationFrame(filterGoTopButtonVisibility);
+            isRequestingAnimationFrame = true;
+        }
+    });
+
+    function filterGoTopButtonVisibility(timestamp) {
+        var windowPageYOffset = window.pageYOffset || document.documentElement.scrollTop;
+        if (windowPageYOffset > windowViewPortHeight) {
+            goTopButton.style.display = 'block';
+            isRequestingAnimationFrame = false;
+        } else {
+            goTopButton.style.display = 'none';
+            requestAnimationFrame(filterGoTopButtonVisibility);
+        }
+    }
+});
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/b2t/" data-id="ckzwp1p850007z18zcy9w4vcy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -108,59 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/b2t.min/" data-id="ckzwn7a0t000ayt8z6ewa9t0s" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/dist/js/darkmode.min" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/dist/js/darkmode.min/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.774Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        (()=>{const e=document.documentElement,t=e=>{try{return localStorage.getItem(e)}catch(e){return null}},l=()=>{const t=getComputedStyle(e).getPropertyValue("--color-mode");return t.length?t.replace(/["'\s]/g,""):"dark"===t?"dark":"light"},d=()=>{e.removeAttribute("data-user-color-scheme"),(e=>{try{localStorage.removeItem(e)}catch(e){}})("user-color-scheme")},m={dark:!0,light:!0},a=a=>{const n=a||t("user-color-scheme");document.getElementById("hl-dark-theme")?m[n]?"dark"===n?(document.getElementById("hl-default-theme").media="none",document.getElementById("hl-dark-theme").media="all"):(document.getElementById("hl-dark-theme").media="none",document.getElementById("hl-default-theme").media="all"):"dark"===l()?(document.getElementById("hl-default-theme").media="none",document.getElementById("hl-dark-theme").media="all"):(document.getElementById("hl-dark-theme").media="none",document.getElementById("hl-default-theme").media="all"):document.getElementById("hl-default-theme")&&(document.getElementById("hl-default-theme").media="all"),n===l()?d():m[n]?e.setAttribute("data-user-color-scheme",n):d()},n={dark:"light",light:"dark"},r=()=>{var e=t("user-color-scheme");if(m[e])e=n[e];else{if(null!==e)return;e=n[l()]}return((e,t)=>{try{localStorage.setItem(e,t)}catch(e){}})("user-color-scheme",e),e};a(),window.onload=()=>{document.getElementById("btn-toggle-dark").addEventListener("click",()=>{a(r())})}})();
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/darkmode.min/" data-id="ckzwn7a0t000byt8zhy5z9gsj" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/languages/zh-CN" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/languages/zh-CN/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.774Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        {"page":{"pagination":"第 %s 页","prev":"上一篇","next":"下一篇"},"navbar":{"home":"首页","link":"友链","archive":"归档","category":"分类","tag":"标签","top":"回到顶部"},"search":{"main":"搜索","placeholder":"请输入关键字..."},"post":{"top":"置顶","read_more":"阅读全文","sticky":"置顶","comments":"评论","comments_placeholder":"您所在的地区可能无法访问 %s 评论系统，请切换网络环境再尝试。","updated":"更新于 ","prev_page":"上一页","next_page":"下一页","toc":"文章目录","copyright":{"author":"本文作者：","permalink":"本文链接："},"expire":"本文最后更新于 %s 天前，文中部分描述可能已经过时。"},"symbol":{"comma":"，","period":"。","colon":"：","angle_l":"&lt;&nbsp;","angle_r":"&nbsp;&gt;","brackets_l":"（","brackets_r":"）"}}
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/languages/zh-CN/" data-id="ckzwn7a0u000cyt8zaamp3se3" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/b2t.min/" data-id="ckzwp1p850009z18z4owucz8c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -291,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/darkmode/" data-id="ckzwn7a0u000dyt8zfs60ez21" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/darkmode/" data-id="ckzwp1p86000az18z6bywa8bv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -301,9 +312,9 @@
 
 
   
-    <article id="post-themes/cards/dist/js/local-search.min" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-themes/cards/dist/js/darkmode.min" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/dist/js/local-search.min/" class="article-date">
+    <a href="/2022/02/19/themes/cards/dist/js/darkmode.min/" class="article-date">
   <time datetime="2022-02-19T10:18:22.774Z" itemprop="datePublished">2022-02-19</time>
 </a>
     
@@ -313,11 +324,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        function t(t){const e={"{":"\\{","}":"\\}","[":"\\[","]":"\\]","(":"\\(",")":"\\)","?":"\\?","*":"\\*",".":"\\.","+":"\\+","^":"\\^",$:"\\$"};return t.replace(/[\{\}\[\]\(\)\?\*\.\+\^\$]/g,(function(t){return e[t]}))}function e(t){document.getElementById("search-result__notice").innerHTML=t}function n(n,c){fetch(n).then(t=>t.json()).then(n=>{const r=performance.now();let o=[],s=0,l=c.trim().toLowerCase().split(/\s/);if(n.forEach(e=>{if(void 0===e.title||void 0===e.content)return;let n=!1;const c=e.title.trim().toLowerCase(),r=e.content?e.content.trim().replace(/<[^>]+>/g,"").toLowerCase():"";let i=0,u={title:-1,content:-1,firstOccur:-1,lastOccur:-1};if(c&&l.forEach(t=>{u.title=c.indexOf(t),u.content=r.indexOf(t),-1===u.title&&-1===u.content||(n=!0,-1!==u.content&&((u.firstOccur>u.content||-1===u.firstOccur)&&(u.firstOccur=u.content),u.lastOccur<u.content&&(u.lastOccur=u.content)),i+=-1!==u.title?2:0,i+=-1!==u.content?1:0,s++)}),n){let n={};if(n.title=e.title,n.link=e.url,l.forEach(e=>{const c=new RegExp(t(e)+"(?!>)","gi");n.title=n.title.replace(c,"<m>$&</m>")}),u.firstOccur>=0){const e=100;let c=u.firstOccur-e,o=u.lastOccur+e;c<0&&(c=0),0===c&&(o=2*e),o>r.length&&(o=r.length),n.content=r.substr(c,o-c),l.forEach(e=>{const c=new RegExp(t(e)+"(?!>)","gi");n.content=n.content.replace(c,"<m>$&</m>")})}o.push([n,i])}}),0!==s){const t=performance.now();e(`${s} related results found (in ${Math.round(100*(t-r))/100} ms)`),o.sort((t,e)=>e[1]-t[1]),function(t){const e=document.getElementById("search-result__list");let n="";t.forEach(t=>{const e=t[0],c=`\n        <a href="${e.link}" class="search-result__link">\n            <div class='search-result__item'>\n                <strong>\n                    ${e.title}\n                </strong>\n                <div class="search-result__content">\n                    ${e.content}\n                </div>\n            </div>\n        </a>\n        `;n+=c}),e.innerHTML=n}(o)}else{const t=performance.now();e(`No related result found (in ${Math.round(100*(t-r))/100} ms)`),document.getElementById("search-result__list").innerHTML=""}})}function c(t){n(searchDataFile,function(t){const e={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","/":"&#x2F;"};return t.replace(/[&<>"'/]/g,(function(t){return e[t]}))}(t))}(()=>{const t=function(t){t=t.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");const e=new RegExp("[\\?&]"+t+"=([^&#]*)").exec(window.location);return null===e?"":decodeURIComponent(e[1].replace(/\+/g," "))}("s");""!==t&&(document.getElementById("search-input").value=t,c(t))})();
+        (()=>{const e=document.documentElement,t=e=>{try{return localStorage.getItem(e)}catch(e){return null}},l=()=>{const t=getComputedStyle(e).getPropertyValue("--color-mode");return t.length?t.replace(/["'\s]/g,""):"dark"===t?"dark":"light"},d=()=>{e.removeAttribute("data-user-color-scheme"),(e=>{try{localStorage.removeItem(e)}catch(e){}})("user-color-scheme")},m={dark:!0,light:!0},a=a=>{const n=a||t("user-color-scheme");document.getElementById("hl-dark-theme")?m[n]?"dark"===n?(document.getElementById("hl-default-theme").media="none",document.getElementById("hl-dark-theme").media="all"):(document.getElementById("hl-dark-theme").media="none",document.getElementById("hl-default-theme").media="all"):"dark"===l()?(document.getElementById("hl-default-theme").media="none",document.getElementById("hl-dark-theme").media="all"):(document.getElementById("hl-dark-theme").media="none",document.getElementById("hl-default-theme").media="all"):document.getElementById("hl-default-theme")&&(document.getElementById("hl-default-theme").media="all"),n===l()?d():m[n]?e.setAttribute("data-user-color-scheme",n):d()},n={dark:"light",light:"dark"},r=()=>{var e=t("user-color-scheme");if(m[e])e=n[e];else{if(null!==e)return;e=n[l()]}return((e,t)=>{try{localStorage.setItem(e,t)}catch(e){}})("user-color-scheme",e),e};a(),window.onload=()=>{document.getElementById("btn-toggle-dark").addEventListener("click",()=>{a(r())})}})();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/local-search.min/" data-id="ckzwn7a0u000fyt8zbd9nfysb" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/darkmode.min/" data-id="ckzwp1p86000bz18zhkh9dqkq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -539,7 +550,33 @@ function inpSearch() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/local-search/" data-id="ckzwn7a0v000gyt8z7sgy1zz4" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/local-search/" data-id="ckzwp1p87000dz18z72ey6zq8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/dist/js/local-search.min" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/dist/js/local-search.min/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.774Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        function t(t){const e={"{":"\\{","}":"\\}","[":"\\[","]":"\\]","(":"\\(",")":"\\)","?":"\\?","*":"\\*",".":"\\.","+":"\\+","^":"\\^",$:"\\$"};return t.replace(/[\{\}\[\]\(\)\?\*\.\+\^\$]/g,(function(t){return e[t]}))}function e(t){document.getElementById("search-result__notice").innerHTML=t}function n(n,c){fetch(n).then(t=>t.json()).then(n=>{const r=performance.now();let o=[],s=0,l=c.trim().toLowerCase().split(/\s/);if(n.forEach(e=>{if(void 0===e.title||void 0===e.content)return;let n=!1;const c=e.title.trim().toLowerCase(),r=e.content?e.content.trim().replace(/<[^>]+>/g,"").toLowerCase():"";let i=0,u={title:-1,content:-1,firstOccur:-1,lastOccur:-1};if(c&&l.forEach(t=>{u.title=c.indexOf(t),u.content=r.indexOf(t),-1===u.title&&-1===u.content||(n=!0,-1!==u.content&&((u.firstOccur>u.content||-1===u.firstOccur)&&(u.firstOccur=u.content),u.lastOccur<u.content&&(u.lastOccur=u.content)),i+=-1!==u.title?2:0,i+=-1!==u.content?1:0,s++)}),n){let n={};if(n.title=e.title,n.link=e.url,l.forEach(e=>{const c=new RegExp(t(e)+"(?!>)","gi");n.title=n.title.replace(c,"<m>$&</m>")}),u.firstOccur>=0){const e=100;let c=u.firstOccur-e,o=u.lastOccur+e;c<0&&(c=0),0===c&&(o=2*e),o>r.length&&(o=r.length),n.content=r.substr(c,o-c),l.forEach(e=>{const c=new RegExp(t(e)+"(?!>)","gi");n.content=n.content.replace(c,"<m>$&</m>")})}o.push([n,i])}}),0!==s){const t=performance.now();e(`${s} related results found (in ${Math.round(100*(t-r))/100} ms)`),o.sort((t,e)=>e[1]-t[1]),function(t){const e=document.getElementById("search-result__list");let n="";t.forEach(t=>{const e=t[0],c=`\n        <a href="${e.link}" class="search-result__link">\n            <div class='search-result__item'>\n                <strong>\n                    ${e.title}\n                </strong>\n                <div class="search-result__content">\n                    ${e.content}\n                </div>\n            </div>\n        </a>\n        `;n+=c}),e.innerHTML=n}(o)}else{const t=performance.now();e(`No related result found (in ${Math.round(100*(t-r))/100} ms)`),document.getElementById("search-result__list").innerHTML=""}})}function c(t){n(searchDataFile,function(t){const e={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","/":"&#x2F;"};return t.replace(/[&<>"'/]/g,(function(t){return e[t]}))}(t))}(()=>{const t=function(t){t=t.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");const e=new RegExp("[\\?&]"+t+"=([^&#]*)").exec(window.location);return null===e?"":decodeURIComponent(e[1].replace(/\+/g," "))}("s");""!==t&&(document.getElementById("search-input").value=t,c(t))})();
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/local-search.min/" data-id="ckzwp1p87000fz18zd4qma5nb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -565,7 +602,7 @@ function inpSearch() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/dist/css/style/main.min/" data-id="ckzwn7a0x000ryt8z2ff1bo8f" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/dist/css/style/main.min/" data-id="ckzwp1p8b000wz18z6jo33v7u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -669,7 +706,7 @@ function inpSearch() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/dist/css/style/dark/" data-id="ckzwn7a0w000nyt8z199p8esc" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/dist/css/style/dark/" data-id="ckzwp1p88000lz18z59pu4irp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -695,7 +732,7 @@ function inpSearch() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/dist/css/style/dark.min/" data-id="ckzwn7a0w000oyt8z5gg811ae" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/dist/css/style/dark.min/" data-id="ckzwp1p89000nz18z97prfk5t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -741,15 +778,15 @@ function inpSearch() {
       <ul>
         
           <li>
+            <a href="/2022/02/19/themes/cards/source/js/b2t/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2022/02/19/themes/cards/source/js/darkmode/">(no title)</a>
           </li>
         
           <li>
             <a href="/2022/02/19/themes/cards/source/js/local-search/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/19/themes/cards/source/js/b2t/">(no title)</a>
           </li>
         
           <li>

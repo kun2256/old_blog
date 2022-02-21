@@ -66,9 +66,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-themes/cards/source/css/highlight/qtcreator_dark" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-themes/cards/source/css/highlight/purebasic" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/qtcreator_dark/" class="article-date">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/purebasic/" class="article-date">
   <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
 </a>
     
@@ -80,92 +80,105 @@
       
         /*
 
-Qt Creator dark color scheme
+PureBASIC native IDE style ( version 1.0 - April 2016 )
 
+by Tristano Ajmone <tajmone@gmail.com>
+
+Public Domain
+
+NOTE_1:	PureBASIC code syntax highlighting only applies the following classes:
+			.highlight .comment
+			.highlight .function
+			.highlight .keywords
+			.highlight .string
+			.highlight .symbol
+
+		Other classes are added here for the benefit of styling other languages with the look and feel of PureBASIC native IDE style.
+		If you need to customize a stylesheet for PureBASIC only, remove all non-relevant classes -- PureBASIC-related classes are followed by
+		a "--- used for PureBASIC ... ---" comment on same line.
+
+NOTE_2:	Color names provided in comments were derived using "Name that Color" online tool:
+			http://chir.ag/projects/name-that-color
 */
 
-
 .highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #000000;
+	display: block;
+	overflow-x: auto;
+	padding: 0.5em;
+	background: #FFFFDF; /* Half and Half (approx.) */
+/* --- Uncomment to add PureBASIC native IDE styled font!
+	font-family: Consolas;
+*/
 }
 
-.highlight,
-.highlight .subst,
+.highlight, /* --- used for PureBASIC base color --- */
+.highlight .type,  /* --- used for PureBASIC Procedures return type --- */
+.highlight .function, /* --- used for wrapping PureBASIC Procedures definitions --- */
+.highlight .name,
+.highlight .number,
+.highlight .attr,
+.highlight .params,
+.highlight .subst {
+	color: #000000; /* Black */
+}
+
+.highlight .comment, /* --- used for PureBASIC Comments --- */
+.highlight .regexp,
+.highlight .section,
+.highlight .selector-pseudo,
+.highlight .addition {
+	color: #00AAAA; /* Persian Green (approx.) */
+}
+
+.highlight .title, /* --- used for PureBASIC Procedures Names --- */
 .highlight .tag,
-.highlight .title {
-  color: #aaaaaa;
+.highlight .variable,
+.highlight .code  {
+	color: #006666; /* Blue Stone (approx.) */
+}
+
+.highlight .keyword, /* --- used for PureBASIC Keywords --- */
+.highlight .class,
+.highlight .meta-keyword,
+.highlight .selector-class,
+.highlight .built_in,
+.highlight .builtin-name {
+	color: #006666; /* Blue Stone (approx.) */
+	font-weight: bold;
+}
+
+.highlight .string, /* --- used for PureBASIC Strings --- */
+.highlight .selector-attr {
+	color: #0080FF; /* Azure Radiance (approx.) */
+}
+
+.highlight .symbol, /* --- used for PureBASIC Constants --- */
+.highlight .link,
+.highlight .deletion,
+.highlight .attribute {
+	color: #924B72; /* Cannon Pink (approx.) */
+}
+
+.highlight .meta,
+.highlight .literal,
+.highlight .selector-id {
+	color: #924B72; /* Cannon Pink (approx.) */
+	font-weight: bold;
 }
 
 .highlight .strong,
-.highlight .emphasis {
-  color: #a8a8a2;
-}
-
-.highlight .bullet,
-.highlight .quote,
-.highlight .number,
-.highlight .regexp,
-.highlight .literal {
-  color: #ff55ff;
-}
-
-.highlight .code
-.highlight .selector-class {
-  color: #aaaaff;
-}
-
-.highlight .emphasis,
-.highlight .stronge,
-.highlight .type {
-  font-style: italic;
-}
-
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .function,
-.highlight .section,
-.highlight .symbol,
 .highlight .name {
-  color: #ffff55;
+	font-weight: bold;
 }
 
-.highlight .attribute {
-  color: #ff5555;
-}
-
-.highlight .variable,
-.highlight .params,
-.highlight .class .highlight .title {
-  color: #8888ff;
-}
-
-.highlight .string,
-.highlight .selector-id,
-.highlight .selector-attr,
-.highlight .selector-pseudo,
-.highlight .type,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .template-tag,
-.highlight .template-variable,
-.highlight .addition,
-.highlight .link {
-  color: #ff55ff;
-}
-
-.highlight .comment,
-.highlight .meta,
-.highlight .deletion {
-  color: #55ffff;
+.highlight .emphasis {
+	font-style: italic;
 }
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/qtcreator_dark/" data-id="ckzwn7a220082yt8z6h9e2t7h" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/purebasic/" data-id="ckzwp1p9b0081z18zd3fe69ot" class="article-share-link">Share</a>
       
       
     </footer>
@@ -274,252 +287,7 @@ Qt Creator light color scheme
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/qtcreator_light/" data-id="ckzwn7a220083yt8z6pjj4eaj" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/rainbow" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/rainbow/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
-
-Style with support for rainbow parens
-
-*/
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #474949;
-  color: #d1d9e1;
-}
-
-
-.highlight .comment,
-.highlight .quote {
-  color: #969896;
-  font-style: italic;
-}
-
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .literal,
-.highlight .type,
-.highlight .addition {
-  color: #cc99cc;
-}
-
-.highlight .number,
-.highlight .selector-attr,
-.highlight .selector-pseudo {
-  color: #f99157;
-}
-
-.highlight .string,
-.highlight .doctag,
-.highlight .regexp {
-  color: #8abeb7;
-}
-
-.highlight .title,
-.highlight .name,
-.highlight .section,
-.highlight .built_in {
-  color: #b5bd68;
-}
-
-.highlight .variable,
-.highlight .template-variable,
-.highlight .selector-id,
-.highlight .class .highlight .title {
-   color: #ffcc66;
-}
-
-.highlight .section,
-.highlight .name,
-.highlight .strong {
-  font-weight: bold;
-}
-
-.highlight .symbol,
-.highlight .bullet,
-.highlight .subst,
-.highlight .meta,
-.highlight .link {
-  color: #f99157;
-}
-
-.highlight .deletion {
-  color: #dc322f;
-}
-
-.highlight .formula {
-  background: #eee8d5;
-}
-
-.highlight .attr,
-.highlight .attribute {
-  color: #81a2be;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/rainbow/" data-id="ckzwn7a220084yt8z4z0797eh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/routeros" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/routeros/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
-
- highlight.js style for Microtik RouterOS script
-
-*/
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #F0F0F0;
-}
-
-/* Base color: saturation 0; */
-
-.highlight,
-.highlight .subst {
-  color: #444;
-}
-
-.highlight .comment {
-  color: #888888;
-}
-
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .meta-keyword,
-.highlight .doctag,
-.highlight .name {
-  font-weight: bold;
-}
-
-.highlight .attribute {
-  color: #0E9A00;
-}    
-
-.highlight .function {
-  color: #99069A;
-}
-
-.highlight .builtin-name {
-  color: #99069A;
-}
-
-/* User color: hue: 0 */
-
-.highlight .type,
-.highlight .string,
-.highlight .number,
-.highlight .selector-id,
-.highlight .selector-class,
-.highlight .quote,
-.highlight .template-tag,
-.highlight .deletion {
-  color: #880000;
-}
-
-.highlight .title,
-.highlight .section {
-  color: #880000;
-  font-weight: bold;
-}
-
-.highlight .regexp,
-.highlight .symbol,
-.highlight .variable,
-.highlight .template-variable,
-.highlight .link,
-.highlight .selector-attr,
-.highlight .selector-pseudo {
-  color: #BC6060;
-}
-
-
-/* Language color: hue: 90; */
-
-.highlight .literal {
-  color: #78A960;
-}
-
-.highlight .built_in,
-.highlight .bullet,
-.highlight .code,
-.highlight .addition {
-  color: #0C9A9A;
-}
-
-
-/* Meta color: hue: 200 */
-
-.highlight .meta {
-  color: #1f7199;
-}
-
-.highlight .meta-string {
-  color: #4d99bf;
-}
-
-
-/* Misc effects */
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/routeros/" data-id="ckzwn7a220085yt8zgusjf9og" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/qtcreator_light/" data-id="ckzwp1p9b0083z18ze1vfadvv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -651,7 +419,118 @@ Railscasts-like style (c) Visoft, Inc. (Damien White)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/railscasts/" data-id="ckzwn7a220086yt8z8wkkbju4" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/railscasts/" data-id="ckzwp1p9b0084z18zfyct1vf7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/source/css/highlight/rainbow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/rainbow/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /*
+
+Style with support for rainbow parens
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #474949;
+  color: #d1d9e1;
+}
+
+
+.highlight .comment,
+.highlight .quote {
+  color: #969896;
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .type,
+.highlight .addition {
+  color: #cc99cc;
+}
+
+.highlight .number,
+.highlight .selector-attr,
+.highlight .selector-pseudo {
+  color: #f99157;
+}
+
+.highlight .string,
+.highlight .doctag,
+.highlight .regexp {
+  color: #8abeb7;
+}
+
+.highlight .title,
+.highlight .name,
+.highlight .section,
+.highlight .built_in {
+  color: #b5bd68;
+}
+
+.highlight .variable,
+.highlight .template-variable,
+.highlight .selector-id,
+.highlight .class .highlight .title {
+   color: #ffcc66;
+}
+
+.highlight .section,
+.highlight .name,
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .subst,
+.highlight .meta,
+.highlight .link {
+  color: #f99157;
+}
+
+.highlight .deletion {
+  color: #dc322f;
+}
+
+.highlight .formula {
+  background: #eee8d5;
+}
+
+.highlight .attr,
+.highlight .attribute {
+  color: #81a2be;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/rainbow/" data-id="ckzwp1p9b0085z18z0u26gf8e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -746,7 +625,459 @@ School Book style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/school-book/" data-id="ckzwn7a220087yt8z4qsm5t6e" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/school-book/" data-id="ckzwp1p9b0086z18z2pytgcsz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/source/css/highlight/solarized-dark" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/solarized-dark/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #002b36;
+  color: #839496;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #586e75;
+}
+
+/* Solarized Green */
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .addition {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.highlight .number,
+.highlight .string,
+.highlight .meta .highlight .meta-string,
+.highlight .literal,
+.highlight .doctag,
+.highlight .regexp {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.highlight .title,
+.highlight .section,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.highlight .attribute,
+.highlight .attr,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .class .highlight .title,
+.highlight .type {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.highlight .symbol,
+.highlight .bullet,
+.highlight .subst,
+.highlight .meta,
+.highlight .meta .highlight .keyword,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .link {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.highlight .built_in,
+.highlight .deletion {
+  color: #dc322f;
+}
+
+.highlight .formula {
+  background: #073642;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/solarized-dark/" data-id="ckzwp1p9b0087z18z76cx4e5m" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/source/css/highlight/solarized-light" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/solarized-light/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fdf6e3;
+  color: #657b83;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #93a1a1;
+}
+
+/* Solarized Green */
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .addition {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.highlight .number,
+.highlight .string,
+.highlight .meta .highlight .meta-string,
+.highlight .literal,
+.highlight .doctag,
+.highlight .regexp {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.highlight .title,
+.highlight .section,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.highlight .attribute,
+.highlight .attr,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .class .highlight .title,
+.highlight .type {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.highlight .symbol,
+.highlight .bullet,
+.highlight .subst,
+.highlight .meta,
+.highlight .meta .highlight .keyword,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .link {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.highlight .built_in,
+.highlight .deletion {
+  color: #dc322f;
+}
+
+.highlight .formula {
+  background: #eee8d5;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/solarized-light/" data-id="ckzwp1p9b0088z18zb31258uj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/source/css/highlight/srcery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/srcery/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /*
+Description: Srcery dark color scheme for highlight.js
+Author: Chen Bin <chen.bin@gmail.com>
+Website: https://srcery-colors.github.io/
+Date: 2020-04-06
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1C1B19;
+  color: #FCE8C3;
+}
+
+.highlight .strong,
+.highlight .emphasis {
+  color: #918175;
+}
+
+.highlight .bullet,
+.highlight .quote,
+.highlight .link,
+.highlight .number,
+.highlight .regexp,
+.highlight .literal {
+  color: #FF5C8F;
+}
+
+.highlight .code,
+.highlight .selector-class {
+  color: #68A8E4
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .section,
+.highlight .attribute,
+.highlight .variable {
+  color: #EF2F27;
+}
+
+.highlight .name,
+.highlight .title {
+  color: #FBB829;
+}
+
+.highlight .type,
+.highlight .params {
+  color: #0AAEB3;
+}
+
+.highlight .string {
+  color: #98BC37;
+}
+
+.highlight .subst,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .symbol,
+.highlight .selector-id,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .template-tag,
+.highlight .template-variable,
+.highlight .addition {
+  color: #C07ABE;
+}
+
+.highlight .comment,
+.highlight .deletion,
+.highlight .meta {
+  color: #918175;
+}
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/srcery/" data-id="ckzwp1p9b0089z18z368ldxzt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-themes/cards/source/css/highlight/sunburst" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/source/css/highlight/sunburst/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        /*
+
+Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #000;
+  color: #f8f8f8;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #aeaeae;
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .type {
+  color: #e28964;
+}
+
+.highlight .string {
+  color: #65b042;
+}
+
+.highlight .subst {
+  color: #daefa3;
+}
+
+.highlight .regexp,
+.highlight .link {
+  color: #e9c062;
+}
+
+.highlight .title,
+.highlight .section,
+.highlight .tag,
+.highlight .name {
+  color: #89bdff;
+}
+
+.highlight .class .highlight .title,
+.highlight .doctag {
+  text-decoration: underline;
+}
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .number {
+  color: #3387cc;
+}
+
+.highlight .params,
+.highlight .variable,
+.highlight .template-variable {
+  color: #3e87e3;
+}
+
+.highlight .attribute {
+  color: #cda869;
+}
+
+.highlight .meta {
+  color: #8996a8;
+}
+
+.highlight .formula {
+  background-color: #0e2231;
+  color: #f8f8f8;
+  font-style: italic;
+}
+
+.highlight .addition {
+  background-color: #253b22;
+  color: #f8f8f8;
+}
+
+.highlight .deletion {
+  background-color: #420e09;
+  color: #f8f8f8;
+}
+
+.highlight .selector-class {
+  color: #9b703f;
+}
+
+.highlight .selector-id {
+  color: #8b98ab;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/sunburst/" data-id="ckzwp1p9c008az18z06un4a80" class="article-share-link">Share</a>
       
       
     </footer>
@@ -868,331 +1199,7 @@ School Book style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/shades-of-purple/" data-id="ckzwn7a220088yt8z9txp25xl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/solarized-light" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/solarized-light/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
-
-Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
-
-*/
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #fdf6e3;
-  color: #657b83;
-}
-
-.highlight .comment,
-.highlight .quote {
-  color: #93a1a1;
-}
-
-/* Solarized Green */
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .addition {
-  color: #859900;
-}
-
-/* Solarized Cyan */
-.highlight .number,
-.highlight .string,
-.highlight .meta .highlight .meta-string,
-.highlight .literal,
-.highlight .doctag,
-.highlight .regexp {
-  color: #2aa198;
-}
-
-/* Solarized Blue */
-.highlight .title,
-.highlight .section,
-.highlight .name,
-.highlight .selector-id,
-.highlight .selector-class {
-  color: #268bd2;
-}
-
-/* Solarized Yellow */
-.highlight .attribute,
-.highlight .attr,
-.highlight .variable,
-.highlight .template-variable,
-.highlight .class .highlight .title,
-.highlight .type {
-  color: #b58900;
-}
-
-/* Solarized Orange */
-.highlight .symbol,
-.highlight .bullet,
-.highlight .subst,
-.highlight .meta,
-.highlight .meta .highlight .keyword,
-.highlight .selector-attr,
-.highlight .selector-pseudo,
-.highlight .link {
-  color: #cb4b16;
-}
-
-/* Solarized Red */
-.highlight .built_in,
-.highlight .deletion {
-  color: #dc322f;
-}
-
-.highlight .formula {
-  background: #eee8d5;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/solarized-light/" data-id="ckzwn7a230089yt8z0cf4fxj3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/solarized-dark" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/solarized-dark/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
-
-Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
-
-*/
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #002b36;
-  color: #839496;
-}
-
-.highlight .comment,
-.highlight .quote {
-  color: #586e75;
-}
-
-/* Solarized Green */
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .addition {
-  color: #859900;
-}
-
-/* Solarized Cyan */
-.highlight .number,
-.highlight .string,
-.highlight .meta .highlight .meta-string,
-.highlight .literal,
-.highlight .doctag,
-.highlight .regexp {
-  color: #2aa198;
-}
-
-/* Solarized Blue */
-.highlight .title,
-.highlight .section,
-.highlight .name,
-.highlight .selector-id,
-.highlight .selector-class {
-  color: #268bd2;
-}
-
-/* Solarized Yellow */
-.highlight .attribute,
-.highlight .attr,
-.highlight .variable,
-.highlight .template-variable,
-.highlight .class .highlight .title,
-.highlight .type {
-  color: #b58900;
-}
-
-/* Solarized Orange */
-.highlight .symbol,
-.highlight .bullet,
-.highlight .subst,
-.highlight .meta,
-.highlight .meta .highlight .keyword,
-.highlight .selector-attr,
-.highlight .selector-pseudo,
-.highlight .link {
-  color: #cb4b16;
-}
-
-/* Solarized Red */
-.highlight .built_in,
-.highlight .deletion {
-  color: #dc322f;
-}
-
-.highlight .formula {
-  background: #073642;
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .strong {
-  font-weight: bold;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/solarized-dark/" data-id="ckzwn7a23008ayt8z4qdm4a75" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes/cards/source/css/highlight/srcery" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/02/19/themes/cards/source/css/highlight/srcery/" class="article-date">
-  <time datetime="2022-02-19T10:18:22.789Z" itemprop="datePublished">2022-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        /*
-Description: Srcery dark color scheme for highlight.js
-Author: Chen Bin <chen.bin@gmail.com>
-Website: https://srcery-colors.github.io/
-Date: 2020-04-06
-*/
-
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #1C1B19;
-  color: #FCE8C3;
-}
-
-.highlight .strong,
-.highlight .emphasis {
-  color: #918175;
-}
-
-.highlight .bullet,
-.highlight .quote,
-.highlight .link,
-.highlight .number,
-.highlight .regexp,
-.highlight .literal {
-  color: #FF5C8F;
-}
-
-.highlight .code,
-.highlight .selector-class {
-  color: #68A8E4
-}
-
-.highlight .emphasis {
-  font-style: italic;
-}
-
-.highlight .keyword,
-.highlight .selector-tag,
-.highlight .section,
-.highlight .attribute,
-.highlight .variable {
-  color: #EF2F27;
-}
-
-.highlight .name,
-.highlight .title {
-  color: #FBB829;
-}
-
-.highlight .type,
-.highlight .params {
-  color: #0AAEB3;
-}
-
-.highlight .string {
-  color: #98BC37;
-}
-
-.highlight .subst,
-.highlight .built_in,
-.highlight .builtin-name,
-.highlight .symbol,
-.highlight .selector-id,
-.highlight .selector-attr,
-.highlight .selector-pseudo,
-.highlight .template-tag,
-.highlight .template-variable,
-.highlight .addition {
-  color: #C07ABE;
-}
-
-.highlight .comment,
-.highlight .deletion,
-.highlight .meta {
-  color: #918175;
-}
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/srcery/" data-id="ckzwn7a23008byt8z324l98xx" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/19/themes/cards/source/css/highlight/shades-of-purple/" data-id="ckzwp1p9c008dz18z9bclf80h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1238,15 +1245,15 @@ Date: 2020-04-06
       <ul>
         
           <li>
+            <a href="/2022/02/19/themes/cards/source/js/b2t/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2022/02/19/themes/cards/source/js/darkmode/">(no title)</a>
           </li>
         
           <li>
             <a href="/2022/02/19/themes/cards/source/js/local-search/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/19/themes/cards/source/js/b2t/">(no title)</a>
           </li>
         
           <li>
