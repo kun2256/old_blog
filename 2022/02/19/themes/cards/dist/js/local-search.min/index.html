@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>kun&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="function t(t){const e&#x3D;{&quot;{&quot;:&quot;\\{&quot;,&quot;}&quot;:&quot;\\}&quot;,&quot;[&quot;:&quot;\\[&quot;,&quot;]&quot;:&quot;\\]&quot;,&quot;(&quot;:&quot;\\(&quot;,&quot;)&quot;:&quot;\\)&quot;,&quot;?&quot;:&quot;\\?&quot;,&quot;*&quot;:&quot;\\*&quot;,&quot;.&quot;:&quot;\\.&quot;,&quot;+&quot;:&quot;\\+&quot;,&quot;^&quot;:&quot;\\^&quot;,$:&quot;\\$&quot;};return t.replace(&#x2F;[\{\}\[\]\(\)\?\*\.\+\^\$]&#x2F;g,(function(t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kun&#39;s blog">
+<meta property="og:url" content="http://example.com/2022/02/19/themes/cards/dist/js/local-search.min/index.html">
+<meta property="og:site_name" content="kun&#39;s blog">
+<meta property="og:description" content="function t(t){const e&#x3D;{&quot;{&quot;:&quot;\\{&quot;,&quot;}&quot;:&quot;\\}&quot;,&quot;[&quot;:&quot;\\[&quot;,&quot;]&quot;:&quot;\\]&quot;,&quot;(&quot;:&quot;\\(&quot;,&quot;)&quot;:&quot;\\)&quot;,&quot;?&quot;:&quot;\\?&quot;,&quot;*&quot;:&quot;\\*&quot;,&quot;.&quot;:&quot;\\.&quot;,&quot;+&quot;:&quot;\\+&quot;,&quot;^&quot;:&quot;\\^&quot;,$:&quot;\\$&quot;};return t.replace(&#x2F;[\{\}\[\]\(\)\?\*\.\+\^\$]&#x2F;g,(function(t">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-02-19T10:18:22.774Z">
+<meta property="article:modified_time" content="2022-02-19T10:18:22.774Z">
+<meta property="article:author" content="Gwoo">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="kun&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">kun&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-themes/cards/dist/js/local-search.min" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/19/themes/cards/dist/js/local-search.min/" class="article-date">
+  <time datetime="2022-02-19T10:18:22.774Z" itemprop="datePublished">2022-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        function t(t){const e={"{":"\\{","}":"\\}","[":"\\[","]":"\\]","(":"\\(",")":"\\)","?":"\\?","*":"\\*",".":"\\.","+":"\\+","^":"\\^",$:"\\$"};return t.replace(/[\{\}\[\]\(\)\?\*\.\+\^\$]/g,(function(t){return e[t]}))}function e(t){document.getElementById("search-result__notice").innerHTML=t}function n(n,c){fetch(n).then(t=>t.json()).then(n=>{const r=performance.now();let o=[],s=0,l=c.trim().toLowerCase().split(/\s/);if(n.forEach(e=>{if(void 0===e.title||void 0===e.content)return;let n=!1;const c=e.title.trim().toLowerCase(),r=e.content?e.content.trim().replace(/<[^>]+>/g,"").toLowerCase():"";let i=0,u={title:-1,content:-1,firstOccur:-1,lastOccur:-1};if(c&&l.forEach(t=>{u.title=c.indexOf(t),u.content=r.indexOf(t),-1===u.title&&-1===u.content||(n=!0,-1!==u.content&&((u.firstOccur>u.content||-1===u.firstOccur)&&(u.firstOccur=u.content),u.lastOccur<u.content&&(u.lastOccur=u.content)),i+=-1!==u.title?2:0,i+=-1!==u.content?1:0,s++)}),n){let n={};if(n.title=e.title,n.link=e.url,l.forEach(e=>{const c=new RegExp(t(e)+"(?!>)","gi");n.title=n.title.replace(c,"<m>$&</m>")}),u.firstOccur>=0){const e=100;let c=u.firstOccur-e,o=u.lastOccur+e;c<0&&(c=0),0===c&&(o=2*e),o>r.length&&(o=r.length),n.content=r.substr(c,o-c),l.forEach(e=>{const c=new RegExp(t(e)+"(?!>)","gi");n.content=n.content.replace(c,"<m>$&</m>")})}o.push([n,i])}}),0!==s){const t=performance.now();e(`${s} related results found (in ${Math.round(100*(t-r))/100} ms)`),o.sort((t,e)=>e[1]-t[1]),function(t){const e=document.getElementById("search-result__list");let n="";t.forEach(t=>{const e=t[0],c=`\n        <a href="${e.link}" class="search-result__link">\n            <div class='search-result__item'>\n                <strong>\n                    ${e.title}\n                </strong>\n                <div class="search-result__content">\n                    ${e.content}\n                </div>\n            </div>\n        </a>\n        `;n+=c}),e.innerHTML=n}(o)}else{const t=performance.now();e(`No related result found (in ${Math.round(100*(t-r))/100} ms)`),document.getElementById("search-result__list").innerHTML=""}})}function c(t){n(searchDataFile,function(t){const e={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","/":"&#x2F;"};return t.replace(/[&<>"'/]/g,(function(t){return e[t]}))}(t))}(()=>{const t=function(t){t=t.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");const e=new RegExp("[\\?&]"+t+"=([^&#]*)").exec(window.location);return null===e?"":decodeURIComponent(e[1].replace(/\+/g," "))}("s");""!==t&&(document.getElementById("search-input").value=t,c(t))})();
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/19/themes/cards/dist/js/local-search.min/" data-id="ckzwn7a0u000fyt8zbd9nfysb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/19/themes/cards/dist/js/darkmode/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/19/themes/cards/dist/js/local-search/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/02/19/themes/cards/source/js/darkmode/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/19/themes/cards/source/js/local-search/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/19/themes/cards/source/js/b2t/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/19/themes/cards/source/css/style/dark/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/19/themes/cards/source/css/style/main/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Gwoo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
