@@ -16,9 +16,19 @@
     <!--icon-->
 
     
+        <link rel="shortcut icon" href="/img/duck.jpeg">
     
     
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/duck.jpeg">
     
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/duck.jpeg">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/duck.jpeg">
+    
+    
+        <link rel="mask-icon" href="/img/duck.jpeg">
     
 
 
@@ -33,12 +43,12 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="Cards | Theme for Hexo      Simple · Swift · Powerful   简洁 · 快速 · 强大  正如其名，「Cards」，一款 单栏样式 &amp; 卡片式设计 的现代 Hexo 主题。 Demo 演示   ChrAlpha Blog   Theme Cards Demo  Installation 安装12345678cd hexogit clone">
+    <meta name="description" content="Cards | Theme for Hexo      Simple · Swift · Powerful   简洁 · 快速 · 强大  正如其名，「Cards」，一款 单栏样式 &amp; 卡片式设计 的现代 Hexo 主题。 Demo 演示   ChrAlpha Blog   Theme Cards Demo  Installation 安装cd hexo git clone https:&#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kun&#39;s blog">
 <meta property="og:url" content="http://example.com/2022/02/19/themes/cards/README/index.html">
 <meta property="og:site_name" content="kun&#39;s blog">
-<meta property="og:description" content="Cards | Theme for Hexo      Simple · Swift · Powerful   简洁 · 快速 · 强大  正如其名，「Cards」，一款 单栏样式 &amp; 卡片式设计 的现代 Hexo 主题。 Demo 演示   ChrAlpha Blog   Theme Cards Demo  Installation 安装12345678cd hexogit clone">
+<meta property="og:description" content="Cards | Theme for Hexo      Simple · Swift · Powerful   简洁 · 快速 · 强大  正如其名，「Cards」，一款 单栏样式 &amp; 卡片式设计 的现代 Hexo 主题。 Demo 演示   ChrAlpha Blog   Theme Cards Demo  Installation 安装cd hexo git clone https:&#x2F;">
 <meta property="og:locale">
 <meta property="og:image" content="https://theme-cards.ichr.me/assets/img/info.png">
 <meta property="og:image" content="https://theme-cards.ichr.me/assets/img/coverpic.png">
@@ -55,14 +65,23 @@
 
     
     
-        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" onload="this.media='all'">
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/default.min.css" media="none" >
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/dark.min.css" media="none">
         
     
 
     
-    
 
     
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
 
      
 
@@ -90,15 +109,21 @@
                 
                     <a href="/friends/" class="navbar-menu button">友链</a>
                 
-                    <a href="/page/" class="navbar-menu button">Page</a>
-                
             </div>
         
         
         
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
 
         
         
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
 
         
             <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
@@ -111,8 +136,6 @@
                     <a href="/archives/" class="dropdown-menu button">归档</a>
                 
                     <a href="/friends/" class="dropdown-menu button">友链</a>
-                
-                    <a href="/page/" class="dropdown-menu button">Page</a>
                 
             </div>
         
@@ -143,8 +166,23 @@
 </div>
 
 
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Demo-%E6%BC%94%E7%A4%BA"><span class="toc-text">Demo 演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation-%E5%AE%89%E8%A3%85"><span class="toc-text">Installation 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Document-%E6%96%87%E6%A1%A3"><span class="toc-text">Document 文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contribution-%E8%B4%A1%E7%8C%AE"><span class="toc-text">Contribution 贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%81%E5%9C%A8%E4%BD%BF%E7%94%A8-Cards-%E4%B8%BB%E9%A2%98"><span class="toc-text">谁在使用 Cards 主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maintainer-%E7%BB%B4%E6%8A%A4%E8%80%85"><span class="toc-text">Maintainer 维护者</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目錄</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Demo-%E6%BC%94%E7%A4%BA"><span class="toc-text">Demo 演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation-%E5%AE%89%E8%A3%85"><span class="toc-text">Installation 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Document-%E6%96%87%E6%A1%A3"><span class="toc-text">Document 文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contribution-%E8%B4%A1%E7%8C%AE"><span class="toc-text">Contribution 贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%81%E5%9C%A8%E4%BD%BF%E7%94%A8-Cards-%E4%B8%BB%E9%A2%98"><span class="toc-text">谁在使用 Cards 主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maintainer-%E7%BB%B4%E6%8A%A4%E8%80%85"><span class="toc-text">Maintainer 维护者</span></a></li></ol>
+    </div>
 
-<article class="post content-card">
+
+<article class="post post__with-toc content-card">
     <div class="post__header"></div>
     <div class="post__content">
         <center><h1>Cards | Theme for Hexo</h1></center>
@@ -159,7 +197,14 @@
 <li>  <a target="_blank" rel="noopener" href="https://blog.ichr.me/">ChrAlpha Blog</a></li>
 <li>  <a target="_blank" rel="noopener" href="https://theme-cards.ichr.me/demo/">Theme Cards Demo</a></li>
 </ul>
-<h2 id="Installation-安装"><a href="#Installation-安装" class="headerlink" title="Installation 安装"></a>Installation 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ChrAlpha/hexo-theme-cards.git themes/cards</span><br><span class="line"></span><br><span class="line">vi _config.yml</span><br><span class="line">-theme: landscape</span><br><span class="line">+theme: cards</span><br><span class="line"></span><br><span class="line">hexo s --debug</span><br></pre></td></tr></table></figure>
+<h2 id="Installation-安装"><a href="#Installation-安装" class="headerlink" title="Installation 安装"></a>Installation 安装</h2><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> hexo
+git <span class="hljs-built_in">clone</span> https://github.com/ChrAlpha/hexo-theme-cards.git themes/cards
+
+vi _config.yml
+-theme: landscape
++theme: cards
+
+hexo s --debug</code></pre>
 
 <p>你也可以参照主题文档详细了解相关配置。</p>
 <h2 id="Document-文档"><a href="#Document-文档" class="headerlink" title="Document 文档"></a>Document 文档</h2><p><a target="_blank" rel="noopener" href="https://theme-cards.ichr.me/">Theme Cards 主题文档</a></p>
@@ -190,7 +235,7 @@
     <div class="nav">
         <div class="nav__prev">
             
-                <a href="/2022/02/19/themes/cards/dist/css/highlight/atelier-dune-light.min/" class="nav__link">
+                <a href="/2022/02/19/themes/cards/dist/css/highlight/atelier-dune-dark/" class="nav__link">
                     <div>
                         <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
                     </div>
@@ -207,7 +252,7 @@
         </div>
         <div class="nav__next">
             
-                <a href="/2022/02/19/themes/cards/dist/css/highlight/a11y-light/" class="nav__link">
+                <a href="/2022/02/19/themes/cards/dist/css/highlight/a11y-dark.min/" class="nav__link">
                     <div>
                         <div class="nav__label">
                             Next Post
@@ -226,12 +271,38 @@
 
 
 
+    <div class="post__comments post__with-toc content-card" id="comment">
+        
+    <h4>評論</h4>
+    
+    
+    
+    
+    
+    
+    
+    <div id="artalk_thread"></div>
+
+    
+    
+    
+    
+
+
+    </div>
+
 
 
 </main>
 
             <footer class="footer">
-    
+     
+    <a href="#" class="button" id="b2t" aria-label="回到頂部" title="回到頂部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
     
 
 
@@ -283,6 +354,65 @@
 
  
 
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    <script>
+        function loadComment() {
+            let e, i;
+            (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/artalk@1.0.6/dist/Artalk.js',
+            document.body.appendChild(e);
+            e.onload = () => {
+                var artalkConfig = {"serverUrl":null,"placeholder":null,"noComment":null,"defaultAvatar":null,"pageKey":null,"gravatar":{"cdn":null},"readMore":{"pageSize":null,"autoLoad":null},"emoticons":null};
+                artalkConfig.el = '#artalk_thread';
+                for (var i in artalkConfig) {
+                    if (artalkConfig[i] === null) delete artalkConfig[i];
+                }
+                new Artalk(artalkConfig);
+            };
+            (i = document.createElement("link")).rel = "stylesheet",
+            i.href = 'https://cdn.jsdelivr.net/npm/artalk@1.0.6/dist/Artalk.css',
+            document.head.appendChild(i);
+        }
+    
+        var runningOnBrowser = typeof window !== "undefined";
+        var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+        var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+    
+        setTimeout(function () {
+            if (!isBot && supportsIntersectionObserver) {
+                var comment_observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        loadComment();
+                        comment_observer.disconnect();
+                    }
+                }, { threshold: [0] });
+                comment_observer.observe(document.getElementById('comment'));
+            } else {
+                loadComment();
+            }
+        }, 1);
+    </script>
+
+    
+    
+    
+    
+
+    
+    
+    
 
 
 
