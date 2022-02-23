@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/img/duck.jpeg">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/duck.jpeg">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/duck.jpeg">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/duck.jpeg">
+    
+    
+        <link rel="mask-icon" href="/img/duck.jpeg">
+    
+
+
+    <!-- meta -->
+
+
+<title>linux-日常命令 | Gwoo</title>
+
+
+    <meta name="keywords" content="linux">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="命令大全操作文件和目录（即文件夹）   命令 作用 参数    mkdir 创建目录（即文件夹）    cp 复制 i提示确认r文件类型u只复制不存在及更新v相关信息   mv 移动&#x2F;重命名 i提示确认u只移动不存在及更新v相关信息   rm 删除 i提示确认r文件类型f忽略不存在v相关信息   ln (-s) 创建硬链接（符号链接）    程序（命令）命令   命令 作用 参数    type">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux-日常命令">
+<meta property="og:url" content="http://example.com/2022/02/23/linux-%E6%97%A5%E5%B8%B8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Gwoo">
+<meta property="og:description" content="命令大全操作文件和目录（即文件夹）   命令 作用 参数    mkdir 创建目录（即文件夹）    cp 复制 i提示确认r文件类型u只复制不存在及更新v相关信息   mv 移动&#x2F;重命名 i提示确认u只移动不存在及更新v相关信息   rm 删除 i提示确认r文件类型f忽略不存在v相关信息   ln (-s) 创建硬链接（符号链接）    程序（命令）命令   命令 作用 参数    type">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-23T03:19:56.000Z">
+<meta property="article:modified_time" content="2022-02-23T03:29:50.227Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" >
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/dark.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">孤鹜</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        linux-日常命令
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2022/02/" class="post-meta__date button">2022-02-23</a>
+        
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%EF%BC%88%E5%8D%B3%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89"><span class="toc-text">操作文件和目录（即文件夹）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%EF%BC%88%E5%91%BD%E4%BB%A4%EF%BC%89%E5%91%BD%E4%BB%A4"><span class="toc-text">程序（命令）命令</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%EF%BC%88%E5%8D%B3%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89"><span class="toc-text">操作文件和目录（即文件夹）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%EF%BC%88%E5%91%BD%E4%BB%A4%EF%BC%89%E5%91%BD%E4%BB%A4"><span class="toc-text">程序（命令）命令</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h1 id="命令大全"><a href="#命令大全" class="headerlink" title="命令大全"></a>命令大全</h1><h2 id="操作文件和目录（即文件夹）"><a href="#操作文件和目录（即文件夹）" class="headerlink" title="操作文件和目录（即文件夹）"></a>操作文件和目录（即文件夹）</h2><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th align="left"><strong>作用</strong></th>
+<th align="left"><strong>参数</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mkdir</td>
+<td align="left">创建目录（即文件夹）</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>cp</td>
+<td align="left">复制</td>
+<td align="left">i提示确认r文件类型u只复制不存在及更新v相关信息</td>
+</tr>
+<tr>
+<td>mv</td>
+<td align="left">移动/重命名</td>
+<td align="left">i提示确认u只移动不存在及更新v相关信息</td>
+</tr>
+<tr>
+<td>rm</td>
+<td align="left">删除</td>
+<td align="left">i提示确认r文件类型f忽略不存在v相关信息</td>
+</tr>
+<tr>
+<td>ln (-s)</td>
+<td align="left">创建硬链接（符号链接）</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="程序（命令）命令"><a href="#程序（命令）命令" class="headerlink" title="程序（命令）命令"></a>程序（命令）命令</h2><table>
+<thead>
+<tr>
+<th align="left"><strong>命令</strong></th>
+<th align="left"><strong>作用</strong></th>
+<th><strong>参数</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">type</td>
+<td align="left">显示命令类型。</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">which</td>
+<td align="left">显示可执行命令的位置。</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">help</td>
+<td align="left">获取Shell内建命令的帮助信息。</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">man</td>
+<td align="left">显示命令的手册页。</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">apropos</td>
+<td align="left">显示适合的命令清单。</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">whatis</td>
+<td align="left">显示手册页的简述。</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">info</td>
+<td align="left">显示命令的info条目。</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">alias</td>
+<td align="left">创建自己的命令。</td>
+<td></td>
+</tr>
+</tbody></table>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2022-02-23</p></div> 
+    <div class="post-entry__tags"><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2022/02/22/C-code/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            C-code-指针基础
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2022 <a href="/">Gwoo</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+         
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>
