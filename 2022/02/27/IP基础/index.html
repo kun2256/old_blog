@@ -35,27 +35,27 @@
     <!-- meta -->
 
 
-<title>linux-日常命令 | Gwoo</title>
+<title>IPV4基础 | Gwoo</title>
 
 
-    <meta name="keywords" content="linux">
+    <meta name="keywords" content="internet">
 
 
 
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="命令大全操作文件和目录（即文件夹）   命令 作用 参数    mkdir 创建目录（即文件夹）    cp 复制 i提示确认r文件类型u只复制不存在及更新v相关信息   mv 移动&#x2F;重命名 i提示确认u只移动不存在及更新v相关信息   rm 删除 i提示确认r文件类型f忽略不存在v相关信息   ln (-s) 创建硬链接（符号链接）    程序（命令）命令   命令 作用 参数    type">
+    <meta name="description" content="IPV4：ip地址由32位二进制组成；一般被分为4组，每组8位；我们看到的一般写为十进制 IPV4结构：ip地址被分为 网络位和主机位，通过子网掩码区别划分，网络位称为网段，由对应子网掩码为1的位组成，而主机位则是后面对应为0的部分； 网络号 与 广播号： 特殊的IP地址: 由上述内容我们知道，IP是由网络位和主机位组成；但有两个特殊情况，如主机位全为1 或 0 。当主机位全为1时，我们将其称之为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux-日常命令">
-<meta property="og:url" content="http://example.com/2022/02/23/linux-%E6%97%A5%E5%B8%B8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:title" content="IPV4基础">
+<meta property="og:url" content="http://example.com/2022/02/27/IP%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Gwoo">
-<meta property="og:description" content="命令大全操作文件和目录（即文件夹）   命令 作用 参数    mkdir 创建目录（即文件夹）    cp 复制 i提示确认r文件类型u只复制不存在及更新v相关信息   mv 移动&#x2F;重命名 i提示确认u只移动不存在及更新v相关信息   rm 删除 i提示确认r文件类型f忽略不存在v相关信息   ln (-s) 创建硬链接（符号链接）    程序（命令）命令   命令 作用 参数    type">
+<meta property="og:description" content="IPV4：ip地址由32位二进制组成；一般被分为4组，每组8位；我们看到的一般写为十进制 IPV4结构：ip地址被分为 网络位和主机位，通过子网掩码区别划分，网络位称为网段，由对应子网掩码为1的位组成，而主机位则是后面对应为0的部分； 网络号 与 广播号： 特殊的IP地址: 由上述内容我们知道，IP是由网络位和主机位组成；但有两个特殊情况，如主机位全为1 或 0 。当主机位全为1时，我们将其称之为">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-23T03:19:56.000Z">
-<meta property="article:modified_time" content="2022-02-23T03:29:50.227Z">
+<meta property="article:published_time" content="2022-02-27T11:03:37.000Z">
+<meta property="article:modified_time" content="2022-02-27T11:47:46.413Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="linux">
+<meta property="article:tag" content="internet">
 <meta name="twitter:card" content="summary_large_image">
 
 
@@ -144,10 +144,10 @@
 
 <div class="post-title">
     <h1 class="post-title__text">
-        linux-日常命令
+        IPV4基础
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2022/02/" class="post-meta__date button">2022-02-23</a>
+        <a href="/archives/2022/02/" class="post-meta__date button">2022-02-27</a>
         
  
         
@@ -164,7 +164,7 @@
 
     <aside class="post-side">
         <div class="post-side__toc">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%EF%BC%88%E5%8D%B3%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89"><span class="toc-text">操作文件和目录（即文件夹）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%EF%BC%88%E5%91%BD%E4%BB%A4%EF%BC%89%E5%91%BD%E4%BB%A4"><span class="toc-text">程序（命令）命令</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#IPV4%EF%BC%9A"><span class="toc-text">IPV4：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPV4%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-text">IPV4结构：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%8F%B7-%E4%B8%8E-%E5%B9%BF%E6%92%AD%E5%8F%B7%EF%BC%9A"><span class="toc-text">网络号 与 广播号：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">IP地址的分类：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E5%8F%98%E9%95%BF%E7%9A%84%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%EF%BC%9A"><span class="toc-text">可变长的子网掩码：</span></a></li></ol>
         </div>
     </aside>
     <a class="btn-toc button" id="btn-toc" tabindex="0">
@@ -174,131 +174,67 @@
     </a>
     <div class="toc-menus" id="toc-menus">
         <div class="toc-title">Article Directory</div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%EF%BC%88%E5%8D%B3%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89"><span class="toc-text">操作文件和目录（即文件夹）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%EF%BC%88%E5%91%BD%E4%BB%A4%EF%BC%89%E5%91%BD%E4%BB%A4"><span class="toc-text">程序（命令）命令</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#IPV4%EF%BC%9A"><span class="toc-text">IPV4：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPV4%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-text">IPV4结构：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%8F%B7-%E4%B8%8E-%E5%B9%BF%E6%92%AD%E5%8F%B7%EF%BC%9A"><span class="toc-text">网络号 与 广播号：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">IP地址的分类：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E5%8F%98%E9%95%BF%E7%9A%84%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%EF%BC%9A"><span class="toc-text">可变长的子网掩码：</span></a></li></ol>
     </div>
 
 
 <article class="post post__with-toc content-card">
     <div class="post__header"></div>
     <div class="post__content">
-        <h1 id="命令大全"><a href="#命令大全" class="headerlink" title="命令大全"></a>命令大全</h1><h2 id="操作文件和目录（即文件夹）"><a href="#操作文件和目录（即文件夹）" class="headerlink" title="操作文件和目录（即文件夹）"></a>操作文件和目录（即文件夹）</h2><table>
+        <h2 id="IPV4："><a href="#IPV4：" class="headerlink" title="IPV4："></a>IPV4：</h2><p>ip地址由32位二进制组成；一般被分为4组，每组8位；我们看到的一般写为十进制</p>
+<h2 id="IPV4结构："><a href="#IPV4结构：" class="headerlink" title="IPV4结构："></a>IPV4结构：</h2><p>ip地址被分为 <strong>网络位和主机位</strong>，通过<strong>子网掩码</strong>区别划分，<strong>网络位称为网段</strong>，由对应子网掩码为1的位组成，而主机位则是后面对应为0的部分；</p>
+<h2 id="网络号-与-广播号："><a href="#网络号-与-广播号：" class="headerlink" title="网络号 与 广播号："></a>网络号 与 广播号：</h2><p> 特殊的IP地址: 由上述内容我们知道，IP是由网络位和主机位组成；但有两个特殊情况，如主机位全为1 或 0 。当主机位全为1时，我们将其称之为<strong>广播号</strong>，目标IP地址为广播号时，会将数据传输至该网络中的每一台主机；而当主机位全为0时，我们将其称之为<strong>网络号</strong>，此IP地址代表这个网络。</p>
+<h2 id="IP地址的分类："><a href="#IP地址的分类：" class="headerlink" title="IP地址的分类："></a>IP地址的分类：</h2><p> 一般我们会将IP地址分为ABCDE<em>五类</em>，而常用的一般为ABC<em>三类</em>，剩下两类一般用于特殊用途。</p>
+<table>
 <thead>
 <tr>
-<th><strong>命令</strong></th>
-<th align="left"><strong>作用</strong></th>
-<th align="left"><strong>参数</strong></th>
+<th>类别</th>
+<th>范围</th>
+<th>对应掩码</th>
+<th>位数</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>mkdir</td>
-<td align="left">创建目录（即文件夹）</td>
-<td align="left"></td>
+<td>A</td>
+<td>1~126</td>
+<td>255.0.0.0</td>
+<td>/8</td>
 </tr>
 <tr>
-<td>cp</td>
-<td align="left">复制</td>
-<td align="left">i提示确认r文件类型u只复制不存在及更新v相关信息</td>
+<td>B</td>
+<td>128~191</td>
+<td>255.255.0.0</td>
+<td>/16</td>
 </tr>
 <tr>
-<td>mv</td>
-<td align="left">移动/重命名</td>
-<td align="left">i提示确认u只移动不存在及更新v相关信息</td>
-</tr>
-<tr>
-<td>rm</td>
-<td align="left">删除</td>
-<td align="left">i提示确认r文件类型f忽略不存在v相关信息</td>
-</tr>
-<tr>
-<td>ln (-s)</td>
-<td align="left">创建硬链接（符号链接）</td>
-<td align="left"></td>
+<td>C</td>
+<td>192~223</td>
+<td>255.255.255.0</td>
+<td>/24</td>
 </tr>
 </tbody></table>
-<h2 id="程序（命令）命令"><a href="#程序（命令）命令" class="headerlink" title="程序（命令）命令"></a>程序（命令）命令</h2><table>
-<thead>
-<tr>
-<th align="left"><strong>命令</strong></th>
-<th align="left"><strong>作用</strong></th>
-<th><strong>参数</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">type</td>
-<td align="left">显示命令类型。</td>
-<td></td>
-</tr>
-<tr>
-<td align="left">which</td>
-<td align="left">显示可执行命令的位置。</td>
-<td></td>
-</tr>
-<tr>
-<td align="left">help</td>
-<td align="left">获取Shell内建命令的帮助信息。</td>
-<td></td>
-</tr>
-<tr>
-<td align="left">man</td>
-<td align="left">显示命令的手册页。</td>
-<td></td>
-</tr>
-<tr>
-<td align="left">apropos</td>
-<td align="left">显示适合的命令清单。</td>
-<td></td>
-</tr>
-<tr>
-<td align="left">whatis</td>
-<td align="left">显示手册页的简述。</td>
-<td></td>
-</tr>
-<tr>
-<td align="left">info</td>
-<td align="left">显示命令的info条目。</td>
-<td></td>
-</tr>
-<tr>
-<td align="left">alias</td>
-<td align="left">创建自己的命令。</td>
-<td></td>
-</tr>
-</tbody></table>
+<h2 id="可变长的子网掩码："><a href="#可变长的子网掩码：" class="headerlink" title="可变长的子网掩码："></a>可变长的子网掩码：</h2><p> 直接举例吧：<br>    ip：172.16.31.0    /20<br>    二进制：10101100.00010000.00100000.00000000<br>    子网： 11111111.11111111.11110000.000000000<br>    网段有20位，不在abc三类之内。</p>
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2022-02-23</p></div> 
-    <div class="post-entry__tags"><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
+    <div class="post-footer__meta"><p>updated at 2022-02-27</p></div> 
+    <div class="post-entry__tags"><a href="/tags/internet/" class="post-tags__link button"># internet</a></div> 
 </article>
 
 
     <div class="nav">
         <div class="nav__prev">
             
-                <a href="/2022/02/27/IP%E5%9F%BA%E7%A1%80/" class="nav__link">
-                    <div>
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
-                    </div>
-                    <div>
-                        <div class="nav__label">
-                            Previous Post
-                        </div>
-                        <div class="nav__title">
-                            IPV4基础
-                        </div>
-                    </div>
-                </a>
-            
         </div>
         <div class="nav__next">
             
-                <a href="/2022/02/22/C-code/" class="nav__link">
+                <a href="/2022/02/23/linux-%E6%97%A5%E5%B8%B8%E5%91%BD%E4%BB%A4/" class="nav__link">
                     <div>
                         <div class="nav__label">
                             Next Post
                         </div>
                         <div class="nav__title">
-                            C-code-指针基础
+                            linux-日常命令
                         </div>
                     </div>
                     <div>
