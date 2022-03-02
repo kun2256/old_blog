@@ -45,15 +45,15 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="sqlmap常用命令sqlmap 基础 sqlmap -u “url（网站）” 查询是否存在注入点   –dbs                     [检测站点有那些数据库                         ] –current-db             [检测当前使用的数据库名                       ] –tables -D “db_name” [列出">
+    <meta name="description" content="sqlmap常用命令sqlmap 基础 sqlmap -u “url（网站）” 查询是否存在注入点   --dbs                     [检测站点有那些数据库                         ] --current-db             [检测当前使用的数据库名                       ] --tables -D “db_name”">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqlmap">
 <meta property="og:url" content="http://example.com/2022/03/02/sqlmap/index.html">
 <meta property="og:site_name" content="Gwoo">
-<meta property="og:description" content="sqlmap常用命令sqlmap 基础 sqlmap -u “url（网站）” 查询是否存在注入点   –dbs                     [检测站点有那些数据库                         ] –current-db             [检测当前使用的数据库名                       ] –tables -D “db_name” [列出">
+<meta property="og:description" content="sqlmap常用命令sqlmap 基础 sqlmap -u “url（网站）” 查询是否存在注入点   --dbs                     [检测站点有那些数据库                         ] --current-db             [检测当前使用的数据库名                       ] --tables -D “db_name”">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-02T10:23:31.000Z">
-<meta property="article:modified_time" content="2022-03-02T10:39:32.795Z">
+<meta property="article:modified_time" content="2022-03-02T11:09:23.907Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="sql">
 <meta name="twitter:card" content="summary_large_image">
@@ -183,11 +183,11 @@
     <div class="post__content">
         <h1 id="sqlmap常用命令"><a href="#sqlmap常用命令" class="headerlink" title="sqlmap常用命令"></a>sqlmap常用命令</h1><h2 id="sqlmap-基础"><a href="#sqlmap-基础" class="headerlink" title="sqlmap 基础"></a>sqlmap 基础</h2><ol>
 <li>sqlmap -u “url（网站）” 查询是否存在注入点  <ul>
-<li>–dbs                     [检测站点有那些数据库                         ]</li>
-<li>–current-db             [检测当前使用的数据库名                       ]</li>
-<li>–tables -D “db_name” [列出指定数据库的所有表名,-D后面接数据库名称]</li>
-<li>–columns -T “table_name” -D “db_name” [列出指定数据库中指定数据表的列(字段)]</li>
-<li>–dump -C “columns_name” -T “table_name” -D “db_name”i [列出数据表中的行（内容）]</li>
+<li>--dbs                     [检测站点有那些数据库                         ]</li>
+<li>--current-db             [检测当前使用的数据库名                       ]</li>
+<li>--tables -D “db_name” [列出指定数据库的所有表名,-D后面接数据库名称]</li>
+<li>--columns -T “table_name” -D “db_name” [列出指定数据库中指定数据表的列(字段)]</li>
+<li>--dump -C “columns_name” -T “table_name” -D “db_name”i [列出数据表中的行（内容）]</li>
 </ul>
 </li>
 </ol>
@@ -199,55 +199,55 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">–purge</td>
+<td align="left">--purge</td>
 <td align="left">重新扫描，会删除原先扫描记录</td>
 </tr>
 <tr>
-<td align="left">–tables</td>
+<td align="left">--tables</td>
 <td align="left">获取表名</td>
 </tr>
 <tr>
-<td align="left">–dbs</td>
+<td align="left">--dbs</td>
 <td align="left">检测站点包含哪些数据库</td>
 </tr>
 <tr>
-<td align="left">–current-db</td>
+<td align="left">--current-db</td>
 <td align="left">获取当前的数据库名</td>
 </tr>
 <tr>
-<td align="left">–current-user</td>
+<td align="left">--current-user</td>
 <td align="left">检测当前用户</td>
 </tr>
 <tr>
-<td align="left">–is-dba</td>
+<td align="left">--is-dba</td>
 <td align="left">判断站点的当前用户是否为数据库管理员</td>
 </tr>
 <tr>
-<td align="left">–batch</td>
+<td align="left">--batch</td>
 <td align="left">默认确认，不询问你是否输入</td>
 </tr>
 <tr>
-<td align="left">–search</td>
+<td align="left">--search</td>
 <td align="left">后面跟参数 -D -T -C搜索列（C），表（T）和数据库名称（D）</td>
 </tr>
 <tr>
-<td align="left">–threads 10</td>
+<td align="left">--threads 10</td>
 <td align="left">线程，参数后空格接数字，sqlmap线程最高设置为10</td>
 </tr>
 <tr>
-<td align="left">–level 3</td>
-<td align="left">sqlmap默认测试所有的GET和POST参数，当–level的值大于等于2的时候也会测试HTTP Cookie头的值，当大于等于3的时候也会测试User-Agent和HTTP Referer头的值。最高为5</td>
+<td align="left">--level 3</td>
+<td align="left">sqlmap默认测试所有的GET和POST参数，当--level的值大于等于2的时候也会测试HTTP Cookie头的值，当大于等于3的时候也会测试User-Agent和HTTP Referer头的值。最高为5</td>
 </tr>
 <tr>
-<td align="left">–risk 3</td>
+<td align="left">--risk 3</td>
 <td align="left">执行测试的风险（0-3，默认为1）risk越高，越慢但是越安全</td>
 </tr>
 <tr>
-<td align="left">–privileges</td>
+<td align="left">--privileges</td>
 <td align="left">查看权限</td>
 </tr>
 <tr>
-<td align="left">–proxy “目标地址″</td>
+<td align="left">--proxy “目标地址″</td>
 <td align="left">使用代理注入</td>
 </tr>
 </tbody></table>
