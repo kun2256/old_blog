@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/img/duck.jpeg">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/duck.jpeg">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/duck.jpeg">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/duck.jpeg">
+    
+    
+        <link rel="mask-icon" href="/img/duck.jpeg">
+    
+
+
+    <!-- meta -->
+
+
+<title>位运算 | Gwoo</title>
+
+
+    <meta name="keywords" content="c">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="位运算C语言可以对二进制位进行运算，称为位运算    运算符 &amp; | ~ ^ &lt;&lt; &gt;&gt;    名称 与 或 非 异或 左移 右移   用处 取1 化1 全反 取反 取乘 取除   与1 &amp; 0 &#x3D; 00 &amp; 0 &#x3D; 01 &amp; 1 &#x3D; 1总结：当第一位与 第二位都为1则运算得1  或1 | 0 &#x3D; 10 | 0 &#x3D; 01 | 1 &#x3D; 1总结：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="位运算">
+<meta property="og:url" content="http://example.com/2022/04/16/%E4%BD%8D%E8%BF%90%E7%AE%97/index.html">
+<meta property="og:site_name" content="Gwoo">
+<meta property="og:description" content="位运算C语言可以对二进制位进行运算，称为位运算    运算符 &amp; | ~ ^ &lt;&lt; &gt;&gt;    名称 与 或 非 异或 左移 右移   用处 取1 化1 全反 取反 取乘 取除   与1 &amp; 0 &#x3D; 00 &amp; 0 &#x3D; 01 &amp; 1 &#x3D; 1总结：当第一位与 第二位都为1则运算得1  或1 | 0 &#x3D; 10 | 0 &#x3D; 01 | 1 &#x3D; 1总结：">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-15T21:30:08.000Z">
+<meta property="article:modified_time" content="2022-04-15T22:14:47.054Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="c">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" >
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/dark.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">孤鹜</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        位运算
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2022/04/" class="post-meta__date button">2022-04-16</a>
+        
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-text">位运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E"><span class="toc-text">与</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%96"><span class="toc-text">或</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E"><span class="toc-text">非</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E6%88%96"><span class="toc-text">异或</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E7%A7%BB-%E5%8F%B3%E7%A7%BB"><span class="toc-text">左移 右移</span></a></li></ol></li></ol></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-text">位运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E"><span class="toc-text">与</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%96"><span class="toc-text">或</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E"><span class="toc-text">非</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E6%88%96"><span class="toc-text">异或</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E7%A7%BB-%E5%8F%B3%E7%A7%BB"><span class="toc-text">左移 右移</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><p>C语言可以对二进制位进行运算，称为位运算</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">&amp;</th>
+<th align="center">|</th>
+<th align="center">~</th>
+<th align="center">^</th>
+<th align="center">&lt;&lt;</th>
+<th align="center">&gt;&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">名称</td>
+<td align="center">与</td>
+<td align="center">或</td>
+<td align="center">非</td>
+<td align="center">异或</td>
+<td align="center">左移</td>
+<td align="center">右移</td>
+</tr>
+<tr>
+<td align="center">用处</td>
+<td align="center">取1</td>
+<td align="center">化1</td>
+<td align="center">全反</td>
+<td align="center">取反</td>
+<td align="center">取乘</td>
+<td align="center">取除</td>
+</tr>
+</tbody></table>
+<h4 id="与"><a href="#与" class="headerlink" title="与"></a>与</h4><p>1 &amp; 0 = 0<br>0 &amp; 0 = 0<br>1 &amp; 1 = 1<br>总结：当第一位<em><strong>与</strong></em> 第二位<em><strong>都</strong></em>为1则运算得1 </p>
+<h4 id="或"><a href="#或" class="headerlink" title="或"></a>或</h4><p>1 | 0 = 1<br>0 | 0 = 0<br>1 | 1 = 1<br>总结：当第一位<em><strong>或</strong></em> 第二位之中<em><strong>有一位</strong></em>为1则运算得1 </p>
+<h4 id="非"><a href="#非" class="headerlink" title="非"></a>非</h4><p>~100 = 011<br>~001 = 110<br>~010 = 101<br>总结：对每一位<em><strong>非</strong></em>运算，将每一位值取反；即0取1，1取0</p>
+<h4 id="异或"><a href="#异或" class="headerlink" title="异或"></a>异或</h4><p>1 ^ 0 = 1<br>0 ^ 0 = 0<br>1 ^ 1 = 0<br>总结：当第一位<em><strong>与</strong></em>第二位<em><strong>相异</strong></em>则运算得1 </p>
+<h4 id="左移-右移"><a href="#左移-右移" class="headerlink" title="左移 右移"></a>左移 右移</h4><p>1 &lt;&lt; 2 = B100 =O4<br>B100 &gt;&gt; 2 = 1  </p>
+<p>总结：左移是将一个数的二进制值中的每个位<em><strong>向左移动</strong></em>n位,不够则补零。十进制运算结果相当于<em><strong>乘以2的n次方</strong></em>。右移反之，即结果相当于除以2的次方，不计算余数</p>
+<p><em><strong>tips:</strong></em> 使用左移右移运算，比直接乘除操作执行速度要更<strong>快</strong>，会提高程序运行速度</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2022-04-16</p></div> 
+    <div class="post-entry__tags"><a href="/tags/c/" class="post-tags__link button"># c</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2022/04/05/%E9%93%BE%E8%A1%A8/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            链表
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2022 <a href="/">Gwoo</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+         
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>
