@@ -35,20 +35,27 @@
     <!-- meta -->
 
 
-<title>Archive | Gwoo</title>
+<title>正则表达式 | Gwoo</title>
 
+
+    <meta name="keywords" content="linux">
 
 
 
 
     <!-- OpenGraph -->
  
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Gwoo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+    <meta name="description" content="简介正则表达式是一种匹配文本字符串的方式，一般用来检索、替换那些符合所要求的文本字符串。要注意：不同的工具，不同的编程语言，其正则表达式都略有差异。此文以POSIX标准(大部分命令行工具的标准)来介绍 grepgrep是Linux中的一个命令程序，名为全局正则表达式输出，一般用来列出匹配的文本字符串等。 文本字符与元字符grep zip 该命令的意思为列出匹配zip字符串的文本等条目。在这里zip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://example.com/2022/05/18/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Gwoo">
+<meta property="og:description" content="简介正则表达式是一种匹配文本字符串的方式，一般用来检索、替换那些符合所要求的文本字符串。要注意：不同的工具，不同的编程语言，其正则表达式都略有差异。此文以POSIX标准(大部分命令行工具的标准)来介绍 grepgrep是Linux中的一个命令程序，名为全局正则表达式输出，一般用来列出匹配的文本字符串等。 文本字符与元字符grep zip 该命令的意思为列出匹配zip字符串的文本等条目。在这里zip">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-18T13:29:06.000Z">
+<meta property="article:modified_time" content="2022-05-18T14:24:46.988Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary_large_image">
 
 
@@ -57,6 +64,13 @@
  
 
     
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" >
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/dark.css" media="none">
+        
+    
+
     
     
 
@@ -125,177 +139,227 @@
 </header>
 
 
-    <div class="cover">
-        <div class="cover__logo">
-            
-                <img no-lazy alt="author Image" class="cover__avatar" src="/img/duck.jpeg">
-            
-        </div>
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        正则表达式
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2022/05/" class="post-meta__date button">2022-05-18</a>
         
-        
-            <div class="cover__intro">
-                <p>好好学习挂科难，早日致富发大财</p>
  
-            </div>
         
+     
+    <span id="leancloud_container_page_pv" hidden>
+        <span class="separate-dot"></span>
+        <span>总访问量</span>
+        <span id="leancloud_value_page_pv"></span>
+        <span></span>
+    </span>
+
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-text">文本字符与元字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POSIX%E5%AD%97%E7%AC%A6%E7%B1%BB"><span class="toc-text">POSIX字符类</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-text">文本字符与元字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POSIX%E5%AD%97%E7%AC%A6%E7%B1%BB"><span class="toc-text">POSIX字符类</span></a></li></ol>
     </div>
 
-            
-<main class='main'>
-    
-        <div class="archives">
-            
-                    <div class="archives-item">
-                        <div class="archives-left">
-                            <div class="archives-icon icon-lg"></div>
-                        </div>
-                        <div class="archives-content">
-                            <h3 class="archives-year">2022</h3>
-                        </div>
-                    </div>
-                
-                <div class="archives-item">
-                    <div class="archives-left">
-                        <div class="archives-icon">
 
-                        </div>
-                    </div>
-                    <span class="archives-content">
-                        05-18
-                        &nbsp;
-                        <a href="/2022/05/18/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-                            <span class="archives-title">
-                                
-                                    正则表达式
-                                
-                            </span>
-                        </a>
-                        <br><br>
-                    </span>
-                </div>
-            
-                <div class="archives-item">
-                    <div class="archives-left">
-                        <div class="archives-icon">
+<article class="post post__with-toc content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>正则表达式是一种匹配文本字符串的方式，一般用来检索、替换那些符合所要求的文本字符串。<br><strong>要注意：不同的工具，不同的编程语言，其正则表达式都略有差异。此文以POSIX标准(大部分命令行工具的标准)来介绍</strong></p>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><p>grep是Linux中的一个命令程序，名为全局正则表达式输出，一般用来列出匹配的文本字符串等。</p>
+<h2 id="文本字符与元字符"><a href="#文本字符与元字符" class="headerlink" title="文本字符与元字符"></a>文本字符与元字符</h2><p>grep zip 该命令的意思为列出匹配zip字符串的文本等条目。在这里zip为最基本的文本字符，而接下来要介绍的则是元字符。</p>
+<p>元字符就是将一些特殊符号转为特殊意义 </p>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>特殊意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.</td>
+<td>代指任意字符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>锚点，表示行首</td>
+</tr>
+<tr>
+<td>$</td>
+<td>锚点，表示行尾</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>方括号内的为待匹配字符,^在最前面表示否定，-表示范围</td>
+</tr>
+<tr>
+<td>*</td>
+<td>表示前面的元素会匹配0次或多次</td>
+</tr>
+<tr>
+<td><em><strong>注意</strong></em></td>
+<td><strong>上面的元字符为BRE标准，下面为ERE,BRE需要\转义</strong></td>
+</tr>
+<tr>
+<td>?</td>
+<td>表示前面的元素会匹配0次或1次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>表示前面的元素会匹配1次或多次</td>
+</tr>
+<tr>
+<td>{}</td>
+<td>匹配指定次数,{n,m}匹配n次或至少n次,至多m次</td>
+</tr>
+<tr>
+<td>()</td>
+<td>将元素集合为一个元素(组)</td>
+</tr>
+<tr>
+<td>|</td>
+<td>表示多选，‘或’的意思</td>
+</tr>
+</tbody></table>
+<h2 id="POSIX字符类"><a href="#POSIX字符类" class="headerlink" title="POSIX字符类"></a>POSIX字符类</h2><p>有时候会遇到不是按ASCII码标准的词序，而是使用aAbB..zZ；这时候用a-z表示小写字母范围则会出错，为了解决这个问题POSIX提供了一种字符类来表示范围。</p>
+<table>
+<thead>
+<tr>
+<th>字符类</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[:alnum:]</td>
+<td>字母和数字字符</td>
+</tr>
+<tr>
+<td>[:word:]</td>
+<td>在alnum的基础上加入下划线</td>
+</tr>
+<tr>
+<td>[:alpha:]</td>
+<td>字母字符</td>
+</tr>
+<tr>
+<td>[:blank:]</td>
+<td>空格符和制表符</td>
+</tr>
+<tr>
+<td>[:cntrl:]</td>
+<td>ASCII的控制字符</td>
+</tr>
+<tr>
+<td>[:digit:]</td>
+<td>数字0～9</td>
+</tr>
+<tr>
+<td>[:graph:]</td>
+<td>可见字符</td>
+</tr>
+<tr>
+<td>[:lower:]</td>
+<td>小写字符</td>
+</tr>
+<tr>
+<td>[:punct:]</td>
+<td>标点符号字符</td>
+</tr>
+<tr>
+<td>[:print:]</td>
+<td>可输出字符</td>
+</tr>
+<tr>
+<td>[:space:]</td>
+<td>空白字符</td>
+</tr>
+<tr>
+<td>[:upper:]</td>
+<td>大写字符</td>
+</tr>
+<tr>
+<td>[:xdigit:]</td>
+<td>用于表示十六进制数值字符</td>
+</tr>
+</tbody></table>
 
-                        </div>
-                    </div>
-                    <span class="archives-content">
-                        04-16
-                        &nbsp;
-                        <a href="/2022/04/16/%E4%BD%8D%E8%BF%90%E7%AE%97/">
-                            <span class="archives-title">
-                                
-                                    位运算
-                                
-                            </span>
-                        </a>
-                        <br><br>
-                    </span>
-                </div>
-            
-                <div class="archives-item">
-                    <div class="archives-left">
-                        <div class="archives-icon">
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2022-05-18</p></div> 
+    <div class="post-entry__tags"><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
+</article>
 
-                        </div>
-                    </div>
-                    <span class="archives-content">
-                        04-05
-                        &nbsp;
-                        <a href="/2022/04/05/%E9%93%BE%E8%A1%A8/">
-                            <span class="archives-title">
-                                
-                                    链表
-                                
-                            </span>
-                        </a>
-                        <br><br>
-                    </span>
-                </div>
-            
-                <div class="archives-item">
-                    <div class="archives-left">
-                        <div class="archives-icon">
 
-                        </div>
-                    </div>
-                    <span class="archives-content">
-                        03-02
-                        &nbsp;
-                        <a href="/2022/03/02/sqlmap/">
-                            <span class="archives-title">
-                                
-                                    sqlmap
-                                
-                            </span>
-                        </a>
-                        <br><br>
-                    </span>
-                </div>
-            
-                <div class="archives-item">
-                    <div class="archives-left">
-                        <div class="archives-icon">
-
-                        </div>
-                    </div>
-                    <span class="archives-content">
-                        02-27
-                        &nbsp;
-                        <a href="/2022/02/27/IP%E5%9F%BA%E7%A1%80/">
-                            <span class="archives-title">
-                                
-                                    IPV4基础
-                                
-                            </span>
-                        </a>
-                        <br><br>
-                    </span>
-                </div>
-            
-                <div class="archives-item">
-                    <div class="archives-left">
-                        <div class="archives-icon">
-
-                        </div>
-                    </div>
-                    <span class="archives-content">
-                        02-23
-                        &nbsp;
-                        <a href="/2022/02/23/linux-%E6%97%A5%E5%B8%B8%E5%91%BD%E4%BB%A4/">
-                            <span class="archives-title">
-                                
-                                    linux-日常命令
-                                
-                            </span>
-                        </a>
-                        <br><br>
-                    </span>
-                </div>
-            
-                <div class="archives-item">
-                    <div class="archives-left">
-                        <div class="archives-icon">
-
-                        </div>
-                    </div>
-                    <span class="archives-content">
-                        02-22
-                        &nbsp;
-                        <a href="/2022/02/22/C-code/">
-                            <span class="archives-title">
-                                
-                                    C-code-指针基础
-                                
-                            </span>
-                        </a>
-                        <br><br>
-                    </span>
-                </div>
+    <div class="nav">
+        <div class="nav__prev">
             
         </div>
+        <div class="nav__next">
+            
+                <a href="/2022/04/16/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            位运算
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+    <div class="post__comments post__with-toc content-card" id="comment">
+        
+    <h4>Comments</h4>
     
+    
+    
+    <div id="valine_container" class="valine_thread"></div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    </div>
+
+
+
 </main>
 
             <footer class="footer">
@@ -466,10 +530,10 @@
                     });
                     getterArr.push(uvGetter);
                 }
-                if ('false' === 'true') {
+                if ('true' === 'true') {
                     var viewCtn = document.querySelector('#leancloud_container_page_pv');
                     if (viewCtn || enableIncr) {
-                        var target = decodeURI('/archives/index.html');
+                        var target = decodeURI('/2022/05/18/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/');
                         var viewGetter = getRecord(Counter, target).then((record) => {
                             incrArr.push(buildIncrement(record.objectId))
                             if (viewCtn) {
@@ -533,6 +597,62 @@
 
  
 
+
+    
+
+    
+    
+    
+    <script>
+        function loadComment() {
+            let e;
+            (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+            document.body.appendChild(e);
+            e.onload = () => {
+                var valineConfig = {"appId":"bJN1qKDryqdQMB2GyyxMcO8b-gzGzoHsz","appKey":"J2HWpTbi7MLIsrnuJaALYcw2","placeholder":null,"path":null,"avatar":null,"meta":["nick","mail","link"],"pageSize":null,"lang":null,"visitor":null,"highlight":null,"avatarForce":null,"recordIP":null,"serverURLs":null,"enableQQ":true,"requiredFields":["nick","mail"],"emojiCDN":null,"emojiMaps":null};
+                valineConfig.el = '#valine_container';
+                for (var i in valineConfig) {
+                    if (valineConfig[i] === null) delete valineConfig[i];
+                }
+                new Valine(valineConfig);
+            };
+        }
+    
+        var runningOnBrowser = typeof window !== "undefined";
+        var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+        var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+    
+        setTimeout(function () {
+            if (!isBot && supportsIntersectionObserver) {
+                var comment_observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        loadComment();
+                        comment_observer.disconnect();
+                    }
+                }, { threshold: [0] });
+                comment_observer.observe(document.getElementById('comment'));
+            } else {
+                loadComment();
+            }
+        }, 1);
+    </script>
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
 
 
 
