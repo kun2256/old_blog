@@ -35,7 +35,7 @@
     <!-- meta -->
 
 
-<title>正则表达式 | Gwoo</title>
+<title>常用命令大全 | Gwoo</title>
 
 
     <meta name="keywords" content="linux">
@@ -45,15 +45,15 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="简介正则表达式是一种匹配文本字符串的方式，一般用来检索、替换那些符合所要求的文本字符串。要注意：不同的工具，不同的编程语言，其正则表达式都略有差异。此文以POSIX标准(大部分命令行工具的标准)来介绍 grepgrep是Linux中的一个命令程序，名为全局正则表达式输出，一般用来列出匹配的文本字符串等。 文本字符与元字符grep zip 该命令的意思为列出匹配zip字符串的文本等条目。在这里zip">
+    <meta name="description" content="命令行大全本文将写出一些常用的命令及其作用描述，具体使用方法自行查阅(可使用 man 命令查看文档，或者通过上网使用搜索引擎查阅) 导航命令   命令 描述    pwd 输出当前所在的工作目录地址名称   ls 列出目录下的内容   cd 进入某个目录   文件操作命令   命令 描述    file 查看文件的类型及其他参数   mkdir 创建一个目录   touch 修改一个文件的时间戳，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式">
-<meta property="og:url" content="http://example.com/2022/05/18/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:title" content="常用命令大全">
+<meta property="og:url" content="http://example.com/2022/06/12/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/index.html">
 <meta property="og:site_name" content="Gwoo">
-<meta property="og:description" content="简介正则表达式是一种匹配文本字符串的方式，一般用来检索、替换那些符合所要求的文本字符串。要注意：不同的工具，不同的编程语言，其正则表达式都略有差异。此文以POSIX标准(大部分命令行工具的标准)来介绍 grepgrep是Linux中的一个命令程序，名为全局正则表达式输出，一般用来列出匹配的文本字符串等。 文本字符与元字符grep zip 该命令的意思为列出匹配zip字符串的文本等条目。在这里zip">
+<meta property="og:description" content="命令行大全本文将写出一些常用的命令及其作用描述，具体使用方法自行查阅(可使用 man 命令查看文档，或者通过上网使用搜索引擎查阅) 导航命令   命令 描述    pwd 输出当前所在的工作目录地址名称   ls 列出目录下的内容   cd 进入某个目录   文件操作命令   命令 描述    file 查看文件的类型及其他参数   mkdir 创建一个目录   touch 修改一个文件的时间戳，">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-05-18T13:29:06.000Z">
-<meta property="article:modified_time" content="2022-05-18T14:24:46.988Z">
+<meta property="article:published_time" content="2022-06-12T06:11:42.000Z">
+<meta property="article:modified_time" content="2022-06-12T09:20:55.996Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -144,10 +144,10 @@
 
 <div class="post-title">
     <h1 class="post-title__text">
-        正则表达式
+        常用命令大全
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2022/05/" class="post-meta__date button">2022-05-18</a>
+        <a href="/archives/2022/06/" class="post-meta__date button">2022-06-12</a>
         
  
         
@@ -171,7 +171,7 @@
 
     <aside class="post-side">
         <div class="post-side__toc">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-text">文本字符与元字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POSIX%E5%AD%97%E7%AC%A6%E7%B1%BB"><span class="toc-text">POSIX字符类</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E5%91%BD%E4%BB%A4"><span class="toc-text">导航命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-text">文件操作命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">命令的命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91%E5%91%BD%E4%BB%A4"><span class="toc-text">重定向命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%80%E5%B7%A7"><span class="toc-text">技巧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%83%E9%99%90"><span class="toc-text">权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B"><span class="toc-text">进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E6%8C%82%E8%BD%BD"><span class="toc-text">存储挂载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C"><span class="toc-text">网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-text">查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%92%E6%A1%A3%E4%B8%8E%E5%A4%87%E4%BB%BD"><span class="toc-text">归档与备份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-text">文本处理</span></a></li></ol>
         </div>
     </aside>
     <a class="btn-toc button" id="btn-toc" tabindex="0">
@@ -181,134 +181,458 @@
     </a>
     <div class="toc-menus" id="toc-menus">
         <div class="toc-title">Article Directory</div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-text">文本字符与元字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POSIX%E5%AD%97%E7%AC%A6%E7%B1%BB"><span class="toc-text">POSIX字符类</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E5%91%BD%E4%BB%A4"><span class="toc-text">导航命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-text">文件操作命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">命令的命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91%E5%91%BD%E4%BB%A4"><span class="toc-text">重定向命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%80%E5%B7%A7"><span class="toc-text">技巧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%83%E9%99%90"><span class="toc-text">权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B"><span class="toc-text">进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E6%8C%82%E8%BD%BD"><span class="toc-text">存储挂载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C"><span class="toc-text">网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-text">查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%92%E6%A1%A3%E4%B8%8E%E5%A4%87%E4%BB%BD"><span class="toc-text">归档与备份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-text">文本处理</span></a></li></ol>
     </div>
 
 
 <article class="post post__with-toc content-card">
     <div class="post__header"></div>
     <div class="post__content">
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>正则表达式是一种匹配文本字符串的方式，一般用来检索、替换那些符合所要求的文本字符串。<br><strong>要注意：不同的工具，不同的编程语言，其正则表达式都略有差异。此文以POSIX标准(大部分命令行工具的标准)来介绍</strong></p>
-<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><p>grep是Linux中的一个命令程序，名为全局正则表达式输出，一般用来列出匹配的文本字符串等。</p>
-<h2 id="文本字符与元字符"><a href="#文本字符与元字符" class="headerlink" title="文本字符与元字符"></a>文本字符与元字符</h2><p>grep zip 该命令的意思为列出匹配zip字符串的文本等条目。在这里zip为最基本的文本字符，而接下来要介绍的则是元字符。</p>
-<p>元字符就是将一些特殊符号转为特殊意义 </p>
-<table>
+        <h1 id="命令行大全"><a href="#命令行大全" class="headerlink" title="命令行大全"></a>命令行大全</h1><p>本文将写出一些常用的命令及其作用描述，具体使用方法自行查阅(可使用 <strong>man</strong> 命令查看文档，或者通过上网使用搜索引擎查阅)</p>
+<h4 id="导航命令"><a href="#导航命令" class="headerlink" title="导航命令"></a>导航命令</h4><table>
 <thead>
 <tr>
-<th>元字符</th>
-<th>特殊意义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>.</td>
-<td>代指任意字符</td>
-</tr>
-<tr>
-<td>^</td>
-<td>锚点，表示行首</td>
-</tr>
-<tr>
-<td>$</td>
-<td>锚点，表示行尾</td>
-</tr>
-<tr>
-<td>[]</td>
-<td>方括号内的为待匹配字符,^在最前面表示否定，-表示范围</td>
-</tr>
-<tr>
-<td>*</td>
-<td>表示前面的元素会匹配0次或多次</td>
-</tr>
-<tr>
-<td><em><strong>注意</strong></em></td>
-<td><strong>上面的元字符为BRE标准，下面为ERE,BRE需要\转义</strong></td>
-</tr>
-<tr>
-<td>?</td>
-<td>表示前面的元素会匹配0次或1次</td>
-</tr>
-<tr>
-<td>+</td>
-<td>表示前面的元素会匹配1次或多次</td>
-</tr>
-<tr>
-<td>{}</td>
-<td>匹配指定次数,{n,m}匹配n次或至少n次,至多m次</td>
-</tr>
-<tr>
-<td>()</td>
-<td>将元素集合为一个元素(组)</td>
-</tr>
-<tr>
-<td>|</td>
-<td>表示多选，‘或’的意思</td>
-</tr>
-</tbody></table>
-<h2 id="POSIX字符类"><a href="#POSIX字符类" class="headerlink" title="POSIX字符类"></a>POSIX字符类</h2><p>有时候会遇到不是按ASCII码标准的词序，而是使用aAbB..zZ；这时候用a-z表示小写字母范围则会出错，为了解决这个问题POSIX提供了一种字符类来表示范围。</p>
-<table>
-<thead>
-<tr>
-<th>字符类</th>
+<th align="center">命令</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>[:alnum:]</td>
-<td>字母和数字字符</td>
+<td align="center">pwd</td>
+<td>输出当前所在的工作目录地址名称</td>
 </tr>
 <tr>
-<td>[:word:]</td>
-<td>在alnum的基础上加入下划线</td>
+<td align="center">ls</td>
+<td>列出目录下的内容</td>
 </tr>
 <tr>
-<td>[:alpha:]</td>
-<td>字母字符</td>
+<td align="center">cd</td>
+<td>进入某个目录</td>
+</tr>
+</tbody></table>
+<h4 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">file</td>
+<td>查看文件的类型及其他参数</td>
 </tr>
 <tr>
-<td>[:blank:]</td>
-<td>空格符和制表符</td>
+<td align="center">mkdir</td>
+<td>创建一个目录</td>
 </tr>
 <tr>
-<td>[:cntrl:]</td>
-<td>ASCII的控制字符</td>
+<td align="center">touch</td>
+<td>修改一个文件的时间戳，如果文件名不存在则创建一个文件</td>
 </tr>
 <tr>
-<td>[:digit:]</td>
-<td>数字0～9</td>
+<td align="center">cp</td>
+<td>复制文件或目录</td>
 </tr>
 <tr>
-<td>[:graph:]</td>
-<td>可见字符</td>
+<td align="center">mv</td>
+<td>移动文件或目录,如果移动的位置是原位置则重命名</td>
 </tr>
 <tr>
-<td>[:lower:]</td>
-<td>小写字符</td>
+<td align="center">rm</td>
+<td>删除文件或目录,特别注意⚠️ 该操作不可逆不可撤回</td>
 </tr>
 <tr>
-<td>[:punct:]</td>
-<td>标点符号字符</td>
+<td align="center">ln</td>
+<td>创建硬链接和符号链接</td>
+</tr>
+</tbody></table>
+<h4 id="命令的命令"><a href="#命令的命令" class="headerlink" title="命令的命令"></a>命令的命令</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">type</td>
+<td>显示命令类型</td>
 </tr>
 <tr>
-<td>[:print:]</td>
-<td>可输出字符</td>
+<td align="center">which</td>
+<td>显示可执行文件的位置｜</td>
 </tr>
 <tr>
-<td>[:space:]</td>
-<td>空白字符</td>
+<td align="center">help</td>
+<td>获取SHELL内建命令的帮助信息</td>
 </tr>
 <tr>
-<td>[:upper:]</td>
-<td>大写字符</td>
+<td align="center">man</td>
+<td>显示命令的手册</td>
 </tr>
 <tr>
-<td>[:xdigit:]</td>
-<td>用于表示十六进制数值字符</td>
+<td align="center">alias</td>
+<td>创建自己的命令</td>
+</tr>
+</tbody></table>
+<h4 id="重定向命令"><a href="#重定向命令" class="headerlink" title="重定向命令"></a>重定向命令</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;</td>
+<td>后台执行命令，放于命令行末端，将程序置于后台执行，不占用SHELL</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td>管道符，将前一个命令的标准输出引流到后一个命令的标准输入</td>
+</tr>
+<tr>
+<td align="center">xargs</td>
+<td>搭配管道符使用，将上一个命令的数据转换成命令行参数传入下一个命令</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td>标准输出重定向，标准输出内容重定向到文件，会将内容覆盖</td>
+</tr>
+<tr>
+<td align="center">&gt;&gt;</td>
+<td>标准输出追加重定向,标准输出内容重定向到文件尾部，将新内容追加到源文件</td>
+</tr>
+<tr>
+<td align="center">2&gt;</td>
+<td>标准错误重定向，标准错误内容重定向到文件，便不会直接在屏幕上输出报错</td>
+</tr>
+<tr>
+<td align="center">&amp;&gt;</td>
+<td>标准输出及标准错误重定向，将所有输出都重定向到文件，此次命令不会有输出</td>
+</tr>
+</tbody></table>
+<h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">echo</td>
+<td>输出一行文本</td>
+</tr>
+<tr>
+<td align="center">*扩展</td>
+<td>通配符</td>
+</tr>
+<tr>
+<td align="center">{}扩展</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">$扩展</td>
+<td>变量扩展</td>
+</tr>
+<tr>
+<td align="center">$()</td>
+<td>命令替换扩展｜</td>
+</tr>
+<tr>
+<td align="center">“扩展</td>
+<td>将引号内的内容丧失特殊意义，使其成为普通字符⚠️ 某些符号除外</td>
+</tr>
+<tr>
+<td align="center">‘扩展</td>
+<td>将引号内的内容 <em><strong>全部</strong></em> 都丧失特殊意义，使其成为普通字符</td>
+</tr>
+<tr>
+<td align="center">\</td>
+<td>转义字符，将单个有特殊意义的字符成为普通字符，或者转义为控制码</td>
+</tr>
+</tbody></table>
+<h4 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">clear</td>
+<td>清除终端屏幕输出</td>
+</tr>
+<tr>
+<td align="center">history</td>
+<td>显示或操作命令历史列表</td>
+</tr>
+</tbody></table>
+<h4 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">id</td>
+<td>查看用户身份</td>
+</tr>
+<tr>
+<td align="center">passwd</td>
+<td>修改密码｜</td>
+</tr>
+<tr>
+<td align="center">umask</td>
+<td>设置默认权限</td>
+</tr>
+<tr>
+<td align="center">chmod</td>
+<td>修改文件权限</td>
+</tr>
+<tr>
+<td align="center">chown</td>
+<td>修改文件所属主和所属组</td>
+</tr>
+<tr>
+<td align="center">chgrp</td>
+<td>修改文件所属组</td>
+</tr>
+<tr>
+<td align="center">su</td>
+<td>以其他用户身份启动SHELL</td>
+</tr>
+<tr>
+<td align="center">sudo</td>
+<td>以其他用户身份执行命令</td>
+</tr>
+</tbody></table>
+<h4 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ps</td>
+<td>查看进程｜</td>
+</tr>
+<tr>
+<td align="center">top</td>
+<td>动态查看进程</td>
+</tr>
+<tr>
+<td align="center">jobs</td>
+<td>查看后台执行的程序</td>
+</tr>
+<tr>
+<td align="center">fg</td>
+<td>将进程置于前台</td>
+</tr>
+<tr>
+<td align="center">bg</td>
+<td>将进程置于后台</td>
+</tr>
+<tr>
+<td align="center">kill</td>
+<td>终止进程，向进程发送信号</td>
+</tr>
+<tr>
+<td align="center">killall</td>
+<td>按名称终止进程</td>
+</tr>
+<tr>
+<td align="center">shutdown</td>
+<td>关闭或重启系统</td>
+</tr>
+</tbody></table>
+<h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">printenv</td>
+<td>显示部分或全部环境变量</td>
+</tr>
+<tr>
+<td align="center">set</td>
+<td>显示SHELL变量和环境变量</td>
+</tr>
+<tr>
+<td align="center">echo</td>
+<td>查看变量内容</td>
+</tr>
+<tr>
+<td align="center">alias</td>
+<td>查看命令别名</td>
+</tr>
+</tbody></table>
+<h4 id="存储挂载"><a href="#存储挂载" class="headerlink" title="存储挂载"></a>存储挂载</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">mount</td>
+<td>挂载文件系统</td>
+</tr>
+<tr>
+<td align="center">umount</td>
+<td>卸载文件系统</td>
+</tr>
+<tr>
+<td align="center">fsck</td>
+<td>检查和修复文件系统</td>
+</tr>
+<tr>
+<td align="center">fdisk</td>
+<td>操作分区</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td>转换和复制文件</td>
+</tr>
+</tbody></table>
+<h4 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ping</td>
+<td>发送ICMP包到目标地址检测是否连通网络</td>
+</tr>
+<tr>
+<td align="center">ifconfig</td>
+<td>输出网络接口信息</td>
+</tr>
+<tr>
+<td align="center">netstat</td>
+<td>输出网络连接、路由表、接口统计、伪装连接、多播成员关系</td>
+</tr>
+<tr>
+<td align="center">ip</td>
+<td>显示/操作路由、设备、策略路由、隧道</td>
+</tr>
+<tr>
+<td align="center">wget</td>
+<td>非交互式网络下载工具 (需通过包管理器下载)</td>
+</tr>
+<tr>
+<td align="center">ssh</td>
+<td>远程登陆程序</td>
+</tr>
+<tr>
+<td align="center">scp</td>
+<td>基于ssh协议传输文件程序</td>
+</tr>
+</tbody></table>
+<h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">locate</td>
+<td>按照路径名查找文件</td>
+</tr>
+<tr>
+<td align="center">find</td>
+<td>在指定目录中查找文件</td>
+</tr>
+</tbody></table>
+<h4 id="归档与备份"><a href="#归档与备份" class="headerlink" title="归档与备份"></a>归档与备份</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">gzip</td>
+<td>压缩或解压缩文件</td>
+</tr>
+<tr>
+<td align="center">zip</td>
+<td>压缩文件</td>
+</tr>
+<tr>
+<td align="center">tar</td>
+<td>磁带归档实用工具</td>
+</tr>
+</tbody></table>
+<h4 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">nl</td>
+<td>对行进行编号</td>
+</tr>
+<tr>
+<td align="center">cat</td>
+<td>查看或者拼接文件内容</td>
+</tr>
+<tr>
+<td align="center">sort</td>
+<td>以行为单位对文件内容排序</td>
+</tr>
+<tr>
+<td align="center">uniq</td>
+<td>报告或者忽略相同的行</td>
+</tr>
+<tr>
+<td align="center">wc</td>
+<td>统计文件中换行符、单词和字节的数量</td>
+</tr>
+<tr>
+<td align="center">grep</td>
+<td>输出与正则表达式相匹配的行</td>
+</tr>
+<tr>
+<td align="center">head</td>
+<td>输出文件开头部分</td>
+</tr>
+<tr>
+<td align="center">tail</td>
+<td>输出文件结尾部分</td>
+</tr>
+<tr>
+<td align="center">cut</td>
+<td>从每行中删除部分内容</td>
+</tr>
+<tr>
+<td align="center">comm</td>
+<td>逐行比较两个已排序的文件</td>
+</tr>
+<tr>
+<td align="center">diff</td>
+<td>逐行比较文件</td>
+</tr>
+<tr>
+<td align="center">patch</td>
+<td>对原文件应用diff文件</td>
+</tr>
+<tr>
+<td align="center">sed</td>
+<td>用于文本过滤和转换的流编辑器</td>
 </tr>
 </tbody></table>
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2022-05-18</p></div> 
+    <div class="post-footer__meta"><p>updated at 2022-06-12</p></div> 
     <div class="post-entry__tags"><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
 </article>
 
@@ -316,30 +640,16 @@
     <div class="nav">
         <div class="nav__prev">
             
-                <a href="/2022/06/12/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" class="nav__link">
-                    <div>
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
-                    </div>
-                    <div>
-                        <div class="nav__label">
-                            Previous Post
-                        </div>
-                        <div class="nav__title">
-                            常用命令大全
-                        </div>
-                    </div>
-                </a>
-            
         </div>
         <div class="nav__next">
             
-                <a href="/2022/04/16/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="nav__link">
+                <a href="/2022/05/18/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="nav__link">
                     <div>
                         <div class="nav__label">
                             Next Post
                         </div>
                         <div class="nav__title">
-                            位运算
+                            正则表达式
                         </div>
                     </div>
                     <div>
@@ -547,7 +857,7 @@
                 if ('true' === 'true') {
                     var viewCtn = document.querySelector('#leancloud_container_page_pv');
                     if (viewCtn || enableIncr) {
-                        var target = decodeURI('/2022/05/18/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/');
+                        var target = decodeURI('/2022/06/12/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/');
                         var viewGetter = getRecord(Counter, target).then((record) => {
                             incrArr.push(buildIncrement(record.objectId))
                             if (viewCtn) {
