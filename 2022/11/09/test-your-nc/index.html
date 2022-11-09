@@ -35,21 +35,33 @@
     <!-- meta -->
 
 
-<title>Gwoo</title>
+<title>test_your_nc | Gwoo</title>
 
+
+    <meta name="keywords" content="pwn">
 
 
 
 
     <!-- OpenGraph -->
  
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Gwoo">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="test_your_nc题目描述及考点题目描述：考点：基本的pwntools使用 WP使用checksec查看程序可以得知这个程序是64位程序之后便可用ida64打开程序，按F5查看伪代码，可以看到这题目直接链接即可。我们直接根据给出的地址写个python链接脚本即可   1234from pwn import *io &#x3D; remote(&amp;#x27;node4.buuoj.cn&amp;#x27;, 29">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test_your_nc">
+<meta property="og:url" content="http://example.com/2022/11/09/test-your-nc/index.html">
 <meta property="og:site_name" content="Gwoo">
+<meta property="og:description" content="test_your_nc题目描述及考点题目描述：考点：基本的pwntools使用 WP使用checksec查看程序可以得知这个程序是64位程序之后便可用ida64打开程序，按F5查看伪代码，可以看到这题目直接链接即可。我们直接根据给出的地址写个python链接脚本即可   1234from pwn import *io &#x3D; remote(&amp;#x27;node4.buuoj.cn&amp;#x27;, 29">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200827786-49c649d1-e2ff-4657-9ab6-fa937e8f6b37.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200827780-8fc5eaa3-2986-46d9-812f-f6a2763ddcef.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200827789-a41e60f1-fed8-4fc8-ab46-909c4d036c4f.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200827771-4614319a-2056-4b72-b9f2-18a0fc5a0ab6.png">
+<meta property="article:published_time" content="2022-11-09T11:13:46.000Z">
+<meta property="article:modified_time" content="2022-11-09T12:16:08.559Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/93712124/200827786-49c649d1-e2ff-4657-9ab6-fa937e8f6b37.png">
 
 
     
@@ -57,6 +69,13 @@
  
 
     
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" >
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/dark.css" media="none">
+        
+    
+
     
     
 
@@ -125,222 +144,92 @@
 </header>
 
 
-    <div class="cover">
-        <div class="cover__logo">
-            
-                <img no-lazy alt="author Image" class="cover__avatar" src="/img/duck.jpeg">
-            
-        </div>
-        
-        
-            <div class="cover__intro">
-                <p>好好学习挂科难，早日致富发大财</p>
- 
-            </div>
-        
-    </div>
-
             <main class="main">
     
-    <div class="post-list">
-        
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
+
+<div class="post-title">
+    <h1 class="post-title__text">
         test_your_nc
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2022/11/" class="post-meta__date button">2022-11-09</a>
-    
- 
-</div>
-<div class="post-entry__tags"><a href="/tags/pwn/" class="post-tags__link button"># pwn</a></div> 
-<a href="/2022/11/09/test-your-nc/" class="post-entry__link">test_your_nc</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        无符号与有符号
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2022/07/" class="post-meta__date button">2022-07-09</a>
-    
- 
-</div>
-<div class="post-entry__tags"><a href="/tags/system/" class="post-tags__link button"># system</a></div> 
-<a href="/2022/07/09/%E6%97%A0%E7%AC%A6%E5%8F%B7%E4%B8%8E%E6%9C%89%E7%AC%A6%E5%8F%B7/" class="post-entry__link">无符号与有符号</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        系统
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2022/07/" class="post-meta__date button">2022-07-09</a>
-    
- 
-</div>
-<div class="post-entry__tags"><a href="/tags/system/" class="post-tags__link button"># system</a></div> 
-<a href="/2022/07/09/%E7%B3%BB%E7%BB%9F/" class="post-entry__link">系统</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        常用命令大全
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2022/06/" class="post-meta__date button">2022-06-12</a>
-    
- 
-</div>
-<div class="post-entry__tags"><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
-<a href="/2022/06/12/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" class="post-entry__link">常用命令大全</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        正则表达式
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2022/05/" class="post-meta__date button">2022-05-18</a>
-    
- 
-</div>
-<div class="post-entry__tags"><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
-<a href="/2022/05/18/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-entry__link">正则表达式</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        位运算
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2022/04/" class="post-meta__date button">2022-04-16</a>
-    
- 
-</div>
-<div class="post-entry__tags"><a href="/tags/c/" class="post-tags__link button"># c</a></div> 
-<a href="/2022/04/16/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="post-entry__link">位运算</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        链表
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2022/04/" class="post-meta__date button">2022-04-05</a>
-    
- 
-</div>
-<div class="post-entry__tags"><a href="/tags/c/" class="post-tags__link button"># c</a></div> 
-<a href="/2022/04/05/%E9%93%BE%E8%A1%A8/" class="post-entry__link">链表</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        sqlmap
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2022/03/" class="post-meta__date button">2022-03-02</a>
-    
- 
-</div>
-<div class="post-entry__tags"><a href="/tags/sql/" class="post-tags__link button"># sql</a></div> 
-<a href="/2022/03/02/sqlmap/" class="post-entry__link">sqlmap</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        IPV4基础
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-27</a>
-    
- 
-</div>
-<div class="post-entry__tags"><a href="/tags/internet/" class="post-tags__link button"># internet</a></div> 
-<a href="/2022/02/27/IP%E5%9F%BA%E7%A1%80/" class="post-entry__link">IPV4基础</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        linux-日常命令
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2022/02/" class="post-meta__date button">2022-02-23</a>
-    
- 
-</div>
-<div class="post-entry__tags"><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
-<a href="/2022/02/23/linux-%E6%97%A5%E5%B8%B8%E5%91%BD%E4%BB%A4/" class="post-entry__link">linux-日常命令</a>
-                </div>
-            
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2022/11/" class="post-meta__date button">2022-11-09</a>
         
+ 
+        
+     
+    <span id="leancloud_container_page_pv" hidden>
+        <span class="separate-dot"></span>
+        <span>总访问量</span>
+        <span id="leancloud_value_page_pv"></span>
+        <span></span>
+    </span>
+
+    
+
+
+ 
+
+ 
     </div>
-    
-        <div class="nav">
-            <div class="nav__prev">
-                
-            </div>
-            <div class="nav__next">
-                
-                    <a href="/page/2/" class="nav__link">
-                        <div>
-                            <div class="nav__label">
-                                Next
-                            </div>
-                            <div class="nav__title">
-                                Page 2
-                            </div>
-                        </div>
-                        <div>
-                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
-                        </div>
-                    </a>
-                
-            </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%E5%8F%8A%E8%80%83%E7%82%B9"><span class="toc-text">题目描述及考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WP"><span class="toc-text">WP</span></a></li></ol>
         </div>
-    
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%E5%8F%8A%E8%80%83%E7%82%B9"><span class="toc-text">题目描述及考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WP"><span class="toc-text">WP</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h1 id="test-your-nc"><a href="#test-your-nc" class="headerlink" title="test_your_nc"></a>test_your_nc</h1><h3 id="题目描述及考点"><a href="#题目描述及考点" class="headerlink" title="题目描述及考点"></a>题目描述及考点</h3><p>题目描述：<br>考点：基本的pwntools使用</p>
+<h3 id="WP"><a href="#WP" class="headerlink" title="WP"></a>WP</h3><p><img src="https://user-images.githubusercontent.com/93712124/200827786-49c649d1-e2ff-4657-9ab6-fa937e8f6b37.png" alt="0"><br>使用<strong>checksec</strong>查看程序<br><img src="https://user-images.githubusercontent.com/93712124/200827780-8fc5eaa3-2986-46d9-812f-f6a2763ddcef.png" alt="1"><br>可以得知这个程序是<strong>64位</strong>程序<br>之后便可用<strong>ida64</strong>打开程序，按F5查看伪代码，可以看到这题目直接链接即可。<br><img src="https://user-images.githubusercontent.com/93712124/200827789-a41e60f1-fed8-4fc8-ab46-909c4d036c4f.png" alt="2"><br>我们直接根据给出的地址写个python链接脚本即可  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">io = remote(&#x27;node4.buuoj.cn&#x27;, 29084)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+<p>运行脚本，便拿到了shell，便可拿到flag<br><img src="https://user-images.githubusercontent.com/93712124/200827771-4614319a-2056-4b72-b9f2-18a0fc5a0ab6.png" alt="3">  </p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2022-11-09</p></div> 
+    <div class="post-entry__tags"><a href="/tags/pwn/" class="post-tags__link button"># pwn</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2022/07/09/%E6%97%A0%E7%AC%A6%E5%8F%B7%E4%B8%8E%E6%9C%89%E7%AC%A6%E5%8F%B7/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            无符号与有符号
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
 
 
 </main>
@@ -513,10 +402,10 @@
                     });
                     getterArr.push(uvGetter);
                 }
-                if ('false' === 'true') {
+                if ('true' === 'true') {
                     var viewCtn = document.querySelector('#leancloud_container_page_pv');
                     if (viewCtn || enableIncr) {
-                        var target = decodeURI('/index.html');
+                        var target = decodeURI('/2022/11/09/test-your-nc/');
                         var viewGetter = getRecord(Counter, target).then((record) => {
                             incrArr.push(buildIncrement(record.objectId))
                             if (viewCtn) {
