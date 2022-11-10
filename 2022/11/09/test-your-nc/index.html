@@ -45,23 +45,22 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="test_your_nc题目描述及考点题目描述：考点：基本的pwntools使用 WP使用checksec查看程序可以得知这个程序是64位程序之后便可用ida64打开程序，按F5查看伪代码，可以看到这题目直接链接即可。我们直接根据给出的地址写个python链接脚本即可   1234from pwn import *io &#x3D; remote(&amp;#x27;node4.buuoj.cn&amp;#x27;, 29">
+    <meta name="description" content="test_your_nc题目描述及考点题目描述：考点：基本的pwntools使用 WP使用checksec查看程序可以得知这个程序是64位程序之后便可用ida64打开程序，按F5查看伪代码，可以看到这题目直接链接即可。我们直接根据给出的地址写个python链接脚本即可   EXP1234from pwn import *io &#x3D; remote(&amp;#x27;node4.buuoj.cn&amp;#x27;,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test_your_nc">
 <meta property="og:url" content="http://example.com/2022/11/09/test-your-nc/index.html">
 <meta property="og:site_name" content="Gwoo">
-<meta property="og:description" content="test_your_nc题目描述及考点题目描述：考点：基本的pwntools使用 WP使用checksec查看程序可以得知这个程序是64位程序之后便可用ida64打开程序，按F5查看伪代码，可以看到这题目直接链接即可。我们直接根据给出的地址写个python链接脚本即可   1234from pwn import *io &#x3D; remote(&amp;#x27;node4.buuoj.cn&amp;#x27;, 29">
+<meta property="og:description" content="test_your_nc题目描述及考点题目描述：考点：基本的pwntools使用 WP使用checksec查看程序可以得知这个程序是64位程序之后便可用ida64打开程序，按F5查看伪代码，可以看到这题目直接链接即可。我们直接根据给出的地址写个python链接脚本即可   EXP1234from pwn import *io &#x3D; remote(&amp;#x27;node4.buuoj.cn&amp;#x27;,">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200827786-49c649d1-e2ff-4657-9ab6-fa937e8f6b37.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200827780-8fc5eaa3-2986-46d9-812f-f6a2763ddcef.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200827789-a41e60f1-fed8-4fc8-ab46-909c4d036c4f.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/93712124/200827771-4614319a-2056-4b72-b9f2-18a0fc5a0ab6.png">
 <meta property="article:published_time" content="2022-11-09T11:13:46.000Z">
-<meta property="article:modified_time" content="2022-11-09T12:16:08.559Z">
+<meta property="article:modified_time" content="2022-11-10T02:16:04.555Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/93712124/200827786-49c649d1-e2ff-4657-9ab6-fa937e8f6b37.png">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/93712124/200827780-8fc5eaa3-2986-46d9-812f-f6a2763ddcef.png">
 
 
     
@@ -176,7 +175,7 @@
 
     <aside class="post-side">
         <div class="post-side__toc">
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%E5%8F%8A%E8%80%83%E7%82%B9"><span class="toc-text">题目描述及考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WP"><span class="toc-text">WP</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%E5%8F%8A%E8%80%83%E7%82%B9"><span class="toc-text">题目描述及考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WP"><span class="toc-text">WP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#EXP"><span class="toc-text">EXP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol></li></ol>
         </div>
     </aside>
     <a class="btn-toc button" id="btn-toc" tabindex="0">
@@ -186,7 +185,7 @@
     </a>
     <div class="toc-menus" id="toc-menus">
         <div class="toc-title">Article Directory</div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%E5%8F%8A%E8%80%83%E7%82%B9"><span class="toc-text">题目描述及考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WP"><span class="toc-text">WP</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%E5%8F%8A%E8%80%83%E7%82%B9"><span class="toc-text">题目描述及考点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WP"><span class="toc-text">WP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#EXP"><span class="toc-text">EXP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol></li></ol>
     </div>
 
 
@@ -194,19 +193,33 @@
     <div class="post__header"></div>
     <div class="post__content">
         <h1 id="test-your-nc"><a href="#test-your-nc" class="headerlink" title="test_your_nc"></a>test_your_nc</h1><h3 id="题目描述及考点"><a href="#题目描述及考点" class="headerlink" title="题目描述及考点"></a>题目描述及考点</h3><p>题目描述：<br>考点：基本的pwntools使用</p>
-<h3 id="WP"><a href="#WP" class="headerlink" title="WP"></a>WP</h3><p><img src="https://user-images.githubusercontent.com/93712124/200827786-49c649d1-e2ff-4657-9ab6-fa937e8f6b37.png" alt="0"><br>使用<strong>checksec</strong>查看程序<br><img src="https://user-images.githubusercontent.com/93712124/200827780-8fc5eaa3-2986-46d9-812f-f6a2763ddcef.png" alt="1"><br>可以得知这个程序是<strong>64位</strong>程序<br>之后便可用<strong>ida64</strong>打开程序，按F5查看伪代码，可以看到这题目直接链接即可。<br><img src="https://user-images.githubusercontent.com/93712124/200827789-a41e60f1-fed8-4fc8-ab46-909c4d036c4f.png" alt="2"><br>我们直接根据给出的地址写个python链接脚本即可  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">io = remote(&#x27;node4.buuoj.cn&#x27;, 29084)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
-<p>运行脚本，便拿到了shell，便可拿到flag<br><img src="https://user-images.githubusercontent.com/93712124/200827771-4614319a-2056-4b72-b9f2-18a0fc5a0ab6.png" alt="3">  </p>
+<h3 id="WP"><a href="#WP" class="headerlink" title="WP"></a>WP</h3><p>使用<strong>checksec</strong>查看程序<br><img src="https://user-images.githubusercontent.com/93712124/200827780-8fc5eaa3-2986-46d9-812f-f6a2763ddcef.png" alt="1"><br>可以得知这个程序是<strong>64位</strong>程序<br>之后便可用<strong>ida64</strong>打开程序，按F5查看伪代码，可以看到这题目直接链接即可。<br><img src="https://user-images.githubusercontent.com/93712124/200827789-a41e60f1-fed8-4fc8-ab46-909c4d036c4f.png" alt="2"><br>我们直接根据给出的地址写个python链接脚本即可  </p>
+<h4 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">io = remote(&#x27;node4.buuoj.cn&#x27;, 29084)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>运行脚本，便拿到了shell，便可拿到flag<br><img src="https://user-images.githubusercontent.com/93712124/200827771-4614319a-2056-4b72-b9f2-18a0fc5a0ab6.png" alt="3">  </p>
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2022-11-09</p></div> 
+    <div class="post-footer__meta"><p>updated at 2022-11-10</p></div> 
     <div class="post-entry__tags"><a href="/tags/pwn/" class="post-tags__link button"># pwn</a></div> 
 </article>
 
 
     <div class="nav">
         <div class="nav__prev">
+            
+                <a href="/2022/11/10/rip1/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            rip1
+                        </div>
+                    </div>
+                </a>
             
         </div>
         <div class="nav__next">
