@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/img/duck.jpeg">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/duck.jpeg">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/duck.jpeg">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/duck.jpeg">
+    
+    
+        <link rel="mask-icon" href="/img/duck.jpeg">
+    
+
+
+    <!-- meta -->
+
+
+<title>hw | Gwoo</title>
+
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="蓝队知识溯源如果挂了代理怎么做 收集信息—-获取代理服务器的日志 分析信息 尝试联系代理服务器的管理员 进一步溯源  Nginx的日志放在哪里？如何进行分析？ 配置文件 &#x2F;etc&#x2F;nginx&#x2F;nginx.conf    访问日志 和 错误日志 access_log 和 error_log    分析 access_log 可以根据每个所关系的字段读取频率最高的起那时看看是否又哦什么出乎预料的情况，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hw">
+<meta property="og:url" content="http://example.com/2023/05/28/hw/index.html">
+<meta property="og:site_name" content="Gwoo">
+<meta property="og:description" content="蓝队知识溯源如果挂了代理怎么做 收集信息—-获取代理服务器的日志 分析信息 尝试联系代理服务器的管理员 进一步溯源  Nginx的日志放在哪里？如何进行分析？ 配置文件 &#x2F;etc&#x2F;nginx&#x2F;nginx.conf    访问日志 和 错误日志 access_log 和 error_log    分析 access_log 可以根据每个所关系的字段读取频率最高的起那时看看是否又哦什么出乎预料的情况，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-28T13:17:22.000Z">
+<meta property="article:modified_time" content="2023-05-28T13:17:46.307Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" >
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/dark.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">孤鹜</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        hw
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2023/05/" class="post-meta__date button">2023-05-28</a>
+        
+ 
+        
+     
+    <span id="leancloud_container_page_pv" hidden>
+        <span class="separate-dot"></span>
+        <span>总访问量</span>
+        <span id="leancloud_value_page_pv"></span>
+        <span></span>
+    </span>
+
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%AF%E6%BA%90%E5%A6%82%E6%9E%9C%E6%8C%82%E4%BA%86%E4%BB%A3%E7%90%86%E6%80%8E%E4%B9%88%E5%81%9A"><span class="toc-text">溯源如果挂了代理怎么做</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E7%9A%84%E6%97%A5%E5%BF%97%E6%94%BE%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%88%86%E6%9E%90%EF%BC%9F"><span class="toc-text">Nginx的日志放在哪里？如何进行分析？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%A4%E7%BD%91%E4%B8%AD%E7%94%A8%E5%88%B0%E7%9A%84%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87%E4%BA%86%E8%A7%A3%E8%BF%87%E5%90%97%EF%BC%9F"><span class="toc-text">护网中用到的安全设备了解过吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie%E5%92%8Csession%E7%9A%84%E5%8E%9F%E7%90%86%E3%80%82%E5%93%AA%E4%B8%AA%E6%9B%B4%E5%AE%89%E5%85%A8%EF%BC%9F"><span class="toc-text">cookie和session的原理。哪个更安全？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E4%B8%AAwebshell%E5%B7%B2%E7%BB%8F%E8%A2%AB%E4%B8%8A%E4%BC%A0-%E5%A6%82%E4%BD%95%E6%8E%92%E6%9F%A5webshell%E6%98%AF%E5%A6%82%E4%BD%95%E4%B8%8A%E4%BC%A0%E7%9A%84-%E6%9C%89%E4%BB%80%E4%B9%88%E6%80%9D%E8%B7%AF"><span class="toc-text">如果有一个webshell已经被上传,如何排查webshell是如何上传的,有什么思路?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E6%9C%89%E4%BD%BF%E7%94%A8%E8%BF%87%E5%90%97-%E9%98%B2%E7%81%AB%E5%A2%99-%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-text">网络设备有使用过吗,防火墙,路由器,交换机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%81%E5%8A%BF%E6%84%9F%E7%9F%A5"><span class="toc-text">态势感知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%93%9D%E9%98%9F%E5%B8%B8%E7%94%A8%E7%9A%84%E5%8F%8D%E5%88%B6%E6%96%B9%E6%B3%95"><span class="toc-text">蓝队常用的反制方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%AF%E6%BA%90%E5%8F%8D%E5%88%B6%E6%96%B9%E6%B3%95"><span class="toc-text">溯源反制方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86%E6%89%AB%E6%8F%8F%E6%B5%81%E9%87%8F%E5%92%8C%E6%89%8B%E5%8A%A8%E6%B5%81%E9%87%8F%EF%BC%9F"><span class="toc-text">如何区分扫描流量和手动流量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E7%9A%84%E5%8A%A0%E5%9B%BA%E6%89%8B%E6%AE%B5"><span class="toc-text">普通的加固手段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E5%88%A4%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="toc-text">研判的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">应急响应的基本思路是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E6%80%A5%E6%8E%92%E6%9F%A5"><span class="toc-text">应急排查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#windows%E5%BA%94%E6%80%A5%E6%8E%92%E6%9F%A5"><span class="toc-text">windows应急排查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux%E5%BA%94%E6%80%A5%E6%8E%92%E6%9F%A5"><span class="toc-text">Linux应急排查</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%A8%E9%A9%AC%E9%A9%BB%E7%95%99%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">木马驻留系统的方式有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%A8%81%E8%83%81%E6%83%85%E6%8A%A5%E5%B9%B3%E5%8F%B0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">常用的威胁情报平台有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84webshell%E6%A3%80%E6%B5%8B%E5%B7%A5%E5%85%B7%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">常用的webshell检测工具有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AF%86%E5%88%ABCDN"><span class="toc-text">如何识别CDN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%89%8B%E5%8A%A8%E5%88%A4%E6%96%AD%E9%9D%B6%E6%A0%87%E7%AB%99%E7%82%B9%E6%98%AFwindows-linux%EF%BC%9F"><span class="toc-text">如何手动判断靶标站点是windows&#x2F;linux？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A53389%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%EF%BC%9F"><span class="toc-text">无法连接3389服务器的几种情况？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88mysql%E7%9A%84%E7%AB%99%E7%82%B9%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE"><span class="toc-text">为什么mysql的站点无法访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%90%91shell%E5%92%8C%E5%8F%8D%E5%90%91shell%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">正向shell和反向shell的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">正向代理和反向代理的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Socks%E5%8D%8F%E8%AE%AE%E8%B5%B0%E7%9A%84%E6%98%AFtcp%EF%BC%8C%E4%B8%8D%E6%94%AF%E6%8C%81icmp%EF%BC%8C%E6%89%80%E4%BB%A5%E4%B8%8D%E8%83%BDping"><span class="toc-text">Socks协议走的是tcp，不支持icmp，所以不能ping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E6%98%AF%E5%AD%98%E6%94%BE%E5%9C%A8%E5%93%AA%E5%BC%A0%E8%A1%A8%E9%87%8C%E9%9D%A2-mysql%E5%AF%86%E7%A0%81%E9%87%87%E7%94%A8%E7%9A%84%E5%93%AA%E7%A7%8D%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F"><span class="toc-text">mysql的用户名密码是存放在哪张表里面 mysql密码采用的哪种加密方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9A%81%E5%89%91-%E8%8F%9C%E5%88%80-c%E5%88%80-%E5%86%B0%E8%9D%8E%E7%9A%84%E7%9B%B8%E5%90%8C%E4%B8%8E%E4%B8%8D%E7%9B%B8%E5%90%8C%E4%B9%8B%E5%A4%84"><span class="toc-text">蚁剑&#x2F;菜刀&#x2F;c刀&#x2F;冰蝎的相同与不相同之处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E7%BD%91%E5%A4%A7%E7%82%B9%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">外网大点基本流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7"><span class="toc-text">常用的渗透工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E7%BD%91%E6%89%93%E7%82%B9%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="toc-text">外网打点常用的工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%9C%AA%E6%8E%88%E6%9D%83%E6%BC%8F%E6%B4%9E%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">常见未授权漏洞有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E4%BB%96%E4%BB%AC%E6%9C%89%E5%93%AA%E4%BA%9B%E6%BC%8F%E6%B4%9E%EF%BC%9F"><span class="toc-text">常见的中间件有哪些？他们有哪些漏洞？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XSS%E5%A6%82%E4%BD%95%E9%85%8D%E5%90%88%E7%BB%84%E5%90%88%E6%8B%B3%E8%BF%9B%E8%A1%8Cgetshell%EF%BC%9F"><span class="toc-text">XSS如何配合组合拳进行getshell？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E9%80%9A%E8%BF%87SSRF%E6%8B%BFshell"><span class="toc-text">怎么通过SSRF拿shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-top-10%E6%BC%8F%E6%B4%9E%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">Web top 10漏洞有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E7%82%B9%E4%B8%80%E8%88%AC%E4%BC%9A%E7%94%A8%E4%BB%80%E4%B9%88%E6%BC%8F%E6%B4%9E"><span class="toc-text">打点一般会用什么漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%BF%E5%88%B0webshell%E4%B8%8D%E5%87%BA%E7%BD%91%E6%83%85%E5%86%B5%E4%B8%8B%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">拿到webshell不出网情况下怎么办</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sqlmap"><span class="toc-text">sqlmap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nmap"><span class="toc-text">Nmap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">sql注入漏洞原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xss%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">xss漏洞原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">文件上传漏洞原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSRF%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">SSRF漏洞原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XXE%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">XXE漏洞原理</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%AF%E6%BA%90%E5%A6%82%E6%9E%9C%E6%8C%82%E4%BA%86%E4%BB%A3%E7%90%86%E6%80%8E%E4%B9%88%E5%81%9A"><span class="toc-text">溯源如果挂了代理怎么做</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E7%9A%84%E6%97%A5%E5%BF%97%E6%94%BE%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%88%86%E6%9E%90%EF%BC%9F"><span class="toc-text">Nginx的日志放在哪里？如何进行分析？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%A4%E7%BD%91%E4%B8%AD%E7%94%A8%E5%88%B0%E7%9A%84%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87%E4%BA%86%E8%A7%A3%E8%BF%87%E5%90%97%EF%BC%9F"><span class="toc-text">护网中用到的安全设备了解过吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie%E5%92%8Csession%E7%9A%84%E5%8E%9F%E7%90%86%E3%80%82%E5%93%AA%E4%B8%AA%E6%9B%B4%E5%AE%89%E5%85%A8%EF%BC%9F"><span class="toc-text">cookie和session的原理。哪个更安全？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E4%B8%AAwebshell%E5%B7%B2%E7%BB%8F%E8%A2%AB%E4%B8%8A%E4%BC%A0-%E5%A6%82%E4%BD%95%E6%8E%92%E6%9F%A5webshell%E6%98%AF%E5%A6%82%E4%BD%95%E4%B8%8A%E4%BC%A0%E7%9A%84-%E6%9C%89%E4%BB%80%E4%B9%88%E6%80%9D%E8%B7%AF"><span class="toc-text">如果有一个webshell已经被上传,如何排查webshell是如何上传的,有什么思路?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E6%9C%89%E4%BD%BF%E7%94%A8%E8%BF%87%E5%90%97-%E9%98%B2%E7%81%AB%E5%A2%99-%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-text">网络设备有使用过吗,防火墙,路由器,交换机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%81%E5%8A%BF%E6%84%9F%E7%9F%A5"><span class="toc-text">态势感知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%93%9D%E9%98%9F%E5%B8%B8%E7%94%A8%E7%9A%84%E5%8F%8D%E5%88%B6%E6%96%B9%E6%B3%95"><span class="toc-text">蓝队常用的反制方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%AF%E6%BA%90%E5%8F%8D%E5%88%B6%E6%96%B9%E6%B3%95"><span class="toc-text">溯源反制方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86%E6%89%AB%E6%8F%8F%E6%B5%81%E9%87%8F%E5%92%8C%E6%89%8B%E5%8A%A8%E6%B5%81%E9%87%8F%EF%BC%9F"><span class="toc-text">如何区分扫描流量和手动流量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E7%9A%84%E5%8A%A0%E5%9B%BA%E6%89%8B%E6%AE%B5"><span class="toc-text">普通的加固手段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E5%88%A4%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="toc-text">研判的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">应急响应的基本思路是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E6%80%A5%E6%8E%92%E6%9F%A5"><span class="toc-text">应急排查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#windows%E5%BA%94%E6%80%A5%E6%8E%92%E6%9F%A5"><span class="toc-text">windows应急排查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux%E5%BA%94%E6%80%A5%E6%8E%92%E6%9F%A5"><span class="toc-text">Linux应急排查</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%A8%E9%A9%AC%E9%A9%BB%E7%95%99%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">木马驻留系统的方式有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%A8%81%E8%83%81%E6%83%85%E6%8A%A5%E5%B9%B3%E5%8F%B0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">常用的威胁情报平台有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84webshell%E6%A3%80%E6%B5%8B%E5%B7%A5%E5%85%B7%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">常用的webshell检测工具有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AF%86%E5%88%ABCDN"><span class="toc-text">如何识别CDN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%89%8B%E5%8A%A8%E5%88%A4%E6%96%AD%E9%9D%B6%E6%A0%87%E7%AB%99%E7%82%B9%E6%98%AFwindows-linux%EF%BC%9F"><span class="toc-text">如何手动判断靶标站点是windows&#x2F;linux？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A53389%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%EF%BC%9F"><span class="toc-text">无法连接3389服务器的几种情况？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88mysql%E7%9A%84%E7%AB%99%E7%82%B9%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE"><span class="toc-text">为什么mysql的站点无法访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%90%91shell%E5%92%8C%E5%8F%8D%E5%90%91shell%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">正向shell和反向shell的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">正向代理和反向代理的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Socks%E5%8D%8F%E8%AE%AE%E8%B5%B0%E7%9A%84%E6%98%AFtcp%EF%BC%8C%E4%B8%8D%E6%94%AF%E6%8C%81icmp%EF%BC%8C%E6%89%80%E4%BB%A5%E4%B8%8D%E8%83%BDping"><span class="toc-text">Socks协议走的是tcp，不支持icmp，所以不能ping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E6%98%AF%E5%AD%98%E6%94%BE%E5%9C%A8%E5%93%AA%E5%BC%A0%E8%A1%A8%E9%87%8C%E9%9D%A2-mysql%E5%AF%86%E7%A0%81%E9%87%87%E7%94%A8%E7%9A%84%E5%93%AA%E7%A7%8D%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F"><span class="toc-text">mysql的用户名密码是存放在哪张表里面 mysql密码采用的哪种加密方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9A%81%E5%89%91-%E8%8F%9C%E5%88%80-c%E5%88%80-%E5%86%B0%E8%9D%8E%E7%9A%84%E7%9B%B8%E5%90%8C%E4%B8%8E%E4%B8%8D%E7%9B%B8%E5%90%8C%E4%B9%8B%E5%A4%84"><span class="toc-text">蚁剑&#x2F;菜刀&#x2F;c刀&#x2F;冰蝎的相同与不相同之处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E7%BD%91%E5%A4%A7%E7%82%B9%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">外网大点基本流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7"><span class="toc-text">常用的渗透工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E7%BD%91%E6%89%93%E7%82%B9%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="toc-text">外网打点常用的工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%9C%AA%E6%8E%88%E6%9D%83%E6%BC%8F%E6%B4%9E%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">常见未授权漏洞有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E4%BB%96%E4%BB%AC%E6%9C%89%E5%93%AA%E4%BA%9B%E6%BC%8F%E6%B4%9E%EF%BC%9F"><span class="toc-text">常见的中间件有哪些？他们有哪些漏洞？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XSS%E5%A6%82%E4%BD%95%E9%85%8D%E5%90%88%E7%BB%84%E5%90%88%E6%8B%B3%E8%BF%9B%E8%A1%8Cgetshell%EF%BC%9F"><span class="toc-text">XSS如何配合组合拳进行getshell？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E9%80%9A%E8%BF%87SSRF%E6%8B%BFshell"><span class="toc-text">怎么通过SSRF拿shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-top-10%E6%BC%8F%E6%B4%9E%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">Web top 10漏洞有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E7%82%B9%E4%B8%80%E8%88%AC%E4%BC%9A%E7%94%A8%E4%BB%80%E4%B9%88%E6%BC%8F%E6%B4%9E"><span class="toc-text">打点一般会用什么漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%BF%E5%88%B0webshell%E4%B8%8D%E5%87%BA%E7%BD%91%E6%83%85%E5%86%B5%E4%B8%8B%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">拿到webshell不出网情况下怎么办</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sqlmap"><span class="toc-text">sqlmap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nmap"><span class="toc-text">Nmap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">sql注入漏洞原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xss%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">xss漏洞原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">文件上传漏洞原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSRF%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">SSRF漏洞原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XXE%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">XXE漏洞原理</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h1 id="蓝队知识"><a href="#蓝队知识" class="headerlink" title="蓝队知识"></a>蓝队知识</h1><h3 id="溯源如果挂了代理怎么做"><a href="#溯源如果挂了代理怎么做" class="headerlink" title="溯源如果挂了代理怎么做"></a>溯源如果挂了代理怎么做</h3><ul>
+<li>收集信息—-获取代理服务器的日志</li>
+<li>分析信息</li>
+<li>尝试联系代理服务器的管理员</li>
+<li>进一步溯源</li>
+</ul>
+<h3 id="Nginx的日志放在哪里？如何进行分析？"><a href="#Nginx的日志放在哪里？如何进行分析？" class="headerlink" title="Nginx的日志放在哪里？如何进行分析？"></a>Nginx的日志放在哪里？如何进行分析？</h3><ul>
+<li>配置文件<blockquote>
+<pre><code>/etc/nginx/nginx.conf
+</code></pre>
+</blockquote>
+</li>
+<li>访问日志 和 错误日志<blockquote>
+<pre><code>access_log 和 error_log
+</code></pre>
+</blockquote>
+</li>
+<li>分析 access_log<blockquote>
+<pre><code>可以根据每个所关系的字段读取频率最高的起那时看看是否又哦什么出乎预料的情况，以客户端IP、客户端UA头、和返回状态码为例。
+流量观察：根据访问时间，统计出每天的访问量和一天中 平均各个时间段的访问量
+</code></pre>
+</blockquote>
+</li>
+<li>分析 error_log<blockquote>
+<pre><code>    错误类型、路径错误、查错示例
+</code></pre>
+</blockquote>
+</li>
+</ul>
+<h3 id="护网中用到的安全设备了解过吗？"><a href="#护网中用到的安全设备了解过吗？" class="headerlink" title="护网中用到的安全设备了解过吗？"></a>护网中用到的安全设备了解过吗？</h3><blockquote>
+<pre><code>IDS/IPS、态势感知,蜜罐，沙箱
+</code></pre>
+</blockquote>
+<h3 id="cookie和session的原理。哪个更安全？"><a href="#cookie和session的原理。哪个更安全？" class="headerlink" title="cookie和session的原理。哪个更安全？"></a>cookie和session的原理。哪个更安全？</h3><blockquote>
+<pre><code>会话（Session）跟踪是Web程序中常用的技术，用来跟踪用户的整个绘画。常用的绘画跟踪技术就是Cookie和Session。Coookie通过再客户端记录信息确定用户身份，Session通过再服务器端记录信息确定用户身份，Session更安全一些。
+</code></pre>
+</blockquote>
+<h3 id="如果有一个webshell已经被上传-如何排查webshell是如何上传的-有什么思路"><a href="#如果有一个webshell已经被上传-如何排查webshell是如何上传的-有什么思路" class="headerlink" title="如果有一个webshell已经被上传,如何排查webshell是如何上传的,有什么思路?"></a>如果有一个webshell已经被上传,如何排查webshell是如何上传的,有什么思路?</h3><ul>
+<li>全面扫描<blockquote>
+<pre><code>隔离webshell，但是需要判断代码的内容，避免误删
+</code></pre>
+</blockquote>
+</li>
+<li>手动全面查杀<blockquote>
+<pre><code>命令查找关键函数：PHP : find  网站目录/* -type f -name &quot;*.php&quot;  |xargs grep &quot;eval&quot;
+JSP:find  网站目录/* -type f -name &quot;*.php&quot;  |xargs grep &quot;eval&quot;
+jspx 文件：find 网站目录/* -type f -name &quot;*.jspx&quot; |xargs grep &quot;getRuntime&quot;
+查找异常端口进程情况：查找异常端口进程情况：Linux ：netstat -anltp|grep bash
+查看目前的网络连接，定位可疑的ESTABLISHED，根据 netstat 定位出的 pid，再通过 tasklist 命令进行进程定位 tasklist | findstr “PID”
+</code></pre>
+</blockquote>
+</li>
+<li>分析应用日志，中间件日志，系统日志等。</li>
+<li>使用流量设备定位webshell</li>
+</ul>
+<h3 id="网络设备有使用过吗-防火墙-路由器-交换机"><a href="#网络设备有使用过吗-防火墙-路由器-交换机" class="headerlink" title="网络设备有使用过吗,防火墙,路由器,交换机"></a>网络设备有使用过吗,防火墙,路由器,交换机</h3><ul>
+<li>交换机负责连接设备</li>
+<li>路由器负责连接网络</li>
+<li>防火墙负责网络访问限制</li>
+</ul>
+<h3 id="态势感知"><a href="#态势感知" class="headerlink" title="态势感知"></a>态势感知</h3><blockquote>
+<pre><code>态势感知是基于网络环境、动态的进行实时的异常检测，实现安全分析智能化与威胁可视化，并提供威胁情报共享、安全态势感知和高级威胁侦测分析等服务
+</code></pre>
+</blockquote>
+<h3 id="蓝队常用的反制方法"><a href="#蓝队常用的反制方法" class="headerlink" title="蓝队常用的反制方法"></a>蓝队常用的反制方法</h3><ul>
+<li>蜜罐</li>
+<li>对攻击目标反渗透（IP定位、端口扫描、web站点渗透）</li>
+<li>应用漏洞挖掘与利用（菜刀、Goby、Xray、蚁剑）</li>
+<li>id–&gt;社交特征关联</li>
+<li>钓鱼网站–&gt;后台扫描、xss盲打</li>
+<li>木马文件–&gt;同源样本关联–&gt;敏感字符串特征检测</li>
+</ul>
+<h3 id="溯源反制方法"><a href="#溯源反制方法" class="headerlink" title="溯源反制方法"></a>溯源反制方法</h3><ul>
+<li>安全设备报价</li>
+<li>日志与流量分析</li>
+<li>服务器资源异常</li>
+<li>邮件钓鱼</li>
+<li>蜜罐系统</li>
+</ul>
+<h3 id="如何区分扫描流量和手动流量？"><a href="#如何区分扫描流量和手动流量？" class="headerlink" title="如何区分扫描流量和手动流量？"></a>如何区分扫描流量和手动流量？</h3><ul>
+<li>查看流量来源</li>
+<li>检测流量频率和规律</li>
+<li>观察流量的请求路径和参数</li>
+<li>分析流量的响应状态码和长度</li>
+</ul>
+<h3 id="普通的加固手段"><a href="#普通的加固手段" class="headerlink" title="普通的加固手段"></a>普通的加固手段</h3><ul>
+<li>更新补丁</li>
+<li>强化口令策略</li>
+<li>加强身份验证</li>
+<li>安装防病毒软件</li>
+<li>关闭不必要的服务</li>
+<li>限制访问权限</li>
+<li>数据备份与恢复</li>
+</ul>
+<h3 id="研判的思路"><a href="#研判的思路" class="headerlink" title="研判的思路"></a>研判的思路</h3><ul>
+<li>首先对攻击的来源进行判断<blockquote>
+<p>   是内对内，外对内还是内对外的情况。 </p>
+</blockquote>
+</li>
+<li>依据设备的告警信息结合具体情况来分析攻击行为的类型</li>
+<li>然后就是根据攻击特征来分析攻击行为使用了什么技术或者说工具<blockquote>
+<p>   比如说攻击的频率，数据包的信息等等。同使结合告警信息和具体情况来判断攻击行为的危害程度，比如说检测到多条攻击成功告警和内对内及内对外攻击告警，这个时候就需要尽快的交给应急组了。 </p>
+</blockquote>
+</li>
+<li>结合设备告警信息及具体情况分析攻击意图<blockquote>
+<p>   比如说攻击者的目标是主站还是旁站，是主机还是域控，不同的攻击意图对于后续的处理也不同。 </p>
+</blockquote>
+</li>
+<li>最后根据我们掌握的信息采取相应的处置方式<blockquote>
+<pre><code>比如说告警信息是误报，说明设备需要策略优化，不需要处置。告警信息是尝试攻击，暂时对资产没有影响，就需要后续持续关注，攻击成功时能够做到及时上报。如果告警确认不是误报，并且攻击成功时，我们就需要迅速上报及时采取应急响应。 
+</code></pre>
+</blockquote>
+</li>
+</ul>
+<h3 id="应急响应的基本思路是什么？"><a href="#应急响应的基本思路是什么？" class="headerlink" title="应急响应的基本思路是什么？"></a>应急响应的基本思路是什么？</h3><ul>
+<li>收集信息<blockquote>
+<p>   收集告警信息、客户反馈信息、设备主机信息等</p>
+</blockquote>
+</li>
+<li>判断类型<blockquote>
+<pre><code>安全事件类型判断（钓鱼邮件、webshell、爆破、中毒等）
+</code></pre>
+</blockquote>
+</li>
+<li>控制范围<blockquote>
+<pre><code>隔离失陷设备
+</code></pre>
+</blockquote>
+</li>
+<li>分析研判<blockquote>
+<pre><code>根据收集回来的信息进行分析
+</code></pre>
+</blockquote>
+</li>
+<li>处置<blockquote>
+<pre><code>根据事件类型进行处置（进程、文件、邮件、启动项、注册表排查等）
+</code></pre>
+</blockquote>
+</li>
+<li>输出报告</li>
+</ul>
+<h3 id="应急排查"><a href="#应急排查" class="headerlink" title="应急排查"></a>应急排查</h3><ul>
+<li>自动化查杀<blockquote>
+<pre><code>360、火绒、卡巴斯基|D盾、河马
+</code></pre>
+</blockquote>
+</li>
+<li>手动排查<blockquote>
+<pre><code>网站服务器或主机是否存在弱口令用户，有无对外开放端口（例如：3389）
+主机是否存在新增、隐藏用户、克隆用户
+通过日志，查看所有用户登录是否存在异常。（4624：登录成功）
+</code></pre>
+</blockquote>
+</li>
+<li>检查异常端口和进程<blockquote>
+<pre><code>netstat查出来的可疑连接的 PID，通过 tasklist 命令进行进程定位 ，可以查看到文件名称tasklist | findstr &quot;PID&quot;
+</code></pre>
+</blockquote>
+</li>
+<li>启动项排查<blockquote>
+<pre><code>在cmd中输入 msconfig，来到系统配置点击启动，来到任务管理器查看是否存在命名异常的启动项目，是则取消勾选命名异常的启动项目，并到命令中显示的路径删除文件。
+</code></pre>
+</blockquote>
+</li>
+</ul>
+<h4 id="windows应急排查"><a href="#windows应急排查" class="headerlink" title="windows应急排查"></a>windows应急排查</h4><ul>
+<li>系统账号排查（通过本地用户组去可疑账号、隐藏账号，有的话就删除）</li>
+<li>事件管理器检测登陆日志，用微软的Log parser导出后分析</li>
+<li>可疑端口，建立的链接，排查他对应的进程，用微软的msinfo32查看进程的路径和签名是否可疑</li>
+<li>后门排查：（权限位置：一个进程杀掉了，过段时间重新派生）</li>
+</ul>
+<h4 id="Linux应急排查"><a href="#Linux应急排查" class="headerlink" title="Linux应急排查"></a>Linux应急排查</h4><ul>
+<li>和windows应急思路相同，登陆账号检测</li>
+<li>后门排查（检测定时任务、开机启动项、异常端口、进程排查）update留意系统运行到现在登陆多久、多少用户</li>
+<li>影子账户，/etc/shadow/因为/etc/passwd任何用户都可疑访问，密码信息就分离到shadow,shadow文件只有root权限才能访问，如果说，stat命令发现，shodow文件选项变化了，这检测就有问题</li>
+<li>SSH公钥，linux的机子22端口基本都是开的，如果写公钥进去，就是明显的后门</li>
+</ul>
+<h3 id="木马驻留系统的方式有哪些？"><a href="#木马驻留系统的方式有哪些？" class="headerlink" title="木马驻留系统的方式有哪些？"></a>木马驻留系统的方式有哪些？</h3><ul>
+<li>注册表</li>
+<li>服务</li>
+<li>启动目录</li>
+<li>计划任务</li>
+<li>关联文件类型</li>
+</ul>
+<h3 id="常用的威胁情报平台有哪些？"><a href="#常用的威胁情报平台有哪些？" class="headerlink" title="常用的威胁情报平台有哪些？"></a>常用的威胁情报平台有哪些？</h3><table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">site</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Viurstotal</td>
+<td align="center">virustotal.com</td>
+</tr>
+<tr>
+<td align="center">微步威胁情报中心</td>
+<td align="center">x.threatbook.cn</td>
+</tr>
+<tr>
+<td align="center">360威胁情报中心</td>
+<td align="center">ti.360.cn</td>
+</tr>
+<tr>
+<td align="center">奇安信威胁情报中心</td>
+<td align="center">ti.qianxin.com</td>
+</tr>
+<tr>
+<td align="center">绿盟威胁情报中心</td>
+<td align="center">nti.nsfocus.com</td>
+</tr>
+<tr>
+<td align="center">安恒威胁情报中心</td>
+<td align="center">ti.dbappsecurity.com.cn</td>
+</tr>
+<tr>
+<td align="center">VenuseEye威胁情报中心</td>
+<td align="center">venuseye.com.cn</td>
+</tr>
+</tbody></table>
+<h3 id="常用的webshell检测工具有哪些？"><a href="#常用的webshell检测工具有哪些？" class="headerlink" title="常用的webshell检测工具有哪些？"></a>常用的webshell检测工具有哪些？</h3><ul>
+<li>D盾</li>
+<li>河马webshell</li>
+<li>百度webdir+</li>
+<li>web shell detector</li>
+<li>sangfor webshellkill [深信服]</li>
+<li>php malware finder [支持linux]</li>
+</ul>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h3 id="如何识别CDN"><a href="#如何识别CDN" class="headerlink" title="如何识别CDN"></a>如何识别CDN</h3><ul>
+<li>使用nslookup进行查询，看返回的域名解析情况</li>
+<li>超级ping工具查看IP结果</li>
+</ul>
+<h3 id="如何手动判断靶标站点是windows-linux？"><a href="#如何手动判断靶标站点是windows-linux？" class="headerlink" title="如何手动判断靶标站点是windows/linux？"></a>如何手动判断靶标站点是windows/linux？</h3><ul>
+<li>大小写检测：windows大小写步敏感，而linux大小写敏感</li>
+<li>ping指令：根据返回的TTL值，windows一般情况下&gt;100，linux一般情况下&lt;100</li>
+</ul>
+<h3 id="无法连接3389服务器的几种情况？"><a href="#无法连接3389服务器的几种情况？" class="headerlink" title="无法连接3389服务器的几种情况？"></a>无法连接3389服务器的几种情况？</h3><ul>
+<li>3389端口处于关闭状态</li>
+<li>远程桌面默认端口号已被更改</li>
+<li>防火墙/杀软拦截</li>
+<li>处于内网环境</li>
+<li>超过了服务器的最大连接数管理员设置了权限，指定用户才能通过3389端口进行访问</li>
+</ul>
+<h3 id="为什么mysql的站点无法访问"><a href="#为什么mysql的站点无法访问" class="headerlink" title="为什么mysql的站点无法访问"></a>为什么mysql的站点无法访问</h3><ul>
+<li>站库分离</li>
+<li>3306端口未对外开放</li>
+<li>管理员修改了mysql的默认端口</li>
+<li>管理员限制之特定IP访问</li>
+</ul>
+<h3 id="正向shell和反向shell的区别是什么？"><a href="#正向shell和反向shell的区别是什么？" class="headerlink" title="正向shell和反向shell的区别是什么？"></a>正向shell和反向shell的区别是什么？</h3><ul>
+<li>正向shell<blockquote>
+<p>  攻击者连接被攻击者，用于攻击者处于<strong>内网</strong>，被攻击者处于<strong>外网</strong></p>
+</blockquote>
+</li>
+<li>反向shell<blockquote>
+<p>  被攻击者连接攻击者，用于攻击者处于<strong>外网</strong>，被攻击者处于<strong>内网</strong></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="正向代理和反向代理的区别是什么？"><a href="#正向代理和反向代理的区别是什么？" class="headerlink" title="正向代理和反向代理的区别是什么？"></a>正向代理和反向代理的区别是什么？</h3><ul>
+<li>正向代理<blockquote>
+<p>  是一个位于客户端和目标服务器之间的服务器（代理服务器），为了从目标服务器取得内容，客户端向代理服务器发送一个请求并指定目标，然后代理服务器向目标服务器转交请求并将获得的内容返回给客户端</p>
+</blockquote>
+</li>
+<li>反向代理<blockquote>
+<p>  是指以代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器</p>
+</blockquote>
+</li>
+<li><strong>总结</strong><blockquote>
+<ul>
+<li><strong>正向代理其实是客户端的代理</strong>，帮助客户端访问其无法访问的服务器资源。<strong>反向代理则是服务器的代理</strong>，帮助服务器做负载均衡，安全防护等。</li>
+<li><strong>正向代理一般是客户端架设的</strong>，比如在自己的机器上安装一个代理软件。而<strong>反向代理一般是服务器架设的</strong>，比如在自己的机器集群中部署一个反向代理服务器。</li>
+<li><strong>正向代理中，服务器不知道真正的客户端到底是谁</strong>，以为访问自己的就是真实的客户端。而在<strong>反向代理中，客户端不知道真正的服务器是谁</strong>，以为自己访问的就是真实的服务器。</li>
+<li>  正向代理和反向代理的作用和目的不同。<strong>正向代理主要是用来解决访问限制问题。而反向代理则是提供负载均衡、 安全防护等作用。二者均能提高访问速度。</strong></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="Socks协议走的是tcp，不支持icmp，所以不能ping"><a href="#Socks协议走的是tcp，不支持icmp，所以不能ping" class="headerlink" title="Socks协议走的是tcp，不支持icmp，所以不能ping"></a>Socks协议走的是tcp，不支持icmp，所以不能ping</h3><h3 id="mysql的用户名密码是存放在哪张表里面-mysql密码采用的哪种加密方式"><a href="#mysql的用户名密码是存放在哪张表里面-mysql密码采用的哪种加密方式" class="headerlink" title="mysql的用户名密码是存放在哪张表里面 mysql密码采用的哪种加密方式"></a>mysql的用户名密码是存放在哪张表里面 mysql密码采用的哪种加密方式</h3><h3 id="蚁剑-菜刀-c刀-冰蝎的相同与不相同之处"><a href="#蚁剑-菜刀-c刀-冰蝎的相同与不相同之处" class="headerlink" title="蚁剑/菜刀/c刀/冰蝎的相同与不相同之处"></a>蚁剑/菜刀/c刀/冰蝎的相同与不相同之处</h3><ul>
+<li>相同<blockquote>
+<p>  都是用来连接webshell的工具</p>
+</blockquote>
+</li>
+<li>不同<blockquote>
+<p>  不同于其他三款，冰蝎有流量动态加密</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="web打点"><a href="#web打点" class="headerlink" title="web打点"></a>web打点</h1><h3 id="外网大点基本流程"><a href="#外网大点基本流程" class="headerlink" title="外网大点基本流程"></a>外网大点基本流程</h3><p><strong>靶标确认，信息收集，漏洞挖掘，漏洞利用，权限提升，横向移动，最终目标是为了获得靶标的系统权限/关键信息</strong></p>
+<blockquote>
+<ul>
+<li>在外网打点最重要的就是信息收集，掌握目标机器的情报越多，后续就可疑尝试越多的攻击方式进行打点。如钓鱼邮件、web漏洞、边界网络哦设备漏洞、弱口令等。</li>
+<li>如果在web层面找不到哦可疑利用的漏洞，可以尝试社会工程学攻击，比如钓鱼，近源渗透等方式</li>
+</ul>
+</blockquote>
+<h3 id="常用的渗透工具"><a href="#常用的渗透工具" class="headerlink" title="常用的渗透工具"></a>常用的渗透工具</h3><ul>
+<li>信息收集类  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">网页</th>
+<th align="center">程序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Fofa</td>
+<td align="center">Oneforall</td>
+</tr>
+<tr>
+<td align="center">Zoomeye</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0.zone</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="外网打点常用的工具"><a href="#外网打点常用的工具" class="headerlink" title="外网打点常用的工具"></a>外网打点常用的工具</h3><table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="left">intro</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ENScan</td>
+<td align="left">企业信息查询工具</td>
+</tr>
+<tr>
+<td align="center">Oneforall</td>
+<td align="left">子域名收集工具</td>
+</tr>
+<tr>
+<td align="center">水泽</td>
+<td align="left">信息收集自动化工具</td>
+</tr>
+<tr>
+<td align="center">Fofa,Zoomey,0.zone,Goby</td>
+<td align="left">网络空间资产检索/攻击面测绘工具</td>
+</tr>
+<tr>
+<td align="center">Masscan,nmap,rustscan</td>
+<td align="left">端口扫描工具</td>
+</tr>
+<tr>
+<td align="center">ARL</td>
+<td align="left">资产安全灯塔，快速侦察与目标关联的资产工具</td>
+</tr>
+</tbody></table>
+<h3 id="常见未授权漏洞有哪些？"><a href="#常见未授权漏洞有哪些？" class="headerlink" title="常见未授权漏洞有哪些？"></a>常见未授权漏洞有哪些？</h3><ul>
+<li>MongoDB 未授权访问漏洞</li>
+<li>Redis 未授权访问漏洞</li>
+<li>Memcached 未授权访问漏洞 CVE-2013-7239</li>
+<li>JBOSS 未授权访问漏洞</li>
+<li>VNC 未授权访问漏洞</li>
+<li>Docker 未授权访问漏洞</li>
+<li>ZooKeeper 未授权访问漏洞</li>
+<li>Rsync 未授权访问漏洞</li>
+</ul>
+<h3 id="常见的中间件有哪些？他们有哪些漏洞？"><a href="#常见的中间件有哪些？他们有哪些漏洞？" class="headerlink" title="常见的中间件有哪些？他们有哪些漏洞？"></a>常见的中间件有哪些？他们有哪些漏洞？</h3><ul>
+<li>IIS<blockquote>
+<p>  解析漏洞、PUT漏洞、短文件名猜解、远程代码执行（MS15-034、RCE-CVE-2017-7269）</p>
+</blockquote>
+</li>
+<li>Apache <blockquote>
+<p>  解析漏洞、目录遍历</p>
+</blockquote>
+</li>
+<li>Nginx <blockquote>
+<p>  文件解析、目录遍历，CRLF注入、目录超越</p>
+</blockquote>
+</li>
+<li>tomcat<blockquote>
+<p>  反序列化漏洞、任意文件写入、弱口令破解+后门getshell、war后们文件部署</p>
+</blockquote>
+</li>
+<li>JBoss<blockquote>
+<p>  反序列化漏洞、war后门文件部署、Administration Console 弱口令</p>
+</blockquote>
+</li>
+<li>Weblogic<blockquote>
+<p>  反序列化漏洞（cve-2023-21839）、弱口令破解+后门getshell、ssrf任意文件上传、war后门文件部署</p>
+</blockquote>
+</li>
+<li>apache shiro反序列化<blockquote>
+<p>  shiro-550（shiro rememberMe）、shiro-721（shiro padding oracle attack）   </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="XSS如何配合组合拳进行getshell？"><a href="#XSS如何配合组合拳进行getshell？" class="headerlink" title="XSS如何配合组合拳进行getshell？"></a>XSS如何配合组合拳进行getshell？</h3><ul>
+<li>XSS配合CSRF组合拳</li>
+<li>XSS配合钓鱼页面</li>
+<li>利用XSS进行水坑攻击</li>
+</ul>
+<h3 id="怎么通过SSRF拿shell"><a href="#怎么通过SSRF拿shell" class="headerlink" title="怎么通过SSRF拿shell"></a>怎么通过SSRF拿shell</h3><p>可以借助gopher协议探测内网的web服务sql注入，直接在url后门拼接内网的地址，后面加上sql注入语句就行</p>
+<h3 id="Web-top-10漏洞有哪些？"><a href="#Web-top-10漏洞有哪些？" class="headerlink" title="Web top 10漏洞有哪些？"></a>Web top 10漏洞有哪些？</h3><ul>
+<li>Sql注入漏洞</li>
+<li>失效的身份认证</li>
+<li>敏感数据泄露</li>
+<li>XML外部实体</li>
+<li>无效的访问控制</li>
+<li>安全配置错误</li>
+<li>跨站脚本（xss）</li>
+<li>不安全的反序列化</li>
+<li>使用含有已知漏洞的组件漏洞</li>
+<li>日志记录和监控不足导致的风险</li>
+</ul>
+<h3 id="打点一般会用什么漏洞"><a href="#打点一般会用什么漏洞" class="headerlink" title="打点一般会用什么漏洞"></a>打点一般会用什么漏洞</h3><p>打点一般会选择比较常见的nday，比如shiro，fastjson，weblogic，spring等反序列化漏洞，还有一些oa管理系统nday，还有最近才出的比较新1day，0day </p>
+<h3 id="拿到webshell不出网情况下怎么办"><a href="#拿到webshell不出网情况下怎么办" class="headerlink" title="拿到webshell不出网情况下怎么办"></a>拿到webshell不出网情况下怎么办</h3><p>reg上传去正向连接。探测出网协议，如dns，icmp，smb，然后再根据出网的协议上线cs</p>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h3 id="sqlmap"><a href="#sqlmap" class="headerlink" title="sqlmap"></a>sqlmap</h3><p>sqlmap -u “url（网站）” 查询是否存在注入点  </p>
+<ul>
+<li>--dbs                     [检测站点有那些数据库                         ]</li>
+<li>--current-db             [检测当前使用的数据库名                       ]</li>
+<li>--tables -D “db_name” [列出指定数据库的所有表名,-D后面接数据库名称]</li>
+<li>--columns -T “table_name” -D “db_name” [列出指定数据库中指定数据表的列(字段)]</li>
+<li>--dump -C “columns_name” -T “table_name” -D “db_name”i [列出数据表中的行（内容）]</li>
+</ul>
+<p>常用指令<br>| 指令                 | 作用                                                                                                                                                              |<br>| :—-                | :—–                                                                                                                                                            |<br>| --purge            | 重新扫描，会删除原先扫描记录                                                                                                                                      |<br>| --tables           | 获取表名                                                                                                                                                          |<br>| --dbs              | 检测站点包含哪些数据库                                                                                                                                            |<br>| --current-db      | 获取当前的数据库名                                                                                                                                                |<br>| --current-user    | 检测当前用户                                                                                                                                                      |<br>| --is-dba          | 判断站点的当前用户是否为数据库管理员                                                                                                                              |<br>| --batch            | 默认确认，不询问你是否输入                                                                                                                                        |<br>| --search           | 后面跟参数 -D -T -C搜索列（C），表（T）和数据库名称（D）                                                                                                       |<br>| --threads 10       | 线程，参数后空格接数字，sqlmap线程最高设置为10                                                                                                                    |<br>| --level 3          | sqlmap默认测试所有的GET和POST参数，当--level的值大于等于2的时候也会测试HTTP Cookie头的值，当大于等于3的时候也会测试User-Agent和HTTP Referer头的值。最高为5 |<br>| --risk 3           | 执行测试的风险（0-3，默认为1）risk越高，越慢但是越安全                                                                                                           |<br>| --privileges       | 查看权限                                                                                                                                                          |<br>| --proxy “目标地址″ | 使用代理注入                                                                                                                                                      |</p>
+<h3 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h3><ul>
+<li>-sS （TCP SYN扫描）：速度快，不易被防火墙发现。</li>
+<li>-sA （TCP ACK扫描）：速度快，不易被防火墙发现，但是无法判断端口是否开放。</li>
+<li>-sT：会获取存活的IP地址、开放的端口，但是这种方法会在主机中留下大量的日志文件</li>
+<li>-Pn：可以穿透防火墙进行扫描</li>
+<li>-O：操作系统探测</li>
+<li>-sV：查看目标主机的版本信息，还可以借助-A选项进行操作系统探测和版本探测</li>
+<li>-Pn：可以穿透防火墙进行扫描</li>
+<li>-sn：只对主机进行扫描，不进行端口扫描</li>
+</ul>
+<h1 id="Web-漏洞"><a href="#Web-漏洞" class="headerlink" title="Web 漏洞"></a>Web 漏洞</h1><h3 id="sql注入漏洞原理"><a href="#sql注入漏洞原理" class="headerlink" title="sql注入漏洞原理"></a>sql注入漏洞原理</h3><p>攻击者的输入被当成sql语句执行</p>
+<h3 id="xss漏洞原理"><a href="#xss漏洞原理" class="headerlink" title="xss漏洞原理"></a>xss漏洞原理</h3><p>攻击者将恶意的代码插入到网页中，正常用户浏览该页面时，恶意的代码就会执行</p>
+<h3 id="文件上传漏洞原理"><a href="#文件上传漏洞原理" class="headerlink" title="文件上传漏洞原理"></a>文件上传漏洞原理</h3><p>攻击者将恶意的代码文件上传到服务器</p>
+<h3 id="SSRF漏洞原理"><a href="#SSRF漏洞原理" class="headerlink" title="SSRF漏洞原理"></a>SSRF漏洞原理</h3><p>攻击者构造恶意请求借助服务端实现访问其本无权访问的URL。</p>
+<h3 id="XXE漏洞原理"><a href="#XXE漏洞原理" class="headerlink" title="XXE漏洞原理"></a>XXE漏洞原理</h3><p>攻击者构造一个带有恶意外部实体的XML请求，发送到服务端。当服务端解析该XML请求时，恶意外部实体会被解析器识别并执行，从而导致攻击者可以访问应用程序不应该公开的文件和数据。</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2023-05-28</p></div> 
+    <div class="post-entry__tags"></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2023/05/11/IDA/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            IDA
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+    
+        <span id="leancloud_container_site_uv" hidden>
+            <span>总访问人</span>
+            <span id="leancloud_value_site_uv"></span>
+            <span></span>
+            
+                <span> </span>
+            
+        </span>
+    
+    
+        <span id="leancloud_container_site_pv" hidden>
+            <span>总访问量</span>
+            <span id="leancloud_value_site_pv"></span>
+            <span></span>
+            
+                <span> </span>
+            
+        </span>
+    
+
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2023 <a href="/">Gwoo</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+         
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+    <script>
+        (function () {
+            function getRecord(Counter, target) {
+                return new Promise(function (resolve, reject) {
+                    Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+                        .then(response => response.json())
+                        .then(({results}) => {
+                            if (results && results.length > 0) {
+                                var record = results[0];
+                                resolve(record);
+                            } else {
+                                Counter('post', '/classes/Counter', {
+                                        target, time: 0
+                                    })
+                                    .then(response => response.json())
+                                    .then(record => {
+                                        resolve(record);
+                                    }).catch(error => {
+                                        console.error('Failed to create', error);
+                                        reject(error);
+                                    });
+                            }
+                        }).catch(error => {
+                            console.error('LeanCloud Counter Error', error);
+                            reject(error);
+                        });
+                })
+            }
+        
+            function buildIncrement(objectId) {
+                return {
+                    "method": "PUT",
+                    "path": `/1.1/classes/Counter/${ objectId }`,
+                    "body": {
+                        "time": {
+                            '__op': 'Increment',
+                            'amount': 1
+                        }
+                    }
+                }
+            }
+        
+            function increment(Counter, incrArr) {
+                return new Promise(function (resolve, reject) {
+                    Counter('post', '/batch', {
+                        "requests": incrArr
+                    }).then((res) => {
+                        resolve(res);
+                    }).catch(error => {
+                        console.error('Failed to save visitor count', error);
+                        reject(error);
+                    });
+                });
+            }
+        
+            function validUV() {
+                var key = 'LeanCloud_UV_Flag';
+                var flag = localStorage.getItem(key);
+                if (flag) {
+                    if (new Date().getTime() - parseInt(flag) <= 86400000) {
+                        return false;
+                    }
+                }
+                localStorage.setItem(key, new Date().getTime().toString());
+                return true;
+            }
+        
+            function addCount(Counter) {
+                var enableIncr = 'leancloud' === 'leancloud';
+                var getterArr = [];
+                var incrArr = [];
+                var pvCtn = document.querySelector('#leancloud_container_site_pv');
+                if (pvCtn || enableIncr) {
+                    var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+                        incrArr.push(buildIncrement(record.objectId))
+                        var ele = document.querySelector('#leancloud_value_site_pv');
+                        if (ele) {
+                            ele.innerText = record.time + 1;
+                            if (pvCtn) {
+                                pvCtn.style.display = 'inline';
+                            }
+                        }
+                    });
+                    getterArr.push(pvGetter);
+                }
+                var uvCtn = document.querySelector('#leancloud_container_site_uv');
+                if (uvCtn || enableIncr) {
+                    var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+                        var vuv = validUV();
+                        vuv && incrArr.push(buildIncrement(record.objectId))
+                        var ele = document.querySelector('#leancloud_value_site_uv');
+                        if (ele) {
+                            ele.innerText = record.time + (vuv ? 1 : 0);
+                            if (uvCtn) {
+                                uvCtn.style.display = 'inline';
+                            }
+                        }
+                    });
+                    getterArr.push(uvGetter);
+                }
+                if ('true' === 'true') {
+                    var viewCtn = document.querySelector('#leancloud_container_page_pv');
+                    if (viewCtn || enableIncr) {
+                        var target = decodeURI('/2023/05/28/hw/');
+                        var viewGetter = getRecord(Counter, target).then((record) => {
+                            incrArr.push(buildIncrement(record.objectId))
+                            if (viewCtn) {
+                                var ele = document.querySelector('#leancloud_value_page_pv');
+                                if (ele) {
+                                    ele.innerText = (record.time || 0) + 1;
+                                    viewCtn.style.display = 'inline';
+                                }
+                            }
+                        });
+                        getterArr.push(viewGetter);
+                    }
+                }
+                if (enableIncr) {
+                    Promise.all(getterArr).then(() => {
+                        incrArr.length > 0 && increment(Counter, incrArr);
+                    })
+                }
+            }
+        
+            var app_id = 'bJN1qKDryqdQMB2GyyxMcO8b-gzGzoHsz';
+            var app_key = 'J2HWpTbi7MLIsrnuJaALYcw2';
+            var server_url = '';
+        
+            function fetchData(api_server) {
+                var Counter = (method, url, data) => {
+                    return fetch(`${ api_server }/1.1${ url }`, {
+                        method,
+                        headers: {
+                                'X-LC-Id': app_id,
+                                'X-LC-Key': app_key,
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data)
+                    });
+                };
+                addCount(Counter);
+            }
+            var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+            if (api_server) {
+                fetchData(api_server);
+            } else {
+                fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+                    .then(response => response.json())
+                    .then(({api_server}) => {
+                        fetchData('https://' + api_server);
+                    });
+            }
+        })();
+    </script>
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":-15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
