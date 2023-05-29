@@ -51,7 +51,7 @@
 <meta property="og:description" content="蓝队知识溯源如果挂了代理怎么做 收集信息—-获取代理服务器的日志 分析信息 尝试联系代理服务器的管理员 进一步溯源  Nginx的日志放在哪里？如何进行分析？ 配置文件 &#x2F;etc&#x2F;nginx&#x2F;nginx.conf    访问日志 和 错误日志 access_log 和 error_log    分析 access_log 可以根据每个所关系的字段读取频率最高的起那时看看是否又哦什么出乎预料的情况，">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-28T13:17:22.000Z">
-<meta property="article:modified_time" content="2023-05-28T13:17:46.307Z">
+<meta property="article:modified_time" content="2023-05-29T07:56:38.634Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -603,7 +603,67 @@ jspx 文件：find 网站目录/* -type f -name &quot;*.jspx&quot; |xargs grep &
 <li>--columns -T “table_name” -D “db_name” [列出指定数据库中指定数据表的列(字段)]</li>
 <li>--dump -C “columns_name” -T “table_name” -D “db_name”i [列出数据表中的行（内容）]</li>
 </ul>
-<p>常用指令<br>| 指令                 | 作用                                                                                                                                                              |<br>| :—-                | :—–                                                                                                                                                            |<br>| --purge            | 重新扫描，会删除原先扫描记录                                                                                                                                      |<br>| --tables           | 获取表名                                                                                                                                                          |<br>| --dbs              | 检测站点包含哪些数据库                                                                                                                                            |<br>| --current-db      | 获取当前的数据库名                                                                                                                                                |<br>| --current-user    | 检测当前用户                                                                                                                                                      |<br>| --is-dba          | 判断站点的当前用户是否为数据库管理员                                                                                                                              |<br>| --batch            | 默认确认，不询问你是否输入                                                                                                                                        |<br>| --search           | 后面跟参数 -D -T -C搜索列（C），表（T）和数据库名称（D）                                                                                                       |<br>| --threads 10       | 线程，参数后空格接数字，sqlmap线程最高设置为10                                                                                                                    |<br>| --level 3          | sqlmap默认测试所有的GET和POST参数，当--level的值大于等于2的时候也会测试HTTP Cookie头的值，当大于等于3的时候也会测试User-Agent和HTTP Referer头的值。最高为5 |<br>| --risk 3           | 执行测试的风险（0-3，默认为1）risk越高，越慢但是越安全                                                                                                           |<br>| --privileges       | 查看权限                                                                                                                                                          |<br>| --proxy “目标地址″ | 使用代理注入                                                                                                                                                      |</p>
+<p>常用指令</p>
+<table>
+<thead>
+<tr>
+<th align="left">指令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">--purge</td>
+<td align="left">重新扫描，会删除原先扫描记录</td>
+</tr>
+<tr>
+<td align="left">--tables</td>
+<td align="left">获取表名</td>
+</tr>
+<tr>
+<td align="left">--dbs</td>
+<td align="left">检测站点包含哪些数据库</td>
+</tr>
+<tr>
+<td align="left">--current-db</td>
+<td align="left">获取当前的数据库名</td>
+</tr>
+<tr>
+<td align="left">--current-user</td>
+<td align="left">检测当前用户</td>
+</tr>
+<tr>
+<td align="left">--is-dba</td>
+<td align="left">判断站点的当前用户是否为数据库管理员</td>
+</tr>
+<tr>
+<td align="left">--batch</td>
+<td align="left">默认确认，不询问你是否输入</td>
+</tr>
+<tr>
+<td align="left">--search</td>
+<td align="left">后面跟参数 -D -T -C搜索列（C），表（T）和数据库名称（D）</td>
+</tr>
+<tr>
+<td align="left">--threads 10</td>
+<td align="left">线程，参数后空格接数字，sqlmap线程最高设置为10</td>
+</tr>
+<tr>
+<td align="left">--level 3</td>
+<td align="left">sqlmap默认测试所有的GET和POST参数，当--level的值大于等于2的时候也会测试HTTP Cookie头的值，当大于等于3的时候也会测试User-Agent和HTTP Referer头的值。最高为5</td>
+</tr>
+<tr>
+<td align="left">--risk 3</td>
+<td align="left">执行测试的风险（0-3，默认为1）risk越高，越慢但是越安全</td>
+</tr>
+<tr>
+<td align="left">--privileges</td>
+<td align="left">查看权限</td>
+</tr>
+<tr>
+<td align="left">--proxy “目标地址″</td>
+<td align="left">使用代理注入</td>
+</tr>
+</tbody></table>
 <h3 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h3><ul>
 <li>-sS （TCP SYN扫描）：速度快，不易被防火墙发现。</li>
 <li>-sA （TCP ACK扫描）：速度快，不易被防火墙发现，但是无法判断端口是否开放。</li>
@@ -622,7 +682,7 @@ jspx 文件：find 网站目录/* -type f -name &quot;*.jspx&quot; |xargs grep &
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2023-05-28</p></div> 
+    <div class="post-footer__meta"><p>updated at 2023-05-29</p></div> 
     <div class="post-entry__tags"></div> 
 </article>
 
